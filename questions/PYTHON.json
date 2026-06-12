@@ -1,0 +1,506 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "What are the key features of the Python programming language?",
+    "follow_ups": [
+      "Why is Python considered a dynamically typed language?",
+      "What does it mean that Python is an object-oriented language?",
+      "Can you explain what 'battery included' means in the context of Python?"
+    ],
+    "evaluation_criteria": ["language_characteristics", "typing_system", "ecosystem_knowledge"],
+    "expected_keywords": ["interpreted", "dynamically typed", "object-oriented", "high-level", "standard library", "readability"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "Is Python an interpreted or compiled language?",
+    "follow_ups": [
+      "What are .pyc files and how do they relate to bytecode?",
+      "Explain the role of the Python Virtual Machine (PVM).",
+      "How do tools like PyPy differ from standard CPython regarding execution?"
+    ],
+    "evaluation_criteria": ["execution_model", "bytecode_understanding", "interpreter_knowledge"],
+    "expected_keywords": ["bytecode", "interpreter", "cpython", "pvm", "just-in-time compiler"],
+    "type": "technical"
+  },
+  {
+    "id": "Q3",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "What are the built-in data types in Python?",
+    "follow_ups": [
+      "Which built-in data types are mutable and which are immutable?",
+      "What is the difference between a float and a complex number in Python?",
+      "How do you check the data type of a variable at runtime?"
+    ],
+    "evaluation_criteria": ["mutability_concept", "type_identification", "data_type_list"],
+    "expected_keywords": ["int", "float", "str", "list", "tuple", "dict", "set", "bool", "mutable", "immutable", "type()"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "What is the difference between a list and a tuple in Python?",
+    "follow_ups": [
+      "Why are tuples generally faster than lists?",
+      "Can a tuple contain mutable elements like a list?",
+      "In what scenarios would you choose a tuple over a list?"
+    ],
+    "evaluation_criteria": ["mutability_differences", "performance_characteristics", "use_case_selection"],
+    "expected_keywords": ["mutable", "immutable", "square brackets", "parentheses", "hashable", "iteration speed"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q5",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "How do lists differ from tuples and sets?",
+    "follow_ups": [
+      "How does a set handle duplicate elements?",
+      "What is the underlying data structure of a set that makes element lookup so fast?",
+      "Can you access elements in a set using an index?"
+    ],
+    "evaluation_criteria": ["data_structure_comparison", "hash_table_knowledge", "uniqueness_handling"],
+    "expected_keywords": ["ordered", "unordered", "duplicates", "hash table", "O(1) lookup", "indexing"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q6",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "What is the difference between local and global scope in Python?",
+    "follow_ups": [
+      "How can you modify a global variable from within a function?",
+      "What happens if a local variable has the same name as a global variable?",
+      "What is the non-local scope and when is it used?"
+    ],
+    "evaluation_criteria": ["scope_rules", "keyword_usage", "shadowing_understanding"],
+    "expected_keywords": ["global keyword", "local variable", "shadowing", "nonlocal", "LEGB rule"],
+    "type": "technical"
+  },
+  {
+    "id": "Q7",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "What are Python namespaces and how does scope resolution work?",
+    "follow_ups": [
+      "Can you explain the LEGB rule for scope resolution?",
+      "How are namespaces implemented internally in Python?",
+      "What is the difference between globals() and locals() built-in functions?"
+    ],
+    "evaluation_criteria": ["resolution_order", "internal_implementation", "built_in_functions"],
+    "expected_keywords": ["LEGB", "local", "enclosing", "global", "built-in", "dictionary"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q8",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the __init__() method?",
+    "follow_ups": [
+      "Is __init__() the exact equivalent of a constructor in C++ or Java? Why or why not?",
+      "What is the difference between __new__() and __init__()?",
+      "Can the __init__() method return a value?"
+    ],
+    "evaluation_criteria": ["object_initialization", "method_comparison", "return_constraints"],
+    "expected_keywords": ["initializer", "constructor", "instantiation", "self", "state setup", "None"],
+    "type": "technical"
+  },
+  {
+    "id": "Q9",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "What is the purpose of self in Python classes?",
+    "follow_ups": [
+      "Is 'self' a reserved keyword in Python?",
+      "What happens if you omit 'self' from a method definition inside a class?",
+      "How does Python automatically pass the instance to the 'self' parameter?"
+    ],
+    "evaluation_criteria": ["instance_binding", "syntax_rules", "convention_understanding"],
+    "expected_keywords": ["instance reference", "convention", "method binding", "class methods", "attributes"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q10",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "What is the difference between == and is operators?",
+    "follow_ups": [
+      "Why does `a = 256; b = 256; a is b` evaluate to True, but doing the same for 257 evaluates to False?",
+      "How does the id() function relate to the 'is' operator?",
+      "When comparing strings or lists, which operator should you typically use?"
+    ],
+    "evaluation_criteria": ["identity_vs_equality", "interning_knowledge", "memory_reference"],
+    "expected_keywords": ["value equality", "memory identity", "integer interning", "id() function", "reference"],
+    "type": "technical"
+  },
+  {
+    "id": "Q11",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "What is PEP 8 and why is it important?",
+    "follow_ups": [
+      "What is the recommended indentation size according to PEP 8?",
+      "How should you name classes versus functions according to PEP 8?",
+      "What tools can you use to automatically check or format your code for PEP 8 compliance?"
+    ],
+    "evaluation_criteria": ["style_guidelines", "naming_conventions", "tool_awareness"],
+    "expected_keywords": ["style guide", "readability", "4 spaces", "CamelCase", "snake_case", "flake8", "black"],
+    "type": "practical"
+  },
+  {
+    "id": "Q12",
+    "subject": "Python",
+    "difficulty": "Easy",
+    "question": "What is the purpose of if __name__ == \"__main__\"?",
+    "follow_ups": [
+      "What value does the __name__ variable hold when a file is imported as a module?",
+      "How does this construct help in unit testing?",
+      "Can a Python script run without this block?"
+    ],
+    "evaluation_criteria": ["module_execution", "namespace_variable", "script_vs_module"],
+    "expected_keywords": ["execution entry point", "module import", "standalone script", "__main__ string"],
+    "type": "technical"
+  },
+  {
+    "id": "Q13",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What are Python iterators and how do they work?",
+    "follow_ups": [
+      "What two dunder methods must an object implement to be considered an iterator?",
+      "What exception is raised when an iterator is exhausted?",
+      "What is the difference between an iterable and an iterator?"
+    ],
+    "evaluation_criteria": ["iterator_protocol", "exception_handling", "iterable_distinction"],
+    "expected_keywords": ["__iter__()", "__next__()", "StopIteration", "stateful", "iterable"],
+    "type": "technical"
+  },
+  {
+    "id": "Q14",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What are generators and how do they differ from normal functions?",
+    "follow_ups": [
+      "How does the 'yield' keyword differ from 'return'?",
+      "Why are generators considered more memory efficient for large datasets?",
+      "Can you send data back into a running generator?"
+    ],
+    "evaluation_criteria": ["yield_mechanics", "memory_efficiency", "advanced_generator_usage"],
+    "expected_keywords": ["yield", "lazy evaluation", "state retention", "memory efficiency", "generator.send()"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q15",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What is the difference between generators and iterators?",
+    "follow_ups": [
+      "Are all generators iterators? Are all iterators generators?",
+      "Which is easier to implement: a custom class iterator or a generator function?",
+      "How do generator expressions differ from list comprehensions?"
+    ],
+    "evaluation_criteria": ["hierarchy_understanding", "implementation_complexity", "syntax_differences"],
+    "expected_keywords": ["subset", "yield", "__iter__/__next__", "lazy evaluation", "syntax simplicity"],
+    "type": "technical"
+  },
+  {
+    "id": "Q16",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What are lambda functions and when should you use them?",
+    "follow_ups": [
+      "Can a lambda function contain multiple expressions or statements?",
+      "How are lambda functions typically used with functions like map() or filter()?",
+      "Why does PEP 8 discourage assigning lambda functions to variables?"
+    ],
+    "evaluation_criteria": ["syntax_limitations", "functional_programming_usage", "style_guidelines"],
+    "expected_keywords": ["anonymous function", "single expression", "map", "filter", "inline execution", "def keyword"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q17",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What is the difference between append() and extend() for lists?",
+    "follow_ups": [
+      "What happens if you pass a list as an argument to append()?",
+      "What happens if you pass a string as an argument to extend()?",
+      "What is the time complexity of appending a single element versus extending a list by k elements?"
+    ],
+    "evaluation_criteria": ["method_behavior", "iterable_handling", "time_complexity"],
+    "expected_keywords": ["add single item", "add iterable elements", "nested list", "unpacked", "O(1)"],
+    "type": "practical"
+  },
+  {
+    "id": "Q18",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What is the difference between shallow copy and deep copy?",
+    "follow_ups": [
+      "Which module in Python provides the copy() and deepcopy() functions?",
+      "How do shallow and deep copies behave differently with nested lists?",
+      "What does the slicing operator `[:]` create: a shallow or deep copy?"
+    ],
+    "evaluation_criteria": ["memory_references", "nested_objects", "module_usage"],
+    "expected_keywords": ["reference copy", "recursive copy", "nested objects", "copy module", "memory independence"],
+    "type": "technical"
+  },
+  {
+    "id": "Q19",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What is the difference between *args and **kwargs?",
+    "follow_ups": [
+      "What data type does *args pack arguments into?",
+      "What data type does **kwargs pack arguments into?",
+      "In what order must positional arguments, *args, and **kwargs be defined in a function signature?"
+    ],
+    "evaluation_criteria": ["argument_packing", "data_types", "signature_ordering"],
+    "expected_keywords": ["positional arguments", "keyword arguments", "tuple", "dictionary", "unpacking"],
+    "type": "technical"
+  },
+  {
+    "id": "Q20",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What is the difference between * and ** operators in Python?",
+    "follow_ups": [
+      "How can you use the * operator to merge two lists?",
+      "How can you use the ** operator to merge two dictionaries (in Python 3.5+)?",
+      "What does the * operator do when placed before an iterable in a function call?"
+    ],
+    "evaluation_criteria": ["operator_overloading", "dictionary_unpacking", "iterable_unpacking"],
+    "expected_keywords": ["multiplication", "exponentiation", "unpacking", "dictionary merge", "list unpacking"],
+    "type": "practical"
+  },
+  {
+    "id": "Q21",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What is the difference between pass, continue, and break?",
+    "follow_ups": [
+      "When is the 'pass' statement required syntactically?",
+      "How does 'break' interact with an 'else' block attached to a loop?",
+      "Can 'continue' be used outside of a loop?"
+    ],
+    "evaluation_criteria": ["control_flow", "syntactic_placeholders", "loop_else_clause"],
+    "expected_keywords": ["null operation", "skip iteration", "terminate loop", "placeholder", "loop else"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q22",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What is the difference between range() and xrange() in Python 2.x?",
+    "follow_ups": [
+      "What happened to xrange() in Python 3.x?",
+      "Why was xrange() more memory-efficient for large loops in Python 2?",
+      "What does the range() function return in Python 3?"
+    ],
+    "evaluation_criteria": ["version_differences", "memory_efficiency", "return_types"],
+    "expected_keywords": ["python 2 vs 3", "list generation", "generator object", "lazy evaluation", "memory footprint"],
+    "type": "historical"
+  },
+  {
+    "id": "Q23",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What are list comprehensions in Python?",
+    "follow_ups": [
+      "How do you add an 'if-else' condition inside a list comprehension?",
+      "Are list comprehensions generally faster than equivalent for-loops? Why?",
+      "Can comprehensions be used for dictionaries and sets as well?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "performance_benefits", "comprehension_types"],
+    "expected_keywords": ["concise syntax", "performance", "dictionary comprehension", "set comprehension", "filtering"],
+    "type": "practical"
+  },
+  {
+    "id": "Q24",
+    "subject": "Python",
+    "difficulty": "Medium",
+    "question": "What is the difference between map(), filter(), and reduce()?",
+    "follow_ups": [
+      "What type of object do map() and filter() return in Python 3?",
+      "From which module do you need to import the reduce() function?",
+      "How can a list comprehension replace map() and filter()?"
+    ],
+    "evaluation_criteria": ["functional_programming", "return_types", "module_imports"],
+    "expected_keywords": ["transformation", "filtering condition", "aggregation", "functools", "iterator", "lambda"],
+    "type": "technical"
+  },
+  {
+    "id": "Q25",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "What are decorators in Python and how do you create one?",
+    "follow_ups": [
+      "How do you pass arguments to a decorator itself?",
+      "What is the purpose of the functools.wraps decorator?",
+      "Can a single function have multiple decorators applied to it? In what order are they executed?"
+    ],
+    "evaluation_criteria": ["closure_understanding", "metadata_preservation", "execution_order"],
+    "expected_keywords": ["higher-order function", "wrapper", "functools.wraps", "closure", "@ syntax", "metadata"],
+    "type": "technical"
+  },
+  {
+    "id": "Q26",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "What are context managers in Python?",
+    "follow_ups": [
+      "What two dunder methods must a class implement to act as a context manager?",
+      "How do context managers ensure that resources are properly cleaned up?",
+      "How can you use the contextlib module to create a context manager using a generator?"
+    ],
+    "evaluation_criteria": ["resource_management", "protocol_methods", "generator_context"],
+    "expected_keywords": ["with statement", "__enter__", "__exit__", "resource leak", "contextlib.contextmanager", "exception handling"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "What is the Global Interpreter Lock (GIL) in Python?",
+    "follow_ups": [
+      "Why does the GIL exist in CPython?",
+      "How does the GIL affect multithreaded programs for CPU-bound vs I/O-bound tasks?",
+      "How can you bypass the GIL for true parallelism in Python?"
+    ],
+    "evaluation_criteria": ["cpython_architecture", "concurrency_vs_parallelism", "multiprocessing_knowledge"],
+    "expected_keywords": ["mutex", "thread-safe", "memory management", "CPU-bound", "I/O-bound", "multiprocessing module"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q28",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "How does memory management work in Python?",
+    "follow_ups": [
+      "Explain the concept of reference counting.",
+      "How does Python's garbage collector handle circular references?",
+      "What is a weak reference (weakref) and when would you use it?"
+    ],
+    "evaluation_criteria": ["garbage_collection_mechanisms", "reference_counting", "circular_reference_resolution"],
+    "expected_keywords": ["reference counting", "garbage collector", "generational gc", "circular reference", "memory leak", "weakref"],
+    "type": "technical"
+  },
+  {
+    "id": "Q29",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "What is the difference between instance methods, class methods, and static methods?",
+    "follow_ups": [
+      "What decorator is used to define a class method and what is its implicit first argument?",
+      "When would you use a static method over a class method?",
+      "Can an instance call a class method?"
+    ],
+    "evaluation_criteria": ["method_binding", "decorator_usage", "design_patterns"],
+    "expected_keywords": ["self", "cls", "@classmethod", "@staticmethod", "factory method", "utility function"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q30",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "What is duck typing in Python?",
+    "follow_ups": [
+      "How does the phrase 'If it walks like a duck and quacks like a duck' apply to Python code?",
+      "How does duck typing differ from strict static typing (like in Java or C++)?",
+      "What is the difference between EAFP (Easier to Ask for Forgiveness than Permission) and LBYL (Look Before You Leap)?"
+    ],
+    "evaluation_criteria": ["dynamic_typing_philosophy", "polymorphism", "error_handling_styles"],
+    "expected_keywords": ["dynamic typing", "behavior over structure", "polymorphism", "EAFP", "LBYL", "attribute checking"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q31",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "What are magic methods (dunder methods) in Python?",
+    "follow_ups": [
+      "How do magic methods enable operator overloading?",
+      "Can you name the magic method invoked when you use the '+' operator?",
+      "What magic method is called when an object is called as a function (like `obj()`)?"
+    ],
+    "evaluation_criteria": ["operator_overloading", "object_behavior_customization", "dunder_knowledge"],
+    "expected_keywords": ["double underscore", "__add__", "__call__", "operator overloading", "built-in behavior"],
+    "type": "technical"
+  },
+  {
+    "id": "Q32",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "What is the difference between __str__() and __repr__()?",
+    "follow_ups": [
+      "Which method is intended for the end-user, and which is intended for developers/debugging?",
+      "What happens if you define __repr__ but not __str__ and you try to print the object?",
+      "How do you explicitly call these methods?"
+    ],
+    "evaluation_criteria": ["string_representation", "fallback_behavior", "debugging_vs_display"],
+    "expected_keywords": ["informal string", "formal string", "debugging", "eval()", "fallback"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q33",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "How can you manage exceptions using try–except blocks?",
+    "follow_ups": [
+      "What is the purpose of the 'else' block in a try-except statement?",
+      "What is the purpose of the 'finally' block?",
+      "How do you catch multiple distinct exceptions in a single except block?"
+    ],
+    "evaluation_criteria": ["exception_handling_flow", "cleanup_operations", "syntax_knowledge"],
+    "expected_keywords": ["try", "except", "else", "finally", "exception class", "cleanup", "tuple of exceptions"],
+    "type": "technical"
+  },
+  {
+    "id": "Q34",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "How does the Python debugger (pdb) work?",
+    "follow_ups": [
+      "How do you insert a breakpoint in your code using pdb (pre-Python 3.7 vs Python 3.7+)?",
+      "What do the commands 'n' (next), 's' (step), and 'c' (continue) do in pdb?",
+      "How can you inspect variable values within a pdb session?"
+    ],
+    "evaluation_criteria": ["debugging_tools", "command_knowledge", "breakpoint_usage"],
+    "expected_keywords": ["breakpoint()", "import pdb", "pdb.set_trace()", "step into", "step over", "continue"],
+    "type": "practical"
+  },
+  {
+    "id": "Q35",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "What are Python modules and packages?",
+    "follow_ups": [
+      "What is the purpose of the __init__.py file in a directory?",
+      "How does Python determine where to look for modules to import?",
+      "What is the difference between an absolute import and a relative import?"
+    ],
+    "evaluation_criteria": ["code_organization", "import_resolution", "package_initialization"],
+    "expected_keywords": ["__init__.py", "sys.path", "namespace", "absolute import", "relative import", "PYTHONPATH"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q36",
+    "subject": "Python",
+    "difficulty": "Hard",
+    "question": "What is the difference between import and from … import?",
+    "follow_ups": [
+      "How does 'from module import *' affect the local namespace?",
+      "When might 'from ... import' lead to circular dependency issues?",
+      "Which method is generally preferred for avoiding namespace collisions?"
+    ],
+    "evaluation_criteria": ["import_mechanics", "namespace_pollution", "circular_dependencies"],
+    "expected_keywords": ["namespace", "polluting", "circular import", "memory footprint", "attribute access"],
+    "type": "conceptual"
+  }
+]

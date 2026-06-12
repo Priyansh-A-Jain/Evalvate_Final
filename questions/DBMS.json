@@ -1,0 +1,437 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Database Management System",
+    "difficulty": "Easy",
+    "question": "What is the difference between DBMS and RDBMS?",
+    "follow_ups": [
+      "Can you give an example of a DBMS that is not an RDBMS?",
+      "How does data storage differ between the two?",
+      "What role does normalization play in an RDBMS compared to a standard DBMS?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "storage_understanding", "example_provided"],
+    "expected_keywords": ["relational", "tables", "files", "normalization", "keys", "sql"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Database Management System",
+    "difficulty": "Easy",
+    "question": "What is the difference between a primary key and a unique key?",
+    "follow_ups": [
+      "Can a table have more than one primary key?",
+      "How do primary keys and unique keys handle NULL values?",
+      "Can a unique key be used as a foreign key in another table?"
+    ],
+    "evaluation_criteria": ["null_handling_knowledge", "table_structure_understanding", "key_relationships"],
+    "expected_keywords": ["null values", "one per table", "multiple per table", "unique identifier", "foreign key"],
+    "type": "technical"
+  },
+  {
+    "id": "Q3",
+    "subject": "Database Management System",
+    "difficulty": "Easy",
+    "question": "What is a foreign key?",
+    "follow_ups": [
+      "What happens to child records if a parent record referenced by a foreign key is deleted?",
+      "Can a foreign key contain NULL values?",
+      "What is referential integrity and how does a foreign key enforce it?"
+    ],
+    "evaluation_criteria": ["referential_integrity_knowledge", "deletion_cascades", "null_allowance"],
+    "expected_keywords": ["referential integrity", "primary key", "parent table", "child table", "cascade delete"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "Database Management System",
+    "difficulty": "Easy",
+    "question": "What is the difference between DELETE, DROP, and TRUNCATE?",
+    "follow_ups": [
+      "Which of these commands can be rolled back?",
+      "Which command resets the identity column (auto-increment)?",
+      "Which of these are DDL and which are DML commands?"
+    ],
+    "evaluation_criteria": ["command_classification", "rollback_knowledge", "identity_reset_understanding"],
+    "expected_keywords": ["ddl", "dml", "rollback", "where clause", "table structure", "identity seed"],
+    "type": "technical"
+  },
+  {
+    "id": "Q5",
+    "subject": "Database Management System",
+    "difficulty": "Easy",
+    "question": "What are the ACID properties?",
+    "follow_ups": [
+      "Can you explain what 'Isolation' means in the context of concurrent transactions?",
+      "How does a database ensure the 'Durability' property?",
+      "What happens to a transaction if 'Atomicity' fails?"
+    ],
+    "evaluation_criteria": ["property_definition", "concurrency_understanding", "durability_mechanisms"],
+    "expected_keywords": ["atomicity", "consistency", "isolation", "durability", "transaction", "rollback", "commit"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q6",
+    "subject": "Database Management System",
+    "difficulty": "Easy",
+    "question": "What is the difference between WHERE and HAVING?",
+    "follow_ups": [
+      "Can we use aggregate functions in the WHERE clause?",
+      "Which clause is evaluated first during query execution: WHERE or HAVING?",
+      "Can HAVING be used without a GROUP BY clause?"
+    ],
+    "evaluation_criteria": ["execution_order", "aggregate_function_usage", "syntax_rules"],
+    "expected_keywords": ["aggregate functions", "group by", "row-level filtering", "group-level filtering", "execution plan"],
+    "type": "technical"
+  },
+  {
+    "id": "Q7",
+    "subject": "Database Management System",
+    "difficulty": "Easy",
+    "question": "What is a candidate key vs. a super key?",
+    "follow_ups": [
+      "Can a candidate key contain redundant attributes?",
+      "How do you choose a primary key from a set of candidate keys?",
+      "Are all super keys also candidate keys?"
+    ],
+    "evaluation_criteria": ["key_definitions", "redundancy_understanding", "selection_process"],
+    "expected_keywords": ["minimal super key", "unique identification", "subset", "redundant attributes", "primary key"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q8",
+    "subject": "Database Management System",
+    "difficulty": "Easy",
+    "question": "What is the difference between DDL and DML?",
+    "follow_ups": [
+      "Give three examples of DDL statements and three of DML statements.",
+      "Are DDL statements auto-committed in most relational databases?",
+      "Where does the GRANT and REVOKE command fit in SQL categorization?"
+    ],
+    "evaluation_criteria": ["statement_categorization", "commit_behavior", "sql_sublanguages"],
+    "expected_keywords": ["data definition language", "data manipulation language", "insert", "update", "create", "alter", "auto-commit", "dcl"],
+    "type": "technical"
+  },
+  {
+    "id": "Q9",
+    "subject": "Database Management System",
+    "difficulty": "Easy",
+    "question": "What is the difference between CHAR and VARCHAR?",
+    "follow_ups": [
+      "Which one is more memory-efficient for storing varying-length data?",
+      "How is padding handled in a CHAR column?",
+      "Is there a performance difference when searching through CHAR versus VARCHAR columns?"
+    ],
+    "evaluation_criteria": ["memory_efficiency", "padding_rules", "performance_tradeoffs"],
+    "expected_keywords": ["fixed-length", "variable-length", "padding", "storage space", "trailing spaces"],
+    "type": "technical"
+  },
+  {
+    "id": "Q10",
+    "subject": "Database Management System",
+    "difficulty": "Easy",
+    "question": "What is NULL? Is it the same as zero or a blank space?",
+    "follow_ups": [
+      "How does the IS NULL operator differ from the = operator when checking for NULL?",
+      "What happens if you perform arithmetic operations on a NULL value?",
+      "How do aggregate functions like COUNT() handle NULL values?"
+    ],
+    "evaluation_criteria": ["null_definition", "operator_usage", "aggregate_behavior"],
+    "expected_keywords": ["unknown", "missing value", "is null", "not equal to zero", "ignored by count"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q11",
+    "subject": "Database Management System",
+    "difficulty": "Medium",
+    "question": "What is normalization? Explain 1NF, 2NF, and 3NF.",
+    "follow_ups": [
+      "What is a partial dependency and which normal form removes it?",
+      "What is a transitive dependency and which normal form removes it?",
+      "What is Boyce-Codd Normal Form (BCNF) and how does it relate to 3NF?"
+    ],
+    "evaluation_criteria": ["normal_form_definitions", "dependency_types", "bcnf_understanding"],
+    "expected_keywords": ["redundancy", "anomaly", "atomic values", "partial dependency", "transitive dependency", "primary key"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q12",
+    "subject": "Database Management System",
+    "difficulty": "Medium",
+    "question": "What are the different types of joins?",
+    "follow_ups": [
+      "What is the difference between an INNER JOIN and a LEFT OUTER JOIN?",
+      "What is a CROSS JOIN and what is the mathematical term for its result?",
+      "In what scenario would you use a FULL OUTER JOIN?"
+    ],
+    "evaluation_criteria": ["join_types", "result_set_knowledge", "practical_application"],
+    "expected_keywords": ["inner", "left", "right", "full", "cross join", "cartesian product", "matching records"],
+    "type": "technical"
+  },
+  {
+    "id": "Q13",
+    "subject": "Database Management System",
+    "difficulty": "Medium",
+    "question": "What is a view? Why do we use it?",
+    "follow_ups": [
+      "Does a standard view store data physically on the disk?",
+      "What is an indexed view or materialized view?",
+      "Can you perform DML operations (INSERT, UPDATE, DELETE) directly on a view?"
+    ],
+    "evaluation_criteria": ["view_definition", "materialized_views", "updatability_rules"],
+    "expected_keywords": ["virtual table", "security", "complexity abstraction", "materialized view", "updatable view"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q14",
+    "subject": "Database Management System",
+    "difficulty": "Medium",
+    "question": "What is the difference between UNION and UNION ALL?",
+    "follow_ups": [
+      "Which of these operators is generally faster and why?",
+      "What are the requirements for the columns in the queries being combined?",
+      "Can UNION be used to combine results from tables with different data types in the same column position?"
+    ],
+    "evaluation_criteria": ["performance_knowledge", "syntax_requirements", "duplicate_handling"],
+    "expected_keywords": ["duplicates", "performance", "sort", "column count", "data types"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "Database Management System",
+    "difficulty": "Medium",
+    "question": "How do you find the second highest salary in a table?",
+    "follow_ups": [
+      "Can you write a query using a subquery and the MAX function to achieve this?",
+      "How would you solve this using window functions like DENSE_RANK() or ROW_NUMBER()?",
+      "What is the advantage of using a window function over a subquery for this task?"
+    ],
+    "evaluation_criteria": ["sql_proficiency", "window_function_knowledge", "performance_considerations"],
+    "expected_keywords": ["max", "subquery", "dense_rank", "limit", "offset", "order by"],
+    "type": "practical"
+  },
+  {
+    "id": "Q16",
+    "subject": "Database Management System",
+    "difficulty": "Medium",
+    "question": "What is an index? How does it improve performance?",
+    "follow_ups": [
+      "What are the drawbacks or costs of having too many indexes on a table?",
+      "What data structure is most commonly used for indexing?",
+      "What is a covering index?"
+    ],
+    "evaluation_criteria": ["index_mechanics", "tradeoff_understanding", "data_structure_knowledge"],
+    "expected_keywords": ["b-tree", "lookup", "insert performance", "storage cost", "covering index", "clustered"],
+    "type": "technical"
+  },
+  {
+    "id": "Q17",
+    "subject": "Database Management System",
+    "difficulty": "Medium",
+    "question": "What is denormalization? When is it used?",
+    "follow_ups": [
+      "Does denormalization mean reverting to 1NF?",
+      "What are the risks of denormalization regarding data integrity?",
+      "Give an example of a system (OLTP vs OLAP) where denormalization is highly beneficial."
+    ],
+    "evaluation_criteria": ["concept_understanding", "tradeoff_analysis", "system_architecture"],
+    "expected_keywords": ["read performance", "redundancy", "joins", "olap", "data warehouse", "integrity maintenance"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q18",
+    "subject": "Database Management System",
+    "difficulty": "Medium",
+    "question": "What is a stored procedure?",
+    "follow_ups": [
+      "How does a stored procedure improve database security against SQL injection?",
+      "What is the difference between a stored procedure and a user-defined function (UDF)?",
+      "Can a stored procedure return multiple result sets?"
+    ],
+    "evaluation_criteria": ["security_benefits", "function_comparison", "execution_capabilities"],
+    "expected_keywords": ["precompiled", "execution plan", "sql injection", "parameters", "business logic", "transaction control"],
+    "type": "technical"
+  },
+  {
+    "id": "Q19",
+    "subject": "Database Management System",
+    "difficulty": "Medium",
+    "question": "What is a self-join? Give a scenario.",
+    "follow_ups": [
+      "How do you differentiate between the two instances of the same table in a self-join query?",
+      "Can a self-join be an outer join?",
+      "How would you query an employee table to find employees who earn more than their managers?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "scenario_application", "alias_usage"],
+    "expected_keywords": ["table alias", "hierarchical data", "employee-manager", "recursive", "foreign key to primary key"],
+    "type": "practical"
+  },
+  {
+    "id": "Q20",
+    "subject": "Database Management System",
+    "difficulty": "Medium",
+    "question": "What is a trigger?",
+    "follow_ups": [
+      "What are the different types of triggers (e.g., BEFORE, AFTER, INSTEAD OF)?",
+      "What are the MAGIC tables (Inserted/Deleted) used inside a trigger in SQL Server?",
+      "What are the performance risks of using complex triggers?"
+    ],
+    "evaluation_criteria": ["trigger_types", "magic_tables", "performance_impact"],
+    "expected_keywords": ["event-driven", "dml events", "before/after", "instead of", "audit logging", "hidden performance cost"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "What is the difference between clustered and non-clustered indexes?",
+    "follow_ups": [
+      "How many clustered indexes can a table have, and why?",
+      "What does the leaf node of a non-clustered index contain?",
+      "How does updating a clustered index key affect non-clustered indexes?"
+    ],
+    "evaluation_criteria": ["physical_storage_knowledge", "leaf_node_contents", "index_relationships"],
+    "expected_keywords": ["physical sorting", "data pages", "row locator", "pointers", "one per table", "b-tree"],
+    "type": "technical"
+  },
+  {
+    "id": "Q22",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "What is a deadlock? How is it resolved?",
+    "follow_ups": [
+      "How does a DBMS detect a deadlock?",
+      "What is a deadlock victim and how is it chosen?",
+      "What application-level design strategies can prevent deadlocks from occurring?"
+    ],
+    "evaluation_criteria": ["deadlock_mechanics", "victim_selection", "prevention_strategies"],
+    "expected_keywords": ["circular wait", "mutual exclusion", "lock manager", "wait-for graph", "deadlock victim", "resource ordering"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q23",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "What are transaction isolation levels?",
+    "follow_ups": [
+      "Name the four ANSI standard isolation levels.",
+      "Which isolation level prevents dirty reads but allows non-repeatable reads?",
+      "What is the performance trade-off of using the Serializable isolation level?"
+    ],
+    "evaluation_criteria": ["isolation_levels", "anomaly_prevention", "performance_tradeoffs"],
+    "expected_keywords": ["read uncommitted", "read committed", "repeatable read", "serializable", "locking mechanisms"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "What are dirty reads and phantom reads?",
+    "follow_ups": [
+      "How does a phantom read differ from a non-repeatable read?",
+      "Which isolation level is required to prevent phantom reads?",
+      "Can you give a real-world scenario where a dirty read would be disastrous?"
+    ],
+    "evaluation_criteria": ["concurrency_anomalies", "isolation_level_mapping", "scenario_application"],
+    "expected_keywords": ["uncommitted data", "insert/delete anomalies", "range queries", "serializable", "read committed"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q25",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "How does a B-tree index work?",
+    "follow_ups": [
+      "What is the difference between a B-tree and a B+ tree?",
+      "Why is a B+ tree preferred for database indexing over a binary search tree?",
+      "How does range scanning benefit from the leaf node structure of a B+ tree?"
+    ],
+    "evaluation_criteria": ["data_structure_knowledge", "b_tree_vs_b_plus_tree", "range_scan_efficiency"],
+    "expected_keywords": ["balanced tree", "logarithmic time", "leaf nodes", "linked list", "page size", "search key"],
+    "type": "technical"
+  },
+  {
+    "id": "Q26",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "What is database sharding?",
+    "follow_ups": [
+      "How does sharding differ from standard database partitioning?",
+      "What is a shard key and why is its selection critical?",
+      "What are the challenges of performing cross-shard joins?"
+    ],
+    "evaluation_criteria": ["scaling_strategies", "shard_key_selection", "distributed_system_challenges"],
+    "expected_keywords": ["horizontal partitioning", "distributed database", "shard key", "hotspots", "cross-shard joins", "scalability"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q27",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "What is the difference between a function and a stored procedure?",
+    "follow_ups": [
+      "Can a function execute DML statements like INSERT or UPDATE?",
+      "Can you call a stored procedure from within a SELECT statement?",
+      "How do exception handling mechanisms differ between the two?"
+    ],
+    "evaluation_criteria": ["execution_context", "dml_capabilities", "query_integration"],
+    "expected_keywords": ["return value", "select statement", "dml restrictions", "precompiled", "try-catch"],
+    "type": "technical"
+  },
+  {
+    "id": "Q28",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "What is query optimization? What is an explain plan?",
+    "follow_ups": [
+      "What is the difference between rule-based and cost-based optimizers?",
+      "When looking at an execution plan, what operations generally indicate a performance problem?",
+      "How do statistics impact the query optimizer's decisions?"
+    ],
+    "evaluation_criteria": ["optimizer_mechanics", "execution_plan_analysis", "statistics_importance"],
+    "expected_keywords": ["execution plan", "table scan", "index seek", "cost-based optimizer", "database statistics", "query execution"],
+    "type": "technical"
+  },
+  {
+    "id": "Q29",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "What is the N+1 problem?",
+    "follow_ups": [
+      "How does this problem typically manifest when using an ORM framework like Hibernate or Entity Framework?",
+      "What is the primary solution to fix the N+1 query problem?",
+      "How can lazy loading contribute to this issue?"
+    ],
+    "evaluation_criteria": ["orm_knowledge", "performance_bottlenecks", "query_fetching_strategies"],
+    "expected_keywords": ["orm", "lazy loading", "eager fetching", "join fetch", "multiple queries", "performance degradation"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q30",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "What is the difference between OLTP and OLAP?",
+    "difficulty": "Hard",
+    "follow_ups": [
+      "How do the database schema designs (e.g., Normalization vs. Star/Snowflake schemas) differ between OLTP and OLAP?",
+      "Why are indexes used differently in OLAP databases compared to OLTP?",
+      "Can you give an example of a technology specifically designed for OLAP?"
+    ],
+    "evaluation_criteria": ["system_purposes", "schema_design", "performance_characteristics"],
+    "expected_keywords": ["transaction processing", "analytical processing", "star schema", "normalization", "data warehouse", "read-heavy vs write-heavy"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q31",
+    "subject": "Database Management System",
+    "difficulty": "Hard",
+    "question": "What is referential integrity?",
+    "follow_ups": [
+      "How does a foreign key constraint enforce referential integrity?",
+      "What are the implications of disabling referential integrity constraints during bulk data imports?",
+      "Explain the difference between ON DELETE CASCADE and ON DELETE SET NULL."
+    ],
+    "evaluation_criteria": ["integrity_constraints", "data_loading_strategies", "cascade_operations"],
+    "expected_keywords": ["foreign key", "parent-child relationship", "orphaned records", "cascade", "consistency"],
+    "type": "technical"
+  }
+]

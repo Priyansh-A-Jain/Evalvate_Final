@@ -1,0 +1,424 @@
+Production Auth: Google + Email/Password
+Current state
+What already works (backend):
+Google OAuth via [
+backend/app/auth/router.py](
+backend/app/auth/router.py) (GET /login, GET /auth/callback)
+JWT access + refresh tokens in 
+HttpOnly
+ cookies
+Per-user data isolation: interviews, results, resume all keyed by 
+user_id
+ in MongoDB
+POST /logout, GET /me, POST /refresh endpoints exist
+Critical gap (must fix first):
+ Auth cookies are set on 
+:8000
+ (backend) but Next.js middleware and SSR read cookies on 
+:3000
+ (frontend). This breaks route protection and server-side 
+getCurrentUser
+(
+) in local dev and any split-domain deploy.
+flowchart LR
+  subgraph today [Broken today]
+    Google --> Backend8000["Backend :8000 sets cookies"]
+    Backend8000 --> Frontend3000["Frontend :3000 cannot read cookies"]
+  end
+  subgraph target [Target architecture]
+    
+LoginUI
+[
+"Next.js /login"] --> 
+BFF[
+"Next.js /
+api
+/auth/*"]
+    BFF --> 
+FastAPI
+[
+"
+FastAPI
+ validates"]
+    BFF --> Cookie3000["Sets cookies on :3000"]
+    Google --> 
+BackendOAuth
+[
+"Backend OAuth callback"]
+    
+BackendOAuth
+ --> 
+Exchange[
+"One-time code exchange"]
+    Exchange --> BFF
+  end
+Architecture decision
+Use a 
+Next.js Auth BFF
+ (Backend-for-Frontend): all session cookies are set on the 
+frontend origin
+ (localhost:3000 now; app.yourdomain.com later). 
+FastAPI
+ remains the source of truth for credentials, JWT issuance, and user records.
+This is production-ready for later deploy (same pattern works with subdomains or a reverse proxy).
+Phase 1 — Backend auth foundation
+1.1 Extend user model ([
+backend/app/auth/service.py](
+backend/app/auth/service.py))
+Add fields to MongoDB 
+users
+ collection:
+Field
+Purpose
+password_hash
+bcrypt
+ hash (null for Google-only users)
+auth_providers
+["password"], ["google"], or both
+email_verified
+true after verification link clicked
+verification_token_hash
+hashed token for email 
+verify
+ link
+verification_token_expires
+24h expiry
+Index: keep unique email.
+1.2 Password + email auth endpoints ([
+backend/app/auth/router.py](
+backend/app/auth/router.py))
+New endpoints (return 
+JSON tokens
+, not Set-Cookie — BFF will set cookies):
+Endpoint
+Behavior
+POST /auth/register
+email + password + name → create user (
+email_verified
+=false), send verification email
+POST /auth/login
+email + password → 403 if not verified, else return {
+access_token
+, 
+refresh_token
+, user}
+GET /auth/
+verify-email?token
+=
+mark verified, return tokens
+POST /auth/resend-verification
+resend verify email (rate-limited)
+Validation: email format, password min 8 chars, 
+bcrypt
+ via 
+passlib
+[
+bcrypt
+] (add to [
+backend/requirements.txt](
+backend/requirements.txt)).
+1.3 Google OAuth → exchange code flow
+Modify [GET /auth/
+callback](
+backend/app/auth/router.py):
+After Google login, store a 
+one-time auth code
+ (60s TTL) in new 
+auth_exchange_codes
+ collection
+Redirect to {POST_LOGIN_REDIRECT_URL}/auth/
+callback?code
+=... (frontend)
+Add POST /auth/exchange — accepts code, returns tokens + user, deletes code
+This lets Google login set cookies on :3000 via the Next.js BFF.
+1.4 Account linking
+If user registers with user@gmail.com then later signs in with Google using the same email (or vice versa):
+Merge into one user document
+Append provider to 
+auth_providers
+Do not overwrite existing 
+password_hash
+1.5 Email verification (Resend)
+New [
+backend/app/auth/email_service.py](
+backend/app/auth/email_service.py):
+Send verification email via 
+Resend
+ HTTP API
+Link format: {FRONTEND_URL}/auth/
+verify?token
+={
+raw_token
+}
+Env vars: RESEND_API_KEY, AUTH_FROM_EMAIL (e.g. auth@yourdomain.com)
+You will need to:
+ create a Resend account and add RESEND_API_KEY to [backend
+/.env
+](backend
+/.env
+). For local dev, Resend allows sending to your own email.
+1.6 Production hardening (backend)
+Shorten access token TTL: 
+15 min
+ access, 
+7 day
+ refresh ([
+backend/app/auth/config.py](
+backend/app/auth/config.py))
+Block unverified users in 
+get_current_user
+ for protected routes (return 403 with 
+email_verified
+: false)
+Rate-limit login/register (5 attempts / 15 min per IP via simple in-memory or MongoDB counter)
+Fix 
+clear_auth_cookies
+ to pass matching secure/
+samesite
+/path ([
+backend/app/auth/cookies.py](
+backend/app/auth/cookies.py))
+Phase 2 — Next.js auth BFF + pages
+2.1 Cookie helpers ([se-hack/lib/
+session.
+ts
+](
+se-hack/lib/
+session.ts
+) — new)
+Centralize 
+HttpOnly
+ cookie set/clear on the 
+Next.js domain
+:
+access_token
+, 
+refresh_token
+secure=false locally, secure=true in production via env
+2.2 API route handlers ([se-hack/app/
+api
+/auth
+/](
+se-hack/app/
+api
+/auth/) — new)
+Route
+Proxies to backend
+Sets cookies
+POST /
+api
+/auth/register
+/auth/register
+No (must verify first)
+POST /
+api
+/auth/login
+/auth/login
+Yes
+POST /
+api
+/auth/logout
+/auth/logout
+Clears
+POST /
+api
+/auth/refresh
+/
+refresh
+Yes
+POST /
+api
+/auth/exchange
+/auth/exchange
+Yes (Google callback)
+GET /
+api
+/auth/me
+/
+me
+No
+Update [se-hack/lib/
+auth.
+ts
+](
+se-hack/lib/
+auth.ts
+) to call /
+api
+/auth/me (same origin) instead of backend :8000/me.
+2.3 Auth pages (new)
+Page
+Purpose
+[
+se-hack/app/login/
+page.tsx
+](
+se-hack/app/login/
+page.tsx
+)
+Email/password form + "Continue with Google" button
+[
+se-hack/app/signup/
+page.tsx
+](
+se-hack/app/signup/
+page.tsx
+)
+Register form → "Check your email" state
+[
+se-hack/app/auth/callback/page.tsx](
+se-hack/app/auth/callback/page.tsx)
+Google OAuth return — calls /
+api
+/auth/exchange
+[
+se-hack/app/auth/verify/page.tsx](
+se-hack/app/auth/verify/page.tsx)
+Email verification link handler
+[
+se-hack/app/auth/check-email/page.tsx](
+se-hack/app/auth/check-email/page.tsx)
+Post-signup "verify your email" screen
+2.4 Update landing page ([
+se-hack/app/
+page.tsx
+](
+se-hack/app/
+page.tsx
+))
+"Sign In" → /login (not backend:8000/login)
+"Continue with Google" → /
+api
+/auth/google redirect (starts OAuth, returns via exchange)
+Keep demo button only when DEMO_MODE=true
+2.5 Middleware ([se-hack/
+middleware.
+ts
+](
+se-hack/
+middleware.ts
+))
+Redirect unauthenticated users to /
+login?redirect
+=... (not /)
+After login, 
+honor
+ ?redirect
+= param (currently ignored)
+Add /login, /signup, /auth/* to public routes
+Phase 3 — Logout + account UI
+3.1 App shell user menu ([
+se-hack/components/layout/app-shell.tsx](
+se-hack/components/layout/app-shell.tsx))
+Add to sidebar footer:
+User avatar/initials + email (from /
+api
+/auth/me)
+Logout
+ button → POST /
+api
+/auth/logout → redirect /login
+New client component: [
+se-hack/components/auth/UserMenu.tsx](
+se-hack/components/auth/UserMenu.tsx)
+3.2 Dashboard personalization ([
+se-hack/app/dashboard/page.tsx](
+se-hack/app/dashboard/page.tsx))
+Already loads user-specific data via cookies. After auth fix:
+Show "Welcome, {name}" from verified session
+If 
+email_verified
+=false, redirect to /auth/check-email
+Phase 4 — Per-user data (already scoped, verify only)
+No schema changes needed. Confirm these remain gated by 
+user_id
+:
+Interviews: [
+backend/app/interviews/service.py](
+backend/app/interviews/service.py)
+Results analytics: [
+backend/app/results/service.py](
+backend/app/results/service.py)
+Resume: [
+backend/app/resume_parser/repository.py](
+backend/app/resume_parser/repository.py)
+Each email → unique MongoDB _id → isolated dashboard, interviews, and reports.
+What you need to do (before/during implementation)
+Resend account
+ — get RESEND_API_KEY, set a verified sender email in Resend dashboard
+Google OAuth
+ — ensure redirect URI stays http://localhost:8000/auth/callback (already in 
+[.env
+](backend
+/.env
+))
+Restart both servers
+ after env changes
+Production later
+ — set COOKIE_SECURE=true, update FRONTEND_URL, POST_LOGIN_REDIRECT_URL, and Google authorized redirect URIs for your domain
+Env vars to add
+Backend .env
+:
+RESEND_API_KEY=
+AUTH_FROM_EMAIL=
+Evalvate
+ <
+onboarding@resend.dev
+>
+FRONTEND_URL=http://localhost:3000
+ACCESS_TOKEN_EXPIRE_MINUTES=15
+Frontend .
+env
+.local
+:
+AUTH_COOKIE_SECURE=false
+Out of scope for v1 (can add later)
+Forgot password / reset flow
+MFA / 2FA
+OAuth providers beyond Google
+Admin roles
+8 
+todos
+: 
+1. 
+Extend users collection: 
+password_hash
+, 
+auth_providers
+, 
+email_verified
+, verification tokens + indexes
+2.
+ 
+Add register/login/verify/resend endpoints with 
+bcrypt
+ + Resend email service
+3.
+ 
+Add OAuth one-time code exchange flow (
+auth_exchange_codes
+ collection)
+4.
+ 
+Create /
+api
+/auth/* route handlers + 
+session.ts
+ cookie helpers on frontend domain
+5.
+ 
+Build /login, /signup, /auth/callback, /auth/verify, /auth/check-email pages
+6.
+ 
+Add 
+UserMenu
+ with email display + logout to app-shell sidebar
+7.
+ 
+Fix middleware: redirect to /login, 
+honor
+ ?redirect
+=, block unverified users
+8.
+ 
+Update landing page links from backend:8000 to Next.js auth routes

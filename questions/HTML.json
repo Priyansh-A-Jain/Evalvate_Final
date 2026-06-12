@@ -1,0 +1,506 @@
+[
+  {
+    "id": "Q1",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What does HTML stand for and what is its purpose?",
+    "follow_ups": [
+      "What is the difference between a markup language and a programming language?",
+      "How do web browsers use HTML?",
+      "What is the relationship between HTML, CSS, and JavaScript?"
+    ],
+    "evaluation_criteria": ["acronym_knowledge", "purpose_understanding", "ecosystem_awareness"],
+    "expected_keywords": ["hypertext markup language", "structure", "browser", "tags", "content", "skeleton"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What is HTML and how does it work?",
+    "follow_ups": [
+      "What is an HTML element?",
+      "How is the DOM (Document Object Model) created from HTML?",
+      "Can HTML be used to create dynamic, interactive logic on its own?"
+    ],
+    "evaluation_criteria": ["element_definition", "dom_understanding", "capability_limits"],
+    "expected_keywords": ["tags", "attributes", "elements", "dom tree", "parsing", "static structure"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q3",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What is the difference between HTML and HTML5?",
+    "follow_ups": [
+      "Name two new semantic tags introduced in HTML5.",
+      "How did HTML5 change the way video and audio are embedded?",
+      "Does HTML5 support older HTML tags?"
+    ],
+    "evaluation_criteria": ["version_differences", "semantic_tags", "multimedia_handling"],
+    "expected_keywords": ["video tag", "audio tag", "semantic tags", "canvas", "local storage", "backward compatible"],
+    "type": "technical"
+  },
+  {
+    "id": "Q4",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the <!DOCTYPE> declaration?",
+    "follow_ups": [
+      "Is <!DOCTYPE> an HTML tag?",
+      "What happens if you omit the <!DOCTYPE> declaration in a modern web page?",
+      "How is the DOCTYPE written for HTML5?"
+    ],
+    "evaluation_criteria": ["declaration_purpose", "quirks_mode", "syntax_knowledge"],
+    "expected_keywords": ["instruction", "browser", "standards mode", "quirks mode", "<!DOCTYPE html>"],
+    "type": "technical"
+  },
+  {
+    "id": "Q5",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What are the different types of DOCTYPE declarations?",
+    "follow_ups": [
+      "Why did older versions of HTML (like HTML 4.01) have complex DOCTYPEs?",
+      "What is SGML and how does it relate to older DOCTYPEs?",
+      "Why is the HTML5 DOCTYPE so simple?"
+    ],
+    "evaluation_criteria": ["historical_context", "sgml_knowledge", "html5_simplification"],
+    "expected_keywords": ["strict", "transitional", "frameset", "sgml", "html5", "dtd"],
+    "type": "historical"
+  },
+  {
+    "id": "Q6",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the <head> and <body> tags?",
+    "follow_ups": [
+      "Which tag contains the visible content of the page?",
+      "What kind of information goes inside the <head> tag?",
+      "Can you place a <div> tag directly inside the <head> tag?"
+    ],
+    "evaluation_criteria": ["structural_understanding", "metadata_vs_content", "validity_rules"],
+    "expected_keywords": ["metadata", "title", "links", "scripts", "visible content", "structure"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q7",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What is the difference between block-level and inline elements?",
+    "follow_ups": [
+      "Does a block-level element start on a new line?",
+      "Can an inline element have a defined width and height?",
+      "Give two examples of block-level elements and two examples of inline elements."
+    ],
+    "evaluation_criteria": ["layout_behavior", "css_box_model", "element_classification"],
+    "expected_keywords": ["new line", "full width", "div", "p", "span", "a", "width and height"],
+    "type": "technical"
+  },
+  {
+    "id": "Q8",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What is the difference between <div> and <span>?",
+    "follow_ups": [
+      "Which one is block-level and which one is inline?",
+      "When would you use a <span> tag over a <div> tag?",
+      "Do these tags carry any semantic meaning?"
+    ],
+    "evaluation_criteria": ["block_vs_inline", "use_cases", "semantic_awareness"],
+    "expected_keywords": ["block-level", "inline", "generic container", "no semantic meaning", "styling", "grouping"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q9",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What are void (self-closing) elements in HTML?",
+    "follow_ups": [
+      "Give three examples of void elements.",
+      "Do void elements require a closing tag (e.g., <img ... ></img>)?",
+      "Is the trailing slash (e.g., <br />) strictly required in HTML5?"
+    ],
+    "evaluation_criteria": ["void_element_identification", "syntax_rules", "html5_standards"],
+    "expected_keywords": ["no content", "img", "br", "hr", "input", "meta", "closing tag"],
+    "type": "technical"
+  },
+  {
+    "id": "Q10",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What is the difference between id and class attributes?",
+    "follow_ups": [
+      "Can multiple elements on a page share the same 'id'?",
+      "How do you target an 'id' versus a 'class' in CSS?",
+      "Can a single HTML element have multiple classes?"
+    ],
+    "evaluation_criteria": ["uniqueness_rules", "css_selectors", "multiple_classes"],
+    "expected_keywords": ["unique", "reusable", "hash (#)", "dot (.)", "multiple classes", "javascript targeting"],
+    "type": "technical"
+  },
+  {
+    "id": "Q11",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "How do you include an image in HTML?",
+    "follow_ups": [
+      "What tag is used to display an image?",
+      "What attribute specifies the path to the image file?",
+      "What is the difference between a relative path and an absolute path for an image source?"
+    ],
+    "evaluation_criteria": ["tag_knowledge", "attribute_usage", "path_types"],
+    "expected_keywords": ["<img>", "src attribute", "relative path", "absolute path", "url"],
+    "type": "practical"
+  },
+  {
+    "id": "Q12",
+    "subject": "HTML",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the alt attribute in the <img> tag?",
+    "follow_ups": [
+      "How does the alt attribute improve accessibility?",
+      "What happens visually if an image fails to load?",
+      "Does the alt attribute have any impact on Search Engine Optimization (SEO)?"
+    ],
+    "evaluation_criteria": ["accessibility_awareness", "fallback_behavior", "seo_impact"],
+    "expected_keywords": ["alternative text", "screen readers", "accessibility", "seo", "image fails to load", "broken image"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q13",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What are semantic HTML elements and why are they important?",
+    "follow_ups": [
+      "Give examples of semantic vs non-semantic elements.",
+      "How do semantic elements benefit visually impaired users?",
+      "How do semantic elements benefit search engines?"
+    ],
+    "evaluation_criteria": ["semantic_definition", "accessibility_benefits", "seo_benefits"],
+    "expected_keywords": ["meaning", "div/span", "header", "footer", "article", "screen readers", "seo ranking"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q14",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What is the difference between <section> and <article>?",
+    "follow_ups": [
+      "Which tag should be used for a piece of content that makes sense independently (e.g., a blog post)?",
+      "Can you nest an <article> inside a <section>, or vice versa?",
+      "What is the primary purpose of the <aside> element in relation to these?"
+    ],
+    "evaluation_criteria": ["semantic_nuance", "nesting_rules", "related_elements"],
+    "expected_keywords": ["independent", "self-contained", "thematic grouping", "syndication", "aside", "sidebar"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What is the difference between <strong> and <b> tags?",
+    "follow_ups": [
+      "Visually, do these tags look different by default?",
+      "Semantically, what is the difference between them?",
+      "How do screen readers handle the <strong> tag differently?"
+    ],
+    "evaluation_criteria": ["visual_vs_semantic", "accessibility", "browser_defaults"],
+    "expected_keywords": ["bold text", "strong importance", "semantic meaning", "screen reader emphasis", "visual styling"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q16",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What is the difference between <em> and <i> tags?",
+    "follow_ups": [
+      "Which tag provides semantic emphasis?",
+      "Which tag is traditionally used for italicizing terms like foreign words or thoughts without emphasizing them?",
+      "Can CSS be used to change the italicized look of an <em> tag?"
+    ],
+    "evaluation_criteria": ["semantic_emphasis", "stylistic_usage", "css_override"],
+    "expected_keywords": ["emphasis", "idiomatic text", "italic", "screen reader stress", "semantic meaning", "css styling"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q17",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What is the purpose of the <meta> tag?",
+    "follow_ups": [
+      "Where must the <meta> tag be placed in an HTML document?",
+      "Does the <meta> tag display content directly on the webpage?",
+      "How does the charset meta tag affect the document?"
+    ],
+    "evaluation_criteria": ["metadata_purpose", "placement_rules", "charset_understanding"],
+    "expected_keywords": ["metadata", "<head>", "invisible", "character set", "utf-8", "browser instructions"],
+    "type": "technical"
+  },
+  {
+    "id": "Q18",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What are the different types of <meta> tags?",
+    "follow_ups": [
+      "What is the viewport meta tag and why is it crucial for mobile devices?",
+      "How do the description and keywords meta tags impact SEO?",
+      "What are Open Graph meta tags used for?"
+    ],
+    "evaluation_criteria": ["viewport_knowledge", "seo_tags", "social_media_integration"],
+    "expected_keywords": ["viewport", "responsive design", "description", "seo", "open graph", "social media preview"],
+    "type": "practical"
+  },
+  {
+    "id": "Q19",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What are forms in HTML and what are form input elements?",
+    "follow_ups": [
+      "What is the purpose of the 'action' and 'method' attributes on a <form> tag?",
+      "How does the <label> tag improve form usability?",
+      "What is the difference between a <button> and an <input type='submit'>?"
+    ],
+    "evaluation_criteria": ["form_attributes", "accessibility_labels", "button_types"],
+    "expected_keywords": ["action attribute", "method attribute", "get/post", "user input", "label for", "submit"],
+    "type": "practical"
+  },
+  {
+    "id": "Q20",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What are the different input types available in HTML5?",
+    "follow_ups": [
+      "Name three new input types introduced in HTML5.",
+      "How do mobile browsers react to input types like 'email' or 'tel'?",
+      "What happens if an older browser doesn't recognize an HTML5 input type (like 'date')?"
+    ],
+    "evaluation_criteria": ["html5_features", "mobile_ux", "fallback_behavior"],
+    "expected_keywords": ["email", "date", "number", "tel", "mobile keyboard", "fallback to text"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What is the difference between GET and POST methods in forms?",
+    "follow_ups": [
+      "Which method appends form data to the URL?",
+      "Which method is better for sending sensitive information like passwords?",
+      "Are there length limitations on data sent via the GET method?"
+    ],
+    "evaluation_criteria": ["http_methods", "security_practices", "url_limitations"],
+    "expected_keywords": ["url parameters", "request body", "security", "bookmarks", "size limit", "idempotent"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q22",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What is the purpose of the placeholder attribute?",
+    "follow_ups": [
+      "Is the placeholder attribute a valid replacement for a <label> tag? Why or why not?",
+      "How does the placeholder text behave when a user starts typing?",
+      "Can you style the placeholder text using CSS?"
+    ],
+    "evaluation_criteria": ["attribute_function", "accessibility_flaws", "css_styling"],
+    "expected_keywords": ["hint", "disappears", "not a label", "accessibility issue", "::placeholder pseudo-element"],
+    "type": "practical"
+  },
+  {
+    "id": "Q23",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What is the purpose of the required attribute?",
+    "follow_ups": [
+      "How does the browser enforce the 'required' attribute?",
+      "Can a user bypass the 'required' attribute validation on the client side?",
+      "Why is server-side validation still necessary if the 'required' attribute is used?"
+    ],
+    "evaluation_criteria": ["client_side_validation", "security_bypasses", "validation_defense_in_depth"],
+    "expected_keywords": ["form validation", "prevent submission", "client-side", "developer tools", "server-side validation"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "HTML",
+    "difficulty": "Medium",
+    "question": "What is the difference between <table>, <ul>, and <ol>?",
+    "follow_ups": [
+      "What specific child tags are required to build a list inside <ul> or <ol>?",
+      "What tags make up the structure of a standard <table>?",
+      "When is it inappropriate to use a <table> for web design?"
+    ],
+    "evaluation_criteria": ["structural_tags", "list_vs_table", "layout_best_practices"],
+    "expected_keywords": ["unordered list", "ordered list", "list item <li>", "tabular data", "tr, td, th", "page layout"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q25",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What are data attributes (data-*) in HTML5?",
+    "follow_ups": [
+      "How do you access data attributes using JavaScript?",
+      "Are data attributes visible to the end user?",
+      "Why should you avoid storing sensitive information in data attributes?"
+    ],
+    "evaluation_criteria": ["custom_attributes", "javascript_interaction", "security_awareness"],
+    "expected_keywords": ["custom data", "dataset property", "getAttribute", "dom manipulation", "visible in source code"],
+    "type": "technical"
+  },
+  {
+    "id": "Q26",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the <canvas> element?",
+    "follow_ups": [
+      "Does the <canvas> element draw graphics on its own?",
+      "What language is typically used to render graphics onto the canvas?",
+      "Is the content inside a <canvas> element accessible to screen readers natively?"
+    ],
+    "evaluation_criteria": ["element_capabilities", "javascript_requirement", "accessibility_limitations"],
+    "expected_keywords": ["2d drawing", "javascript API", "getcontext", "pixels", "not accessible", "raster graphics"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What is the difference between <svg> and <canvas>?",
+    "follow_ups": [
+      "Which one is resolution-independent (vector-based)?",
+      "Which one is better for rendering thousands of moving objects (like a game)?",
+      "Can you manipulate individual shapes inside an <svg> using CSS and JavaScript?"
+    ],
+    "evaluation_criteria": ["vector_vs_raster", "performance_tradeoffs", "dom_interaction"],
+    "expected_keywords": ["scalable vector graphics", "raster graphics", "resolution independent", "dom elements", "pixel manipulation", "event handlers"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q28",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the <video> and <audio> tags?",
+    "follow_ups": [
+      "What is the 'controls' attribute used for?",
+      "How do you provide multiple file formats for cross-browser compatibility?",
+      "What is the 'autoplay' attribute and why do modern browsers restrict it?"
+    ],
+    "evaluation_criteria": ["multimedia_attributes", "browser_compatibility", "autoplay_policies"],
+    "expected_keywords": ["native playback", "controls attribute", "<source> tag", "formats (mp4, webm)", "autoplay policies", "muted"],
+    "type": "practical"
+  },
+  {
+    "id": "Q29",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What is the difference between <link> and <script> tags?",
+    "follow_ups": [
+      "Which tag is used to attach external CSS, and which is used for JavaScript?",
+      "What is the difference between placing a <script> in the <head> vs at the end of the <body>?",
+      "What do the 'defer' and 'async' attributes do on a <script> tag?"
+    ],
+    "evaluation_criteria": ["tag_purpose", "render_blocking", "script_loading_attributes"],
+    "expected_keywords": ["css stylesheet", "javascript", "render blocking", "defer", "async", "page load performance"],
+    "type": "technical"
+  },
+  {
+    "id": "Q30",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the <iframe> tag?",
+    "follow_ups": [
+      "How does the Same-Origin Policy affect iframes?",
+      "What are the security risks associated with iframes (e.g., Clickjacking)?",
+      "How can you restrict the capabilities of an iframe (e.g., using the sandbox attribute)?"
+    ],
+    "evaluation_criteria": ["element_function", "security_policies", "sandbox_attribute"],
+    "expected_keywords": ["embed another document", "same-origin policy", "cross-origin", "clickjacking", "sandbox attribute"],
+    "type": "technical"
+  },
+  {
+    "id": "Q31",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What is the difference between localStorage and sessionStorage?",
+    "follow_ups": [
+      "How long does the data persist in localStorage versus sessionStorage?",
+      "Are these storage mechanisms accessible across different browser tabs of the same origin?",
+      "What is the storage size limit compared to cookies?"
+    ],
+    "evaluation_criteria": ["persistence_duration", "tab_sharing_rules", "capacity_knowledge"],
+    "expected_keywords": ["web storage api", "no expiration", "cleared on tab close", "same origin", "5MB limit", "client-side"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q32",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the title attribute?",
+    "follow_ups": [
+      "How does the browser display the contents of the title attribute?",
+      "Is the title attribute a reliable method for providing accessibility information?",
+      "What is the difference between the <title> tag and the title attribute?"
+    ],
+    "evaluation_criteria": ["attribute_behavior", "accessibility_limitations", "tag_vs_attribute"],
+    "expected_keywords": ["tooltip", "hover", "accessibility issues", "mobile devices", "page title vs element tooltip"],
+    "type": "practical"
+  },
+  {
+    "id": "Q33",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the accesskey attribute?",
+    "follow_ups": [
+      "How does a user activate an element using its accesskey?",
+      "Why is the use of the accesskey attribute often discouraged by accessibility experts?",
+      "What alternative navigation methods do screen reader users typically prefer?"
+    ],
+    "evaluation_criteria": ["keyboard_navigation", "accessibility_conflicts", "best_practices"],
+    "expected_keywords": ["keyboard shortcut", "modifier key", "conflict with browser shortcuts", "screen reader commands", "usability"],
+    "type": "technical"
+  },
+  {
+    "id": "Q34",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "How does HTML support accessibility features?",
+    "follow_ups": [
+      "What are ARIA (Accessible Rich Internet Applications) attributes?",
+      "Give an example of an aria-label or role attribute.",
+      "Why is semantic HTML preferred over ARIA attributes when possible?"
+    ],
+    "evaluation_criteria": ["aria_knowledge", "attribute_usage", "first_rule_of_aria"],
+    "expected_keywords": ["wai-aria", "screen readers", "role attribute", "aria-label", "semantic html", "first rule of aria"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q35",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What are semantic tags like <header> and <footer> used for?",
+    "follow_ups": [
+      "Can a document have more than one <header> or <footer>?",
+      "Can a <header> tag be placed inside an <article> tag?",
+      "What elements typically belong inside a <nav> tag?"
+    ],
+    "evaluation_criteria": ["document_structure", "nesting_semantics", "navigation_elements"],
+    "expected_keywords": ["page structure", "multiple headers", "article header", "navigation links", "landmark roles"],
+    "type": "practical"
+  },
+  {
+    "id": "Q36",
+    "subject": "HTML",
+    "difficulty": "Hard",
+    "question": "What are meta tags used for in SEO and responsive design?",
+    "follow_ups": [
+      "What is the exact syntax for the viewport meta tag used for responsive design?",
+      "Why do search engines care about the meta description tag?",
+      "Do search engines still heavily weigh the meta keywords tag?"
+    ],
+    "evaluation_criteria": ["viewport_syntax", "seo_mechanics", "keyword_deprecation"],
+    "expected_keywords": ["width=device-width", "initial-scale=1.0", "search snippet", "click-through rate", "keywords ignored"],
+    "type": "technical"
+  }
+]

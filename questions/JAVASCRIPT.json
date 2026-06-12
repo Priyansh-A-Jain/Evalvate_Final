@@ -1,0 +1,506 @@
+[
+  {
+    "id": "Q1",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What is the difference between var, let, and const?",
+    "follow_ups": [
+      "Which of these declarations are block-scoped vs function-scoped?",
+      "Can a 'const' variable containing an object have its properties modified?",
+      "What happens if you try to access a 'let' variable before its declaration?"
+    ],
+    "evaluation_criteria": ["scope_rules", "mutability_nuance", "temporal_dead_zone"],
+    "expected_keywords": ["block scope", "function scope", "reassign", "mutate", "temporal dead zone", "hoisting"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What is hoisting in JavaScript?",
+    "follow_ups": [
+      "Are function expressions hoisted the same way as function declarations?",
+      "How does hoisting behave differently for 'var' compared to 'let' and 'const'?",
+      "Does hoisting physically move code to the top of the file?"
+    ],
+    "evaluation_criteria": ["hoisting_mechanics", "variable_vs_function", "execution_context"],
+    "expected_keywords": ["memory allocation", "compilation phase", "undefined", "temporal dead zone", "function declaration"],
+    "type": "technical"
+  },
+  {
+    "id": "Q3",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What is the difference between == and ===?",
+    "follow_ups": [
+      "Which operator performs type coercion?",
+      "What is the result of `0 == false` vs `0 === false`?",
+      "Why is it generally recommended to use === over ==?"
+    ],
+    "evaluation_criteria": ["type_coercion", "strict_equality", "best_practices"],
+    "expected_keywords": ["loose equality", "strict equality", "type coercion", "data type", "predictability"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What is the difference between null and undefined?",
+    "follow_ups": [
+      "Which one is the default value of an uninitialized variable?",
+      "Which one represents the intentional absence of an object value?",
+      "What is the 'typeof' result for null compared to undefined?"
+    ],
+    "evaluation_criteria": ["type_differences", "default_behavior", "typeof_quirks"],
+    "expected_keywords": ["uninitialized", "intentional absence", "typeof object", "typeof undefined", "primitive values"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q5",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the this keyword in JavaScript?",
+    "follow_ups": [
+      "How does the value of 'this' change depending on how a function is called?",
+      "What does 'this' refer to in the global scope in a browser?",
+      "How does strict mode affect the value of 'this' in a simple function call?"
+    ],
+    "evaluation_criteria": ["context_binding", "execution_context", "strict_mode_impact"],
+    "expected_keywords": ["execution context", "calling object", "window object", "undefined in strict mode", "lexical scoping"],
+    "type": "technical"
+  },
+  {
+    "id": "Q6",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the typeof operator?",
+    "follow_ups": [
+      "What does `typeof []` (an array) return?",
+      "What does `typeof NaN` return?",
+      "Why is typeof considered unreliable for complex data types?"
+    ],
+    "evaluation_criteria": ["operator_usage", "typeof_quirks", "type_checking_alternatives"],
+    "expected_keywords": ["primitive types", "object", "number", "Array.isArray", "null bug"],
+    "type": "technical"
+  },
+  {
+    "id": "Q7",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What is the difference between instanceof and typeof?",
+    "follow_ups": [
+      "Which operator is used to check the prototype chain of an object?",
+      "Which operator returns a string describing the primitive type?",
+      "How would you reliably check if a variable is an array using these or other methods?"
+    ],
+    "evaluation_criteria": ["operator_comparison", "prototype_chain", "array_checking"],
+    "expected_keywords": ["prototype chain", "primitive types", "constructor", "boolean", "Array.isArray()"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q8",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What are template literals in JavaScript?",
+    "follow_ups": [
+      "What syntax is used to define a template literal instead of normal quotes?",
+      "How do you perform string interpolation (inject variables) within a template literal?",
+      "Do template literals support multi-line strings without concatenation?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "string_interpolation", "multi_line_support"],
+    "expected_keywords": ["backticks", "${variable}", "interpolation", "multi-line", "ES6"],
+    "type": "practical"
+  },
+  {
+    "id": "Q9",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What is the difference between function declaration and function expression?",
+    "follow_ups": [
+      "Which one is hoisted to the top of its scope?",
+      "Can a function expression be anonymous?",
+      "How does this difference affect when you can call the function in your code?"
+    ],
+    "evaluation_criteria": ["hoisting_behavior", "anonymity", "execution_order"],
+    "expected_keywords": ["hoisted", "anonymous", "variable assignment", "usable before declaration", "usable after definition"],
+    "type": "technical"
+  },
+  {
+    "id": "Q10",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What are arrow functions and how do they differ from regular functions?",
+    "follow_ups": [
+      "How do arrow functions handle the 'this' keyword?",
+      "Can you use the 'arguments' object inside an arrow function?",
+      "Can an arrow function be used as a constructor with the 'new' keyword?"
+    ],
+    "evaluation_criteria": ["lexical_this", "arguments_object", "constructor_limitations"],
+    "expected_keywords": ["lexical this", "shorter syntax", "no arguments object", "not constructable", "ES6"],
+    "type": "technical"
+  },
+  {
+    "id": "Q11",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What are callback functions in JavaScript?",
+    "follow_ups": [
+      "Why are callbacks heavily used in asynchronous operations?",
+      "What is 'Callback Hell' (Pyramid of Doom)?",
+      "How can you pass a callback function without executing it immediately?"
+    ],
+    "evaluation_criteria": ["function_as_arguments", "asynchronous_flow", "callback_hell"],
+    "expected_keywords": ["passed as argument", "executed later", "asynchronous", "callback hell", "higher-order function"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q12",
+    "subject": "JavaScript",
+    "difficulty": "Easy",
+    "question": "What is synchronous vs. asynchronous JavaScript?",
+    "follow_ups": [
+      "Since JavaScript is single-threaded, how does it handle asynchronous tasks like fetching data?",
+      "What happens if a synchronous task takes a very long time to execute?",
+      "Give an example of a built-in asynchronous function."
+    ],
+    "evaluation_criteria": ["execution_model", "blocking_vs_non_blocking", "web_apis"],
+    "expected_keywords": ["single-threaded", "blocking", "non-blocking", "event loop", "setTimeout", "fetch"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q13",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What are closures in JavaScript and how do they work?",
+    "follow_ups": [
+      "What enables an inner function to remember the variables of its outer function even after the outer function has returned?",
+      "What is a common practical use case for closures (e.g., data privacy)?",
+      "Can closures lead to memory leaks if not managed properly?"
+    ],
+    "evaluation_criteria": ["lexical_scoping", "data_encapsulation", "memory_implications"],
+    "expected_keywords": ["lexical environment", "remembered scope", "data privacy", "module pattern", "garbage collection"],
+    "type": "technical"
+  },
+  {
+    "id": "Q14",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What is prototypal inheritance in JavaScript?",
+    "follow_ups": [
+      "How does the prototype chain work when you try to access a property on an object?",
+      "What is the difference between `__proto__` and `prototype`?",
+      "How do ES6 classes relate to prototypal inheritance?"
+    ],
+    "evaluation_criteria": ["prototype_chain", "property_resolution", "syntactic_sugar"],
+    "expected_keywords": ["prototype chain", "delegation", "Object.prototype", "syntactic sugar", "__proto__", "constructor function"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What is the event loop in JavaScript?",
+    "follow_ups": [
+      "What is the difference between the Call Stack and the Task Queue (Callback Queue)?",
+      "What is a Microtask Queue and how does it relate to Promises?",
+      "Does the event loop process the Microtask queue or the Macrotask queue first?"
+    ],
+    "evaluation_criteria": ["event_loop_mechanics", "queue_priorities", "promise_execution"],
+    "expected_keywords": ["call stack", "callback queue", "microtask queue", "promises", "macrotasks", "single-threaded"],
+    "type": "technical"
+  },
+  {
+    "id": "Q16",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What are promises in JavaScript and how do they work?",
+    "follow_ups": [
+      "What are the three states of a Promise?",
+      "How do you handle a resolved promise vs a rejected promise?",
+      "How can you wait for multiple promises to finish using Promise.all()?"
+    ],
+    "evaluation_criteria": ["promise_states", "chaining_methods", "concurrency_methods"],
+    "expected_keywords": ["pending", "fulfilled", "rejected", ".then()", ".catch()", "Promise.all()"],
+    "type": "practical"
+  },
+  {
+    "id": "Q17",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What is the difference between promises and async/await?",
+    "follow_ups": [
+      "Is async/await a completely new feature or syntactic sugar over promises?",
+      "How do you handle errors in an async/await block compared to a promise chain?",
+      "Can you use the 'await' keyword outside of an 'async' function?"
+    ],
+    "evaluation_criteria": ["syntactic_sugar", "error_handling", "scope_limitations"],
+    "expected_keywords": ["syntactic sugar", "try/catch", ".catch()", "synchronous-looking", "top-level await"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q18",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What is the purpose of bind(), call(), and apply() methods?",
+    "follow_ups": [
+      "How do these methods manipulate the 'this' context of a function?",
+      "What is the difference in how call() and apply() accept arguments?",
+      "Does bind() execute the function immediately?"
+    ],
+    "evaluation_criteria": ["context_manipulation", "argument_passing", "execution_timing"],
+    "expected_keywords": ["explicit binding", "this keyword", "comma-separated", "array of arguments", "returns a new function"],
+    "type": "technical"
+  },
+  {
+    "id": "Q19",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What is destructuring assignment in JavaScript?",
+    "follow_ups": [
+      "How do you destructure properties from an object?",
+      "How can you provide default values during destructuring?",
+      "How do you rename a variable while destructuring an object property?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "default_values", "aliasing"],
+    "expected_keywords": ["unpack values", "arrays", "objects", "default values", "colon alias", "ES6 syntax"],
+    "type": "practical"
+  },
+  {
+    "id": "Q20",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What is the purpose of the spread operator (...)?",
+    "follow_ups": [
+      "How can you use the spread operator to create a shallow copy of an array or object?",
+      "How does the spread operator differ from the rest parameter syntax?",
+      "Can you use the spread operator to combine two arrays?"
+    ],
+    "evaluation_criteria": ["copying_objects", "rest_vs_spread", "array_manipulation"],
+    "expected_keywords": ["expand iterables", "shallow copy", "rest parameter collects", "merge arrays", "ES6"],
+    "type": "practical"
+  },
+  {
+    "id": "Q21",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What is the difference between map(), filter(), and reduce()?",
+    "follow_ups": [
+      "Which of these methods returns an array of the same length as the original?",
+      "Which of these methods is best suited for summing all numbers in an array?",
+      "Do these methods mutate the original array?"
+    ],
+    "evaluation_criteria": ["array_methods", "use_cases", "immutability"],
+    "expected_keywords": ["transform", "subset", "accumulator", "new array", "pure function", "higher-order functions"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q22",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What is the purpose of setTimeout() and setInterval()?",
+    "follow_ups": [
+      "How do you cancel a repeating interval?",
+      "If you set a timeout of 0ms, does the callback execute instantly? Why or why not?",
+      "What is the difference in execution behavior between the two functions?"
+    ],
+    "evaluation_criteria": ["timing_functions", "event_loop_interaction", "cancellation"],
+    "expected_keywords": ["delay", "repeat", "clearTimeout", "clearInterval", "macrotask queue", "minimum delay"],
+    "type": "technical"
+  },
+  {
+    "id": "Q23",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What is event bubbling and event capturing?",
+    "follow_ups": [
+      "In which direction does the event travel during the bubbling phase?",
+      "Which phase happens first: capturing or bubbling?",
+      "How can you attach an event listener to the capturing phase instead of the bubbling phase?"
+    ],
+    "evaluation_criteria": ["event_propagation", "phase_order", "listener_configuration"],
+    "expected_keywords": ["propagation", "bottom-up", "top-down", "trickling", "addEventListener", "useCapture flag"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "JavaScript",
+    "difficulty": "Medium",
+    "question": "What is the difference between event.preventDefault() and event.stopPropagation()?",
+    "follow_ups": [
+      "Which method stops an event from bubbling up the DOM tree?",
+      "Which method stops a form from submitting or a link from navigating?",
+      "Can you use both methods on the same event?"
+    ],
+    "evaluation_criteria": ["method_purpose", "default_behavior", "event_bubbling"],
+    "expected_keywords": ["default action", "bubbling", "form submission", "propagation", "DOM tree"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q25",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "What are JavaScript modules and how do you import and export them?",
+    "follow_ups": [
+      "What is the difference between a default export and a named export?",
+      "How do ES6 modules (import/export) differ from CommonJS modules (require/module.exports)?",
+      "Are ES6 modules strictly executed in strict mode?"
+    ],
+    "evaluation_criteria": ["export_types", "module_systems_comparison", "strict_mode"],
+    "expected_keywords": ["default export", "named export", "ES6 vs CommonJS", "static analysis", "strict mode by default"],
+    "type": "technical"
+  },
+  {
+    "id": "Q26",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the fetch() API?",
+    "follow_ups": [
+      "Does a fetch() promise reject if the server returns a 404 or 500 HTTP status code?",
+      "How do you extract JSON data from a fetch response?",
+      "How does fetch() handle CORS compared to older XMLHttpRequests?"
+    ],
+    "evaluation_criteria": ["promise_behavior", "response_parsing", "cors_handling"],
+    "expected_keywords": ["network request", "promise based", "response.json()", "HTTP error vs Network error", "CORS policy"],
+    "type": "practical"
+  },
+  {
+    "id": "Q27",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "What is the difference between localStorage and sessionStorage?",
+    "follow_ups": [
+      "Can data stored in localStorage be accessed by a different domain?",
+      "What is the maximum storage capacity roughly available for these APIs?",
+      "How do you store a JavaScript object in localStorage?"
+    ],
+    "evaluation_criteria": ["persistence_duration", "origin_restrictions", "serialization"],
+    "expected_keywords": ["persistence", "session duration", "Same-Origin Policy", "JSON.stringify()", "5MB capacity"],
+    "type": "practical"
+  },
+  {
+    "id": "Q28",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "What are web workers in JavaScript?",
+    "follow_ups": [
+      "How do web workers help keep the UI responsive during heavy computations?",
+      "Do web workers have access to the DOM or the window object?",
+      "How does the main thread communicate with a web worker?"
+    ],
+    "evaluation_criteria": ["threading_model", "dom_restrictions", "message_passing"],
+    "expected_keywords": ["background thread", "non-blocking UI", "no DOM access", "postMessage", "onmessage event"],
+    "type": "technical"
+  },
+  {
+    "id": "Q29",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the try–catch–finally block?",
+    "follow_ups": [
+      "Does a try-catch block catch syntax errors or asynchronous errors (like inside a setTimeout)?",
+      "Will the 'finally' block execute if the 'try' block contains a 'return' statement?",
+      "How do you extract the error message inside the catch block?"
+    ],
+    "evaluation_criteria": ["exception_handling", "execution_guarantees", "async_limitations"],
+    "expected_keywords": ["exception handling", "synchronous code", "always executes", "error object", "graceful degradation"],
+    "type": "technical"
+  },
+  {
+    "id": "Q30",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "What is the difference between throw and throw new Error()?",
+    "follow_ups": [
+      "Why is throwing a string (e.g., `throw 'An error occurred'`) considered bad practice?",
+      "What valuable information does the Error object provide that a primitive value does not?",
+      "Can you create custom error classes by extending the Error object?"
+    ],
+    "evaluation_criteria": ["error_objects", "stack_traces", "custom_errors"],
+    "expected_keywords": ["stack trace", "Error object", "primitive type", "debugging", "class extension"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q31",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "How do you manipulate the DOM using JavaScript?",
+    "follow_ups": [
+      "What is the difference between querySelector() and getElementById()?",
+      "How do you create a new element and append it to an existing DOM node?",
+      "Why is manipulating the DOM directly considered a slow operation?"
+    ],
+    "evaluation_criteria": ["selector_methods", "element_creation", "performance_impact"],
+    "expected_keywords": ["document object model", "CSS selectors", "createElement", "appendChild", "reflow/repaint", "virtual DOM"],
+    "type": "practical"
+  },
+  {
+    "id": "Q32",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "What is currying in JavaScript?",
+    "follow_ups": [
+      "How does currying transform a function with multiple arguments?",
+      "How do closures make currying possible?",
+      "What is a practical use case for currying (e.g., partial application)?"
+    ],
+    "evaluation_criteria": ["functional_programming", "closure_usage", "partial_application"],
+    "expected_keywords": ["sequence of functions", "single argument", "closures", "partial application", "function reusability"],
+    "type": "technical"
+  },
+  {
+    "id": "Q33",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "How does the this keyword behave differently in arrow functions?",
+    "follow_ups": [
+      "Why are arrow functions unsuitable for defining object methods that rely on 'this'?",
+      "Can you change the 'this' context of an arrow function using bind()?",
+      "How does the lexical 'this' in arrow functions solve common issues with setTimeout callbacks?"
+    ],
+    "evaluation_criteria": ["lexical_scoping", "method_limitations", "binding_behavior"],
+    "expected_keywords": ["lexical this", "enclosing scope", "cannot bind", "object methods", "callback context"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q34",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "What are memory leaks in JavaScript and how can they be avoided?",
+    "follow_ups": [
+      "How can an uncleared setInterval cause a memory leak?",
+      "How can event listeners attached to removed DOM elements cause memory leaks?",
+      "What is the Mark-and-Sweep algorithm?"
+    ],
+    "evaluation_criteria": ["memory_management", "leak_causes", "garbage_collection"],
+    "expected_keywords": ["unreachable objects", "global variables", "closures", "event listeners", "mark-and-sweep", "garbage collection"],
+    "type": "technical"
+  },
+  {
+    "id": "Q35",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "What is debouncing vs. throttling?",
+    "follow_ups": [
+      "Which technique ensures a function is only called once after a specified pause in input (like a search bar)?",
+      "Which technique ensures a function is called at a regular interval during continuous events (like scrolling)?",
+      "How does the setTimeout function help implement these techniques?"
+    ],
+    "evaluation_criteria": ["rate_limiting", "use_cases", "implementation_mechanics"],
+    "expected_keywords": ["delay execution", "rate limit", "scroll events", "search input", "setTimeout", "performance optimization"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q36",
+    "subject": "JavaScript",
+    "difficulty": "Hard",
+    "question": "How does JavaScript handle garbage collection?",
+    "follow_ups": [
+      "What is the difference between reference counting and the mark-and-sweep algorithm?",
+      "Why did older browsers struggle with circular references regarding garbage collection?",
+      "Can a developer manually trigger garbage collection in JavaScript?"
+    ],
+    "evaluation_criteria": ["algorithm_knowledge", "circular_references", "developer_control"],
+    "expected_keywords": ["mark-and-sweep", "reference counting", "root object", "unreachable code", "circular reference", "automatic memory management"],
+    "type": "technical"
+  }
+]

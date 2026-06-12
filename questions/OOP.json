@@ -1,0 +1,422 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Easy",
+    "question": "What are the four main pillars of Object-Oriented Programming (OOP)?",
+    "follow_ups": [
+      "Can you briefly define encapsulation?",
+      "How does inheritance promote code reusability?",
+      "Give a quick example of polymorphism."
+    ],
+    "evaluation_criteria": ["core_concept_identification", "definition_accuracy", "reusability_understanding"],
+    "expected_keywords": ["encapsulation", "abstraction", "inheritance", "polymorphism", "data hiding", "reusability", "multiple forms"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Easy",
+    "question": "What is the difference between a class and an object?",
+    "follow_ups": [
+      "Which one is a blueprint and which one is an instance?",
+      "Does a class consume memory when it is defined?",
+      "Can you create multiple objects from a single class?"
+    ],
+    "evaluation_criteria": ["blueprint_vs_instance", "memory_allocation", "instantiation"],
+    "expected_keywords": ["blueprint", "template", "instance", "memory allocation", "state", "behavior"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q3",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Easy",
+    "question": "Explain encapsulation vs. abstraction with a real-world example.",
+    "follow_ups": [
+      "How does a car steering wheel represent abstraction?",
+      "How does the car's engine cover represent encapsulation?",
+      "Which concept focuses on hiding the internal state, and which focuses on hiding complex implementation details?"
+    ],
+    "evaluation_criteria": ["real_world_analogy", "differentiation", "design_intent"],
+    "expected_keywords": ["data hiding", "showing essential features", "complex details", "internal state", "access modifiers", "interface"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q4",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Easy",
+    "question": "What is a constructor? How is it different from a method?",
+    "follow_ups": [
+      "Does a constructor have a return type?",
+      "When is a constructor called?",
+      "What is a default constructor?"
+    ],
+    "evaluation_criteria": ["constructor_properties", "invocation_timing", "return_type_knowledge"],
+    "expected_keywords": ["initialization", "same name as class", "no return type", "object creation", "default", "parameterized"],
+    "type": "technical"
+  },
+  {
+    "id": "Q5",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Easy",
+    "question": "What are access specifiers (access modifiers)?",
+    "follow_ups": [
+      "What is the difference between public, private, and protected?",
+      "Which access specifier is crucial for achieving encapsulation?",
+      "How does 'protected' behave differently from 'private' in relation to subclasses?"
+    ],
+    "evaluation_criteria": ["visibility_levels", "encapsulation_link", "inheritance_access"],
+    "expected_keywords": ["public", "private", "protected", "visibility", "scope", "subclasses", "data hiding"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q6",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Easy",
+    "question": "What is method overloading vs. method overriding?",
+    "follow_ups": [
+      "Which one happens at compile-time and which one at runtime?",
+      "Does method overloading require an inheritance relationship?",
+      "Must the method signatures be identical in method overriding?"
+    ],
+    "evaluation_criteria": ["compile_time_vs_runtime", "inheritance_requirement", "signature_rules"],
+    "expected_keywords": ["same class", "different parameters", "compile-time polymorphism", "derived class", "same signature", "runtime polymorphism"],
+    "type": "technical"
+  },
+  {
+    "id": "Q7",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Easy",
+    "question": "Does your programming language support multiple inheritance?",
+    "follow_ups": [
+      "If you use Java or C#, why is multiple inheritance of classes not supported?",
+      "How do languages like Java achieve multiple inheritance-like behavior using interfaces?",
+      "If you use C++, what is the diamond problem?"
+    ],
+    "evaluation_criteria": ["language_specifics", "alternative_mechanisms", "ambiguity_awareness"],
+    "expected_keywords": ["ambiguity", "diamond problem", "interfaces", "traits", "mixins", "C++ supports"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q8",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Easy",
+    "question": "What is the this pointer or this keyword?",
+    "follow_ups": [
+      "What does 'this' refer to inside an instance method?",
+      "Can you use 'this' inside a static method?",
+      "How is 'this' useful when a method parameter has the same name as an instance variable?"
+    ],
+    "evaluation_criteria": ["context_reference", "static_limitations", "shadowing_resolution"],
+    "expected_keywords": ["current object", "reference", "shadowing", "static method error", "instance variables"],
+    "type": "technical"
+  },
+  {
+    "id": "Q9",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Easy",
+    "question": "What is a static variable or static method?",
+    "follow_ups": [
+      "Does a static variable belong to the class or to specific objects?",
+      "Can a static method access non-static instance variables directly?",
+      "Give a common use case for a static method (e.g., utility functions)."
+    ],
+    "evaluation_criteria": ["class_level_membership", "access_restrictions", "practical_use_cases"],
+    "expected_keywords": ["class level", "shared memory", "utility methods", "no object needed", "this keyword unavailable"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q10",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Easy",
+    "question": "What is a destructor?",
+    "follow_ups": [
+      "When is a destructor called?",
+      "Why do languages like C++ have destructors, but languages like Java use Garbage Collection instead?",
+      "What is the typical syntax for a destructor in C++?"
+    ],
+    "evaluation_criteria": ["lifecycle_management", "memory_management_comparison", "syntax_knowledge"],
+    "expected_keywords": ["clean up", "free memory", "object destroyed", "garbage collection", "tilde (~)"],
+    "type": "technical"
+  },
+  {
+    "id": "Q11",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Medium",
+    "question": "What is the difference between an abstract class and an interface?",
+    "follow_ups": [
+      "Can an abstract class have implemented methods (methods with a body)?",
+      "Can a class inherit from multiple abstract classes?",
+      "When would you choose an abstract class over an interface?"
+    ],
+    "evaluation_criteria": ["implementation_capabilities", "multiple_inheritance_rules", "design_choices"],
+    "expected_keywords": ["is-a relationship", "can-do relationship", "multiple interfaces", "state/fields", "default methods"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q12",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Medium",
+    "question": "What is the Diamond Problem?",
+    "follow_ups": [
+      "In what type of inheritance structure does the diamond problem occur?",
+      "What ambiguity does it create for the compiler?",
+      "How is the diamond problem solved in C++ (hint: virtual inheritance)?"
+    ],
+    "evaluation_criteria": ["multiple_inheritance_issues", "ambiguity_explanation", "resolution_mechanisms"],
+    "expected_keywords": ["multiple inheritance", "ambiguity", "same method name", "virtual inheritance", "two base classes"],
+    "type": "technical"
+  },
+  {
+    "id": "Q13",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Medium",
+    "question": "Explain deep copy vs. shallow copy.",
+    "follow_ups": [
+      "If you modify an object nested inside a shallow-copied object, does the original object change?",
+      "How do you implement a deep copy?",
+      "What does the default copy constructor in C++ perform (shallow or deep)?"
+    ],
+    "evaluation_criteria": ["reference_vs_value", "memory_allocation", "implementation_methods"],
+    "expected_keywords": ["reference copying", "value copying", "dynamic memory", "pointers", "serialization", "clone"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q14",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Medium",
+    "question": "What is the difference between composition and aggregation?",
+    "follow_ups": [
+      "Which relationship implies a stronger ownership (a 'death' relationship)?",
+      "Give a real-world example of aggregation (e.g., Department and Teachers).",
+      "Give a real-world example of composition (e.g., House and Rooms)."
+    ],
+    "evaluation_criteria": ["ownership_strength", "lifecycle_dependency", "real_world_analogies"],
+    "expected_keywords": ["has-a relationship", "strong ownership", "weak ownership", "independent lifecycle", "dependent lifecycle"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q15",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Medium",
+    "question": "What is dynamic binding (late binding)?",
+    "follow_ups": [
+      "How does dynamic binding relate to method overriding?",
+      "What determines which method implementation is called: the reference type or the actual object type?",
+      "How does dynamic binding impact performance compared to static binding?"
+    ],
+    "evaluation_criteria": ["runtime_polymorphism", "reference_vs_object", "performance_tradeoffs"],
+    "expected_keywords": ["runtime", "virtual functions", "actual object type", "v-table", "performance overhead", "method overriding"],
+    "type": "technical"
+  },
+  {
+    "id": "Q16",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Medium",
+    "question": "What is a virtual function in C++?",
+    "follow_ups": [
+      "What keyword is used to declare a virtual function?",
+      "What is a pure virtual function?",
+      "How does a pure virtual function make a class abstract?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "late_binding_mechanics", "abstract_classes"],
+    "expected_keywords": ["runtime polymorphism", "override", "pure virtual (= 0)", "abstract class", "base pointer"],
+    "type": "technical"
+  },
+  {
+    "id": "Q17",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Medium",
+    "question": "What is a friend class or friend function?",
+    "follow_ups": [
+      "What access does a friend function have that normal external functions do not?",
+      "Does using the 'friend' keyword break the principle of encapsulation?",
+      "Is friendship inherited by subclasses?"
+    ],
+    "evaluation_criteria": ["access_privileges", "encapsulation_debate", "inheritance_rules"],
+    "expected_keywords": ["private members", "protected members", "C++", "encapsulation violation", "not inherited"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q18",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Medium",
+    "question": "Can a constructor be private?",
+    "follow_ups": [
+      "If a constructor is private, can you instantiate the class from outside?",
+      "What design pattern heavily relies on a private constructor?",
+      "How can a class with a private constructor provide an instance to the outside world?"
+    ],
+    "evaluation_criteria": ["instantiation_control", "design_patterns", "static_factory_methods"],
+    "expected_keywords": ["singleton pattern", "factory method", "instantiation prevention", "static method", "internal instance"],
+    "type": "practical"
+  },
+  {
+    "id": "Q19",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Medium",
+    "question": "What is the final keyword in Java or const in C++?",
+    "follow_ups": [
+      "What happens when you declare a class as final/sealed?",
+      "What happens when you declare a method as final?",
+      "Why would a developer want to prevent a class from being subclassed?"
+    ],
+    "evaluation_criteria": ["immutability", "inheritance_prevention", "security_and_design"],
+    "expected_keywords": ["cannot be subclassed", "cannot be overridden", "constants", "security", "immutable design"],
+    "type": "technical"
+  },
+  {
+    "id": "Q20",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Medium",
+    "question": "What is exception handling in the context of OOP?",
+    "follow_ups": [
+      "What keywords are typically used for exception handling (try, catch, finally)?",
+      "Why is exception handling preferred over returning error codes?",
+      "Can exceptions be objects? If so, how do they fit into an inheritance hierarchy?"
+    ],
+    "evaluation_criteria": ["error_management", "flow_control", "exception_hierarchy"],
+    "expected_keywords": ["try-catch", "throw", "error objects", "clean code", "separation of concerns", "exception hierarchy"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q21",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Hard",
+    "question": "Explain the SOLID principles briefly.",
+    "follow_ups": [
+      "What does the Single Responsibility Principle mean?",
+      "Explain the Open/Closed Principle.",
+      "How does the Dependency Inversion Principle affect how classes depend on each other?"
+    ],
+    "evaluation_criteria": ["acronym_knowledge", "principle_definitions", "software_design_architecture"],
+    "expected_keywords": ["single responsibility", "open/closed", "liskov substitution", "interface segregation", "dependency inversion", "interfaces", "abstractions"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q22",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Hard",
+    "question": "What is the Singleton design pattern and where is it used?",
+    "follow_ups": [
+      "How do you implement a Singleton (what components are needed)?",
+      "What are the challenges of using a Singleton in a multithreaded environment?",
+      "Why is the Singleton pattern sometimes considered an anti-pattern?"
+    ],
+    "evaluation_criteria": ["implementation_details", "thread_safety", "anti_pattern_debate"],
+    "expected_keywords": ["one instance", "private constructor", "static instance", "global state", "thread-safe", "double-checked locking", "testing difficulty"],
+    "type": "technical"
+  },
+  {
+    "id": "Q23",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Hard",
+    "question": "Why is composition often preferred over inheritance?",
+    "follow_ups": [
+      "What is the 'fragile base class' problem?",
+      "How does composition provide more flexibility at runtime compared to inheritance?",
+      "In what scenario is inheritance clearly the better choice?"
+    ],
+    "evaluation_criteria": ["design_flexibility", "tight_coupling", "is-a_vs_has-a"],
+    "expected_keywords": ["tight coupling", "fragile base class", "flexibility", "runtime behavior change", "interfaces", "has-a"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q24",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Hard",
+    "question": "What is a virtual destructor and why is it important?",
+    "follow_ups": [
+      "What happens if you delete a derived class object through a base class pointer and the base class destructor is NOT virtual?",
+      "Does a class need a virtual constructor? Is that even possible?",
+      "Should all classes have virtual destructors?"
+    ],
+    "evaluation_criteria": ["memory_leaks", "polymorphic_deletion", "c++_specifics"],
+    "expected_keywords": ["memory leak", "base class pointer", "undefined behavior", "polymorphism", "no virtual constructors"],
+    "type": "technical"
+  },
+  {
+    "id": "Q25",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Hard",
+    "question": "What is the Factory design pattern?",
+    "follow_ups": [
+      "What problem does the Factory pattern solve regarding object creation?",
+      "How does it relate to the Open/Closed Principle?",
+      "What is the difference between a Simple Factory and an Abstract Factory?"
+    ],
+    "evaluation_criteria": ["creation_patterns", "decoupling", "pattern_variations"],
+    "expected_keywords": ["object creation", "decoupling", "interface/abstract class", "subclasses decide", "hide instantiation logic"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q26",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Hard",
+    "question": "What is object slicing?",
+    "follow_ups": [
+      "In what programming languages does object slicing typically occur (e.g., C++)?",
+      "How does passing an object by value instead of by reference or pointer cause slicing?",
+      "What data is lost during object slicing?"
+    ],
+    "evaluation_criteria": ["memory_layout", "pass_by_value", "data_loss"],
+    "expected_keywords": ["C++", "pass by value", "derived to base assignment", "loss of derived data", "use pointers/references"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Hard",
+    "question": "How does polymorphism work internally using a V-Table?",
+    "follow_ups": [
+      "What is a virtual pointer (vptr)?",
+      "When is the V-Table created and when is the vptr initialized?",
+      "How does the compiler use the V-Table to resolve method calls at runtime?"
+    ],
+    "evaluation_criteria": ["internal_mechanics", "memory_overhead", "runtime_resolution"],
+    "expected_keywords": ["virtual table", "function pointers", "vptr", "dynamic dispatch", "runtime performance overhead", "constructor initialization"],
+    "type": "technical"
+  },
+  {
+    "id": "Q28",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Hard",
+    "question": "What is an immutable object?",
+    "follow_ups": [
+      "How do you create an immutable class?",
+      "What are the benefits of immutable objects in a multithreaded application?",
+      "Give an example of a common immutable class in Java or C#."
+    ],
+    "evaluation_criteria": ["state_management", "thread_safety", "class_design"],
+    "expected_keywords": ["state cannot change", "no setters", "final fields", "thread-safe", "String class", "constructor initialization"],
+    "type": "practical"
+  },
+  {
+    "id": "Q29",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Hard",
+    "question": "What is dependency injection?",
+    "follow_ups": [
+      "How does dependency injection implement the Inversion of Control (IoC) principle?",
+      "What are the common types of dependency injection (e.g., constructor, setter)?",
+      "How does DI improve the testability of a class?"
+    ],
+    "evaluation_criteria": ["inversion_of_control", "testing_benefits", "coupling_reduction"],
+    "expected_keywords": ["pass dependencies", "constructor injection", "loose coupling", "mocking/testing", "IoC container"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q30",
+    "subject": "Object Oriented Programming",
+    "difficulty": "Hard",
+    "question": "How would you design a thread-safe logger class?",
+    "follow_ups": [
+      "What design pattern might be appropriate for a logger?",
+      "How do you ensure that multiple threads don't overwrite each other's log entries?",
+      "What are the performance implications of strictly locking the write operation?"
+    ],
+    "evaluation_criteria": ["system_design", "concurrency_management", "performance_tradeoffs"],
+    "expected_keywords": ["singleton", "mutex/locks", "synchronization", "asynchronous logging", "message queue", "thread-safe"],
+    "type": "scenario"
+  }
+]

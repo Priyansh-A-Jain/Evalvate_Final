@@ -1,0 +1,422 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Easy",
+    "question": "What is the relationship between Artificial Intelligence, Machine Learning, and Deep Learning?",
+    "follow_ups": [
+      "Can you give a real-world example of each?",
+      "Where does generative AI fit in this hierarchy?",
+      "What's the boundary between ML and Deep Learning in practice?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "use_of_examples", "depth"],
+    "expected_keywords": ["neural networks", "subset", "training data", "representation"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Easy",
+    "question": "What is the difference between supervised and unsupervised learning?",
+    "follow_ups": [
+      "What is semi-supervised learning?",
+      "Can you explain with examples of algorithms for both?",
+      "How do the training datasets differ for these two types?"
+    ],
+    "evaluation_criteria": ["comparative_accuracy", "clarity_of_examples", "understanding_of_labels"],
+    "expected_keywords": ["labeled data", "unlabeled data", "feedback loop", "clustering", "regression", "classification"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q3",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Easy",
+    "question": "What is the difference between classification and regression?",
+    "follow_ups": [
+      "Can an algorithm like Logistic Regression be used for classification despite its name?",
+      "How do evaluation metrics differ between classification and regression?",
+      "What is an example of a scenario where you would use both?"
+    ],
+    "evaluation_criteria": ["definition_accuracy", "output_type_distinction", "metric_knowledge"],
+    "expected_keywords": ["discrete classes", "continuous values", "labels", "numerical prediction", "decision boundary"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Easy",
+    "question": "What is overfitting? How do you identify it?",
+    "follow_ups": [
+      "What is underfitting and how does it relate to bias?",
+      "What are some common techniques to prevent overfitting?",
+      "How does cross-validation help in identifying overfitting?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "identification_methods", "mitigation_strategies"],
+    "expected_keywords": ["high variance", "training accuracy", "validation loss", "noise", "generalization"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q5",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Easy",
+    "question": "Why do we split data into training, validation, and test sets?",
+    "follow_ups": [
+      "What happens if we leak test data into the training set?",
+      "How does the validation set help in hyperparameter tuning?",
+      "What is the recommended ratio for splitting data and why does it change with dataset size?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "purpose_of_splits", "data_leakage_awareness"],
+    "expected_keywords": ["hyperparameter tuning", "generalization", "data leakage", "model evaluation", "unseen data"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q6",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Easy",
+    "question": "What is the purpose of an activation function in a neural network?",
+    "follow_ups": [
+      "What happens if we do not use an activation function?",
+      "Compare ReLU and Sigmoid activation functions.",
+      "What is the dying ReLU problem?"
+    ],
+    "evaluation_criteria": ["mathematical_intuition", "nonlinearity_explanation", "function_comparison"],
+    "expected_keywords": ["non-linearity", "backpropagation", "vanishing gradient", "decision boundary", "identity mapping"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q7",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Easy",
+    "question": "What is a confusion matrix?",
+    "follow_ups": [
+      "How do you compute accuracy, precision, and recall from a confusion matrix?",
+      "What are Type I and Type II errors in this context?",
+      "When is accuracy a misleading metric?"
+    ],
+    "evaluation_criteria": ["terminology_comprehension", "calculation_ability", "practical_application"],
+    "expected_keywords": ["True Positive", "False Positive", "True Negative", "False Negative", "actual vs predicted"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q8",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Easy",
+    "question": "Explain precision vs. recall with an example.",
+    "follow_ups": [
+      "What is the F1-Score and when should it be used?",
+      "In a spam detection system, would you prioritize precision or recall?",
+      "How does changing the classification threshold affect precision and recall?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "scenario_analysis", "tradeoff_understanding"],
+    "expected_keywords": ["false positives", "false negatives", "relevance", "retrieval", "trade-off"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q9",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Easy",
+    "question": "What is data normalization and why is it important?",
+    "follow_ups": [
+      "What is the difference between Min-Max scaling and Standardization (Z-score)?",
+      "Which algorithms are sensitive to feature scaling?",
+      "What happens to gradient descent if features are not normalized?"
+    ],
+    "evaluation_criteria": ["importance_justification", "scaling_methods", "algorithmic_impact"],
+    "expected_keywords": ["gradient descent convergence", "feature scale", "mean", "standard deviation", "outliers"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q10",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Easy",
+    "question": "What is the difference between Narrow AI (ANI) and General AI (AGI)?",
+    "follow_ups": [
+      "Do current LLMs like GPT-4 count as AGI? Why or why not?",
+      "What is Artificial Superintelligence (ASI)?",
+      "What are the key limitations holding us back from achieving AGI?"
+    ],
+    "evaluation_criteria": ["conceptual_distinction", "critical_thinking", "limitations_awareness"],
+    "expected_keywords": ["domain-specific", "general cognitive abilities", "adaptability", "autonomous learning", "human-like intelligence"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q11",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Medium",
+    "question": "How does a decision tree make decisions using entropy or Gini index?",
+    "follow_ups": [
+      "What is Information Gain and how does it relate to entropy?",
+      "Compare the computational efficiency of Gini impurity vs. Entropy.",
+      "How does a decision tree handle continuous vs. categorical variables?"
+    ],
+    "evaluation_criteria": ["mathematical_clarity", "splitting_criteria_comparison", "algorithmic_understanding"],
+    "expected_keywords": ["impurity", "information gain", "split", "homogeneity", "probability"],
+    "type": "technical"
+  },
+  {
+    "id": "Q12",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Medium",
+    "question": "What is the difference between bagging and boosting?",
+    "follow_ups": [
+      "How do Random Forests implement bagging?",
+      "Why is boosting more prone to overfitting than bagging?",
+      "Can you name some popular boosting algorithms?"
+    ],
+    "evaluation_criteria": ["comparative_analysis", "variance_bias_understanding", "ensemble_methods"],
+    "expected_keywords": ["parallel training", "sequential training", "weak learners", "bootstrap aggregating", "weights", "bias reduction", "variance reduction"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q13",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Medium",
+    "question": "Why are convolutional neural networks better suited for image processing than standard neural networks?",
+    "follow_ups": [
+      "What is local receptive field and weight sharing?",
+      "How do standard feedforward networks handle spatial information?",
+      "What is translation invariance?"
+    ],
+    "evaluation_criteria": ["spatial_understanding", "architecture_comparison", "parameter_efficiency"],
+    "expected_keywords": ["spatial hierarchy", "parameter sharing", "local connectivity", "translation invariance", "feature maps"],
+    "type": "technical"
+  },
+  {
+    "id": "Q14",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Medium",
+    "question": "What is pooling in CNNs and why is it used?",
+    "follow_ups": [
+      "Compare Max Pooling and Average Pooling.",
+      "Does pooling reduce overfitting? Why or why not?",
+      "What is the trend regarding pooling in modern architectures like ResNet?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "pooling_methods", "architectural_trends"],
+    "expected_keywords": ["dimensionality reduction", "spatial size", "downsampling", "parameter reduction", "max pooling"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Medium",
+    "question": "What is the bias–variance tradeoff?",
+    "follow_ups": [
+      "How do high bias and high variance manifest in training vs test errors?",
+      "Which models generally have high bias but low variance?",
+      "How does increasing model complexity affect bias and variance?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "tradeoff_dynamics", "error_diagnostics"],
+    "expected_keywords": ["underfitting", "overfitting", "model complexity", "total error", "generalization error"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q16",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Medium",
+    "question": "Explain K-Means clustering. How do you choose the value of K?",
+    "follow_ups": [
+      "How does K-Means++ improve standard K-Means?",
+      "What is the Elbow Method and the Silhouette Score?",
+      "Is K-Means sensitive to outliers and initialization?"
+    ],
+    "evaluation_criteria": ["algorithmic_explanation", "hyperparameter_selection", "limitations_awareness"],
+    "expected_keywords": ["centroids", "euclidean distance", "elbow method", "wcss", "silhouette analysis", "convergence"],
+    "type": "technical"
+  },
+  {
+    "id": "Q17",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Medium",
+    "question": "What is transfer learning?",
+    "follow_ups": [
+      "When is fine-tuning preferred over using a pre-trained model as a feature extractor?",
+      "What is catastrophic forgetting?",
+      "Can you give an example of transfer learning in NLP vs Computer Vision?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "fine_tuning_vs_feature_extraction", "practical_application"],
+    "expected_keywords": ["pre-trained models", "fine-tuning", "feature extraction", "domain adaptation", "target task"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q18",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Medium",
+    "question": "What is tokenization in Natural Language Processing?",
+    "follow_ups": [
+      "Compare word-level, character-level, and subword-level tokenization.",
+      "How does Byte Pair Encoding (BPE) work?",
+      "How does tokenization handle out-of-vocabulary (OOV) words?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "tokenization_methods", "handling_oov"],
+    "expected_keywords": ["subwords", "vocabulary", "byte pair encoding", "tokens", "out-of-vocabulary"],
+    "type": "technical"
+  },
+  {
+    "id": "Q19",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Medium",
+    "question": "Why were LSTMs introduced over standard RNNs?",
+    "follow_ups": [
+      "Explain the architecture of an LSTM cell (gates).",
+      "What is the cell state vs. hidden state in an LSTM?",
+      "How does GRU compare to LSTM?"
+    ],
+    "evaluation_criteria": ["limitations_of_rnn", "lstm_architecture", "gate_functionality"],
+    "expected_keywords": ["vanishing gradient", "long-term dependencies", "forget gate", "input gate", "output gate", "cell state"],
+    "type": "technical"
+  },
+  {
+    "id": "Q20",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Medium",
+    "question": "What is the difference between L1 and L2 regularization?",
+    "follow_ups": [
+      "Why does L1 regularization lead to sparse weights?",
+      "What is Elastic Net regularization?",
+      "How do regularization terms affect the loss function mathematically?"
+    ],
+    "evaluation_criteria": ["mathematical_comparison", "sparsity_explanation", "regularization_usage"],
+    "expected_keywords": ["lasso", "ridge", "absolute values", "squared values", "sparsity", "feature selection"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Hard",
+    "question": "Explain the vanishing gradient problem.",
+    "follow_ups": [
+      "How do residual connections (in ResNets) mitigate vanishing gradients?",
+      "Which activation functions suffer most from vanishing gradients and why?",
+      "How do weight initialization techniques (like Xavier/He) help?"
+    ],
+    "evaluation_criteria": ["mathematical_intuition", "mitigation_strategies", "activation_function_impact"],
+    "expected_keywords": ["chain rule", "sigmoid", "backpropagation", "exponential decay", "residual connections"],
+    "type": "technical"
+  },
+  {
+    "id": "Q22",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Hard",
+    "question": "What is the Transformer architecture and why is self-attention important?",
+    "follow_ups": [
+      "Explain the difference between self-attention and multi-head attention.",
+      "Why are positional encodings necessary in Transformers?",
+      "How does self-attention enable parallelization compared to RNNs?"
+    ],
+    "evaluation_criteria": ["architecture_comprehension", "self_attention_mechanism", "positional_encoding_purpose"],
+    "expected_keywords": ["attention mechanism", "queries keys values", "positional encoding", "parallel training", "scalability"],
+    "type": "technical"
+  },
+  {
+    "id": "Q23",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Hard",
+    "question": "What is the difference between Word2Vec and BERT embeddings?",
+    "follow_ups": [
+      "How does contextuality work in BERT compared to static embeddings?",
+      "Explain the training objectives of BERT (MLM and NSP).",
+      "What is the difference between autoregressive models like GPT and autoencoding models like BERT?"
+    ],
+    "evaluation_criteria": ["embedding_evolution", "contextual_vs_static", "bert_training_objectives"],
+    "expected_keywords": ["static embeddings", "contextual embeddings", "masked language model", "bidirectional", "polysemy"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Hard",
+    "question": "How does the YOLO (You Only Look Once) algorithm work for object detection?",
+    "follow_ups": [
+      "How does YOLO treat object detection as a single regression problem?",
+      "What are anchor boxes and how are they used in YOLO?",
+      "Explain Non-Max Suppression (NMS) and why it is necessary."
+    ],
+    "evaluation_criteria": ["algorithm_workflow", "regression_formulation", "nms_purpose"],
+    "expected_keywords": ["single pass", "grid cells", "bounding boxes", "intersection over union", "non-max suppression"],
+    "type": "technical"
+  },
+  {
+    "id": "Q25",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Hard",
+    "question": "What is model drift or data drift in production systems?",
+    "follow_ups": [
+      "What is the difference between covariate shift, concept drift, and prior probability shift?",
+      "How can you detect data drift in production?",
+      "What are the strategies to remediate model drift?"
+    ],
+    "evaluation_criteria": ["production_challenges", "drift_types", "remediation_strategies"],
+    "expected_keywords": ["concept drift", "covariate shift", "ks test", "model degradation", "re-training"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q26",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Hard",
+    "question": "How do you handle imbalanced datasets?",
+    "follow_ups": [
+      "Explain SMOTE (Synthetic Minority Over-sampling Technique) and its potential drawbacks.",
+      "How do class weights or focal loss help in training?",
+      "Which evaluation metrics are best suited for highly imbalanced classification?"
+    ],
+    "evaluation_criteria": ["data_level_methods", "algorithmic_methods", "metric_selection"],
+    "expected_keywords": ["undersampling", "oversampling", "smote", "f1-score", "precision-recall curve", "class weights"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Hard",
+    "question": "What is the difference between batch gradient descent and stochastic gradient descent?",
+    "follow_ups": [
+      "What is Mini-batch Gradient Descent and why is it preferred in practice?",
+      "How does the batch size affect the generalization of the model?",
+      "What is the role of momentum in gradient descent optimization?"
+    ],
+    "evaluation_criteria": ["optimization_comparison", "mini_batch_advantages", "momentum_intuition"],
+    "expected_keywords": ["computational efficiency", "noise", "local minima", "mini-batch", "epoch", "learning rate"],
+    "type": "technical"
+  },
+  {
+    "id": "Q28",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Hard",
+    "question": "What is explainable AI (XAI) and why is it important?",
+    "follow_ups": [
+      "Explain the difference between LIME and SHAP.",
+      "Why are neural networks considered 'black boxes'?",
+      "In what industries is XAI legally or ethically mandatory?"
+    ],
+    "evaluation_criteria": ["ethical_awareness", "xai_methods", "industry_compliance"],
+    "expected_keywords": ["black box", "lime", "shap", "feature attribution", "interpretability"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q29",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Hard",
+    "question": "What is the dying ReLU problem?",
+    "follow_ups": [
+      "How do Leaky ReLU and ELU address the dying ReLU problem?",
+      "Under what circumstances do neurons die in ReLU?",
+      "How does weight initialization influence this issue?"
+    ],
+    "evaluation_criteria": ["activation_failure_modes", "alternative_activations", "initialization_impact"],
+    "expected_keywords": ["zero gradient", "inactive neuron", "leaky relu", "gradient flow", "negative input"],
+    "type": "technical"
+  },
+  {
+    "id": "Q30",
+    "subject": "Artificial Intelligence",
+    "difficulty": "Hard",
+    "question": "How can AI bias be identified and prevented?",
+    "follow_ups": [
+      "What are the common sources of bias in training data?",
+      "Explain the difference between group fairness and individual fairness.",
+      "How can post-processing techniques adjust model predictions to ensure fairness?"
+    ],
+    "evaluation_criteria": ["ethics_and_fairness", "bias_mitigation", "metrics_for_fairness"],
+    "expected_keywords": ["historical bias", "fairness metrics", "demographic parity", "data auditing", "representation bias"],
+    "type": "conceptual"
+  }
+]

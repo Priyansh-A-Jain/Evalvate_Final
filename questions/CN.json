@@ -1,0 +1,423 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Computer Networks",
+    "difficulty": "Easy",
+    "question": "Explain the OSI model. What happens at the transport layer?",
+    "follow_ups": [
+      "Can you name the 7 layers of the OSI model in order?",
+      "How does the OSI model differ from the TCP/IP model?",
+      "What is the difference between TCP and UDP at the transport layer?"
+    ],
+    "evaluation_criteria": ["layer_knowledge", "model_comparison", "protocol_identification"],
+    "expected_keywords": ["physical", "data link", "network", "transport", "session", "presentation", "application", "segmentation", "tcp", "udp"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Computer Networks",
+    "difficulty": "Easy",
+    "question": "What is the difference between a hub, a switch, and a router?",
+    "follow_ups": [
+      "At which OSI layer does each of these devices operate?",
+      "What is a broadcast domain and how do switches and routers handle it differently?",
+      "Why is a hub considered a legacy device?"
+    ],
+    "evaluation_criteria": ["device_differentiation", "osi_layer_mapping", "broadcast_handling"],
+    "expected_keywords": ["layer 1", "layer 2", "layer 3", "mac address", "ip address", "broadcast domain", "collision domain"],
+    "type": "technical"
+  },
+  {
+    "id": "Q3",
+    "subject": "Computer Networks",
+    "difficulty": "Easy",
+    "question": "What is the difference between TCP and UDP?",
+    "follow_ups": [
+      "Why is TCP considered reliable and UDP unreliable?",
+      "Can you give an example of an application that uses UDP and why?",
+      "What is the overhead difference between the two protocols?"
+    ],
+    "evaluation_criteria": ["reliability_comparison", "use_case_examples", "overhead_understanding"],
+    "expected_keywords": ["connection-oriented", "connectionless", "three-way handshake", "video streaming", "voip", "acknowledgment"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "Computer Networks",
+    "difficulty": "Easy",
+    "question": "What is the difference between HTTP and HTTPS?",
+    "follow_ups": [
+      "What protocol provides the 'S' (secure) in HTTPS?",
+      "Which port numbers are typically used for HTTP and HTTPS?",
+      "How does symmetric and asymmetric encryption work in HTTPS?"
+    ],
+    "evaluation_criteria": ["security_knowledge", "port_identification", "encryption_basics"],
+    "expected_keywords": ["port 80", "port 443", "ssl", "tls", "encryption", "certificate"],
+    "type": "technical"
+  },
+  {
+    "id": "Q5",
+    "subject": "Computer Networks",
+    "difficulty": "Easy",
+    "question": "What is an IP address vs. a MAC address?",
+    "follow_ups": [
+      "Which address is physical and which is logical?",
+      "How does ARP bridge the gap between IP and MAC addresses?",
+      "Can an IP address change? Can a MAC address change?"
+    ],
+    "evaluation_criteria": ["address_types", "arp_understanding", "mutability"],
+    "expected_keywords": ["layer 2", "layer 3", "logical address", "physical address", "nic", "arp"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q6",
+    "subject": "Computer Networks",
+    "difficulty": "Easy",
+    "question": "What is the difference between IPv4 and IPv6?",
+    "difficulty": "Easy",
+    "follow_ups": [
+      "Why was IPv6 created?",
+      "How many bits make up an IPv4 address compared to an IPv6 address?",
+      "Does IPv6 require NAT?"
+    ],
+    "evaluation_criteria": ["address_space", "bit_length", "protocol_evolution"],
+    "expected_keywords": ["32-bit", "128-bit", "address exhaustion", "hexadecimal", "ipsec", "nat"],
+    "type": "technical"
+  },
+  {
+    "id": "Q7",
+    "subject": "Computer Networks",
+    "difficulty": "Easy",
+    "question": "What is localhost or 127.0.0.1?",
+    "follow_ups": [
+      "What is the equivalent localhost address in IPv6?",
+      "What happens when you send a ping to 127.0.0.1?",
+      "Why is the loopback interface useful for developers?"
+    ],
+    "evaluation_criteria": ["loopback_understanding", "ipv6_equivalent", "testing_utility"],
+    "expected_keywords": ["loopback address", "::1", "local machine", "testing network stack", "network interface"],
+    "type": "practical"
+  },
+  {
+    "id": "Q8",
+    "subject": "Computer Networks",
+    "difficulty": "Easy",
+    "question": "What does a 404 Not Found error mean?",
+    "follow_ups": [
+      "What HTTP status code class does 404 belong to?",
+      "What is the difference between a 401, 403, and 404 error?",
+      "What class of status codes indicates a server-side error?"
+    ],
+    "evaluation_criteria": ["status_code_knowledge", "client_error_identification", "server_error_awareness"],
+    "expected_keywords": ["client error", "4xx", "5xx server error", "resource unavailable", "unauthorized", "forbidden"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q9",
+    "subject": "Computer Networks",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the physical layer?",
+    "follow_ups": [
+      "What kind of data unit operates at the physical layer?",
+      "Give an example of a device or medium that operates at this layer.",
+      "How does the physical layer relate to the data link layer?"
+    ],
+    "evaluation_criteria": ["layer_function", "data_unit_knowledge", "hardware_examples"],
+    "expected_keywords": ["bits", "cables", "fiber optics", "electrical signals", "hubs", "transmission medium"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q10",
+    "subject": "Computer Networks",
+    "difficulty": "Easy",
+    "question": "What is ping? How does it work?",
+    "follow_ups": [
+      "What underlying protocol does ping use?",
+      "What are Echo Request and Echo Reply messages?",
+      "Can a server be active but not respond to ping? Why?"
+    ],
+    "evaluation_criteria": ["protocol_knowledge", "message_types", "firewall_awareness"],
+    "expected_keywords": ["icmp", "echo request", "echo reply", "latency", "packet loss", "firewall block"],
+    "type": "technical"
+  },
+  {
+    "id": "Q11",
+    "subject": "Computer Networks",
+    "difficulty": "Medium",
+    "question": "Explain the TCP three-way handshake.",
+    "follow_ups": [
+      "What are the specific flags used in the three steps?",
+      "What is a SYN flood attack and how does it abuse the handshake?",
+      "How is a TCP connection terminated?"
+    ],
+    "evaluation_criteria": ["handshake_steps", "security_vulnerability", "termination_process"],
+    "expected_keywords": ["syn", "syn-ack", "ack", "fin", "sequence number", "connection establishment"],
+    "type": "technical"
+  },
+  {
+    "id": "Q12",
+    "subject": "Computer Networks",
+    "difficulty": "Medium",
+    "question": "How does DNS (Domain Name System) work?",
+    "follow_ups": [
+      "What is the difference between an iterative and recursive DNS query?",
+      "What are some common DNS record types (A, CNAME, MX)?",
+      "Which transport protocol and port does DNS typically use?"
+    ],
+    "evaluation_criteria": ["resolution_process", "record_types", "protocol_details"],
+    "expected_keywords": ["udp port 53", "a record", "cname", "root server", "tld server", "authoritative name server"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q13",
+    "subject": "Computer Networks",
+    "difficulty": "Medium",
+    "question": "What is subnetting and why do we use it?",
+    "follow_ups": [
+      "How does a subnet mask work to divide an IP address?",
+      "What is CIDR notation?",
+      "How does subnetting improve network security and performance?"
+    ],
+    "evaluation_criteria": ["subnet_mechanics", "cidr_knowledge", "benefits_understanding"],
+    "expected_keywords": ["network portion", "host portion", "broadcast domain", "cidr", "/24", "subnet mask"],
+    "type": "technical"
+  },
+  {
+    "id": "Q14",
+    "subject": "Computer Networks",
+    "difficulty": "Medium",
+    "question": "What is ARP (Address Resolution Protocol)?",
+    "follow_ups": [
+      "How does an ARP request differ from an ARP reply in terms of transmission (broadcast vs unicast)?",
+      "What is ARP spoofing/poisoning?",
+      "What command can you use to view the ARP cache on a computer?"
+    ],
+    "evaluation_criteria": ["protocol_mechanics", "security_risks", "practical_commands"],
+    "expected_keywords": ["ip to mac", "broadcast", "unicast", "arp cache", "man in the middle", "arp -a"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "Computer Networks",
+    "difficulty": "Medium",
+    "question": "What is DHCP?",
+    "follow_ups": [
+      "Explain the DORA process in DHCP.",
+      "What happens when a DHCP lease expires?",
+      "What is a DHCP reservation?"
+    ],
+    "evaluation_criteria": ["process_knowledge", "lease_lifecycle", "reservation_concept"],
+    "expected_keywords": ["discover", "offer", "request", "acknowledge", "ip assignment", "lease time"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q16",
+    "subject": "Computer Networks",
+    "difficulty": "Medium",
+    "question": "Explain circuit switching vs. packet switching.",
+    "follow_ups": [
+      "Which switching technique does the internet use?",
+      "What is a dedicated path and which switching method uses it?",
+      "Why is packet switching more efficient for bursty data?"
+    ],
+    "evaluation_criteria": ["technique_comparison", "internet_architecture", "efficiency_analysis"],
+    "expected_keywords": ["dedicated path", "independent packets", "bandwidth allocation", "tcp/ip", "telephony"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q17",
+    "subject": "Computer Networks",
+    "difficulty": "Medium",
+    "question": "What is NAT (Network Address Translation)?",
+    "follow_ups": [
+      "Why is NAT necessary in IPv4 networks?",
+      "What is PAT (Port Address Translation) and how does it differ from basic NAT?",
+      "How does NAT affect end-to-end connectivity protocols like IPsec?"
+    ],
+    "evaluation_criteria": ["nat_purpose", "pat_understanding", "protocol_interference"],
+    "expected_keywords": ["public ip", "private ip", "port numbers", "address exhaustion", "router"],
+    "type": "technical"
+  },
+  {
+    "id": "Q18",
+    "subject": "Computer Networks",
+    "difficulty": "Medium",
+    "question": "What is the difference between flow control and congestion control?",
+    "follow_ups": [
+      "At what layer does congestion control operate?",
+      "How does the sliding window protocol help with flow control?",
+      "What is TCP Slow Start?"
+    ],
+    "evaluation_criteria": ["control_mechanisms", "sliding_window", "congestion_avoidance"],
+    "expected_keywords": ["sender and receiver", "network traffic", "window size", "slow start", "congestion window"],
+    "type": "technical"
+  },
+  {
+    "id": "Q19",
+    "subject": "Computer Networks",
+    "difficulty": "Medium",
+    "question": "What are HTTP methods (GET vs. POST)?",
+    "follow_ups": [
+      "What makes GET an idempotent method?",
+      "Why should you never use GET for sensitive data?",
+      "What are PUT and DELETE used for?"
+    ],
+    "evaluation_criteria": ["method_differences", "idempotency", "security_practices"],
+    "expected_keywords": ["idempotent", "body payload", "url parameters", "rest api", "caching"],
+    "type": "practical"
+  },
+  {
+    "id": "Q20",
+    "subject": "Computer Networks",
+    "difficulty": "Medium",
+    "question": "What is a gateway?",
+    "follow_ups": [
+      "How does a gateway differ from a standard router?",
+      "What is a default gateway?",
+      "Can a gateway perform protocol translation?"
+    ],
+    "evaluation_criteria": ["device_function", "routing_concepts", "protocol_translation"],
+    "expected_keywords": ["protocol conversion", "different networks", "default route", "exit point", "osi layers"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q21",
+    "subject": "Computer Networks",
+    "difficulty": "Hard",
+    "question": "What is SSL/TLS and how does the handshake work?",
+    "follow_ups": [
+      "What is the difference between symmetric and asymmetric encryption during the TLS handshake?",
+      "What is a session key and how is it securely exchanged?",
+      "What role does a Certificate Authority (CA) play in TLS?"
+    ],
+    "evaluation_criteria": ["handshake_steps", "encryption_types", "certificate_verification"],
+    "expected_keywords": ["client hello", "server hello", "public key", "private key", "session key", "certificate authority"],
+    "type": "technical"
+  },
+  {
+    "id": "Q22",
+    "subject": "Computer Networks",
+    "difficulty": "Hard",
+    "question": "What is the difference between symmetric and asymmetric encryption?",
+    "follow_ups": [
+      "Which type is generally faster and why?",
+      "How is the key distribution problem solved using asymmetric encryption?",
+      "Give an example algorithm for both (e.g., AES, RSA)."
+    ],
+    "evaluation_criteria": ["algorithm_types", "performance_comparison", "key_management"],
+    "expected_keywords": ["single key", "public/private key pair", "aes", "rsa", "computational overhead"],
+    "type": "technical"
+  },
+  {
+    "id": "Q23",
+    "subject": "Computer Networks",
+    "difficulty": "Hard",
+    "question": "What is a DoS vs. a DDoS attack?",
+    "follow_ups": [
+      "What is a botnet and how is it used in DDoS?",
+      "Can you describe an amplification attack (like DNS amplification)?",
+      "How can network administrators mitigate DDoS attacks?"
+    ],
+    "evaluation_criteria": ["attack_mechanics", "amplification_concept", "mitigation_strategies"],
+    "expected_keywords": ["distributed", "botnet", "amplification", "rate limiting", "traffic scrubbing", "single source"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q24",
+    "subject": "Computer Networks",
+    "difficulty": "Hard",
+    "question": "What is the difference between a proxy and a VPN?",
+    "follow_ups": [
+      "Does a proxy encrypt your traffic like a VPN?",
+      "At what OSI layer does a VPN operate compared to a web proxy?",
+      "When would you use a proxy over a VPN in a corporate environment?"
+    ],
+    "evaluation_criteria": ["encryption_differences", "osi_layer_mapping", "use_cases"],
+    "expected_keywords": ["application layer", "network layer", "encryption tunnel", "ipsec", "anonymity"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q25",
+    "subject": "Computer Networks",
+    "difficulty": "Hard",
+    "question": "What is the sliding window protocol?",
+    "follow_ups": [
+      "How does the receiver advertise its window size?",
+      "What happens if a packet is lost in the Go-Back-N vs Selective Repeat protocols?",
+      "How does TCP use the sliding window for flow control?"
+    ],
+    "evaluation_criteria": ["protocol_mechanics", "error_recovery", "tcp_integration"],
+    "expected_keywords": ["flow control", "window size", "acknowledgment", "go-back-n", "selective repeat", "buffer"],
+    "type": "technical"
+  },
+  {
+    "id": "Q26",
+    "subject": "Computer Networks",
+    "difficulty": "Hard",
+    "question": "What is the difference between the loopback address and 0.0.0.0?",
+    "follow_ups": [
+      "What does it mean when a server binds to 0.0.0.0?",
+      "What does 0.0.0.0 mean when used as a default route in a routing table?",
+      "Can you ping 0.0.0.0?"
+    ],
+    "evaluation_criteria": ["address_semantics", "binding_behavior", "routing_table_knowledge"],
+    "expected_keywords": ["all interfaces", "wildcard", "default route", "127.0.0.1", "binding"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "Computer Networks",
+    "difficulty": "Hard",
+    "question": "How does traceroute work?",
+    "follow_ups": [
+      "What role does the Time To Live (TTL) field play in traceroute?",
+      "What ICMP message is returned when a router discards a packet due to TTL expiration?",
+      "Why might some hops show up as asterisks (*) in a traceroute output?"
+    ],
+    "evaluation_criteria": ["ttl_mechanics", "icmp_messages", "firewall_behavior"],
+    "expected_keywords": ["time to live", "ttl", "icmp time exceeded", "routers", "firewall blocking"],
+    "type": "technical"
+  },
+  {
+    "id": "Q28",
+    "subject": "Computer Networks",
+    "difficulty": "Hard",
+    "question": "What is a sticky session (session affinity)?",
+    "follow_ups": [
+      "How does a load balancer maintain a sticky session (e.g., using cookies)?",
+      "What are the drawbacks of using sticky sessions for scalability?",
+      "What is a stateless alternative to sticky sessions?"
+    ],
+    "evaluation_criteria": ["load_balancing_concepts", "scalability_drawbacks", "stateless_design"],
+    "expected_keywords": ["load balancer", "cookies", "uneven load", "distributed cache", "redis", "stateful"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q29",
+    "subject": "Computer Networks",
+    "difficulty": "Hard",
+    "question": "What is the difference between a forward proxy and a reverse proxy?",
+    "follow_ups": [
+      "Which proxy protects the client and which protects the server?",
+      "Give an example of a popular reverse proxy server software.",
+      "How does a reverse proxy help with load balancing and SSL termination?"
+    ],
+    "evaluation_criteria": ["architecture_roles", "software_examples", "proxy_features"],
+    "expected_keywords": ["client anonymity", "server protection", "nginx", "haproxy", "ssl termination", "load balancing"],
+    "type": "technical"
+  },
+  {
+    "id": "Q30",
+    "subject": "Computer Networks",
+    "difficulty": "Hard",
+    "question": "Why is the OSI model called a reference model if we actually use TCP/IP?",
+    "follow_ups": [
+      "How do the layers of TCP/IP map to the OSI model?",
+      "Why did TCP/IP become the standard over OSI?",
+      "Is the OSI model still relevant today?"
+    ],
+    "evaluation_criteria": ["historical_context", "model_mapping", "practical_relevance"],
+    "expected_keywords": ["conceptual framework", "troubleshooting", "standardization", "department of defense", "application layer mapping"],
+    "type": "historical"
+  }
+]

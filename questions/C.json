@@ -1,0 +1,506 @@
+[
+  {
+    "id": "Q1",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What are the basic data types supported in C?",
+    "follow_ups": [
+      "Can you mention the typical memory size occupied by an int and a double?",
+      "What is the difference between a signed and an unsigned integer?",
+      "What is the void data type used for?"
+    ],
+    "evaluation_criteria": ["data_type_knowledge", "memory_size_awareness", "practical_application"],
+    "expected_keywords": ["int", "char", "float", "double", "void", "primitive"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What is the difference between printf() and scanf()?",
+    "follow_ups": [
+      "Why do you need to pass the memory address (using &) to scanf()?",
+      "Can printf() be used to print variables without a format specifier?",
+      "What header file is required to use these functions?"
+    ],
+    "evaluation_criteria": ["function_purpose", "syntax_knowledge", "header_inclusion"],
+    "expected_keywords": ["stdio.h", "output", "input", "format specifier", "memory address", "console"],
+    "type": "practical"
+  },
+  {
+    "id": "Q3",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What are the different types of errors in C?",
+    "follow_ups": [
+      "Give an example of a syntax error versus a logical error.",
+      "What is a runtime error and what typically causes it?",
+      "How does a segmentation fault occur?"
+    ],
+    "evaluation_criteria": ["error_classification", "troubleshooting_awareness", "examples_provided"],
+    "expected_keywords": ["syntax error", "logical error", "runtime error", "compilation", "segmentation fault", "linker error"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What are conditional and iterative statements in C?",
+    "follow_ups": [
+      "When would you use a switch statement instead of multiple if-else statements?",
+      "Can a for loop run indefinitely? How?",
+      "What is the difference between break and continue within a loop?"
+    ],
+    "evaluation_criteria": ["control_flow_understanding", "syntax_knowledge", "conditional_logic"],
+    "expected_keywords": ["if-else", "switch", "for", "while", "do-while", "control structures"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q5",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What is the difference between ++i and i++?",
+    "follow_ups": [
+      "Which one is generally faster in execution and why?",
+      "What would be the output of `a = 5; b = a++;` for variables a and b?",
+      "How does operator precedence affect pre-increment and post-increment?"
+    ],
+    "evaluation_criteria": ["operator_knowledge", "execution_order", "value_assignment"],
+    "expected_keywords": ["pre-increment", "post-increment", "assignment", "operator precedence", "evaluation"],
+    "type": "technical"
+  },
+  {
+    "id": "Q6",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What is the difference between while and do-while loops?",
+    "follow_ups": [
+      "In what scenario is a do-while loop strictly required?",
+      "Will a do-while loop execute if the initial condition is false?",
+      "How does the placement of the condition check differ between the two?"
+    ],
+    "evaluation_criteria": ["loop_mechanics", "execution_guarantee", "use_case_identification"],
+    "expected_keywords": ["entry-controlled", "exit-controlled", "condition check", "execute at least once", "iteration"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q7",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What is the difference between break and continue?",
+    "follow_ups": [
+      "Can you use a break statement outside of a loop or switch case?",
+      "What happens to the loop counter when a continue statement is executed?",
+      "How do break and continue behave in nested loops?"
+    ],
+    "evaluation_criteria": ["control_flow_alteration", "loop_behavior", "scope_understanding"],
+    "expected_keywords": ["terminate", "skip iteration", "loop execution", "switch statement", "nested loop"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q8",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the sizeof operator?",
+    "follow_ups": [
+      "Does sizeof evaluate its operand at compile-time or runtime?",
+      "What is the output of sizeof applied to an array versus a pointer to the array?",
+      "What is the return type of the sizeof operator?"
+    ],
+    "evaluation_criteria": ["operator_purpose", "compile_time_knowledge", "array_vs_pointer"],
+    "expected_keywords": ["memory allocation", "bytes", "compile-time", "size_t", "data type size"],
+    "type": "technical"
+  },
+  {
+    "id": "Q9",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What is the difference between local and global variables?",
+    "follow_ups": [
+      "What is the default initial value of a local variable vs a global variable?",
+      "How does variable shadowing occur with local and global variables?",
+      "What happens to the memory of a local variable after its function returns?"
+    ],
+    "evaluation_criteria": ["scope_knowledge", "initialization_rules", "memory_lifetime"],
+    "expected_keywords": ["scope", "lifetime", "stack", "data segment", "uninitialized", "garbage value"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q10",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What are storage classes in C and what are their types?",
+    "follow_ups": [
+      "What does the 'static' storage class do to a local variable?",
+      "What is the 'register' storage class and is it guaranteed to be stored in a CPU register?",
+      "How does the 'extern' storage class facilitate multi-file programming?"
+    ],
+    "evaluation_criteria": ["storage_class_knowledge", "lifetime_and_scope", "multi_file_linkage"],
+    "expected_keywords": ["auto", "static", "register", "extern", "visibility", "lifetime", "memory location"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q11",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the typedef keyword?",
+    "follow_ups": [
+      "How does typedef improve code readability when working with structs?",
+      "What is the difference between typedef and #define?",
+      "Can typedef be used to create new data types?"
+    ],
+    "evaluation_criteria": ["keyword_utility", "code_readability", "macro_comparison"],
+    "expected_keywords": ["alias", "custom data type", "struct", "readability", "compiler", "preprocessor"],
+    "type": "technical"
+  },
+  {
+    "id": "Q12",
+    "subject": "C",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the enum keyword?",
+    "follow_ups": [
+      "What are the underlying data types of enum constants?",
+      "Can you specify custom integer values for enum members?",
+      "How does enum differ from multiple #define macros?"
+    ],
+    "evaluation_criteria": ["keyword_understanding", "integer_mapping", "macro_comparison"],
+    "expected_keywords": ["enumeration", "named integer constants", "readability", "integral type", "default values"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q13",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "What is a pointer and how do you use it?",
+    "follow_ups": [
+      "What is a null pointer and why is it important?",
+      "What is a dangling pointer and how can it be avoided?",
+      "Explain the concept of pointer to a pointer (double pointer)."
+    ],
+    "evaluation_criteria": ["memory_concept", "pointer_safety", "advanced_pointers"],
+    "expected_keywords": ["memory address", "dereference", "null pointer", "dangling pointer", "asterisk", "ampersand"],
+    "type": "technical"
+  },
+  {
+    "id": "Q14",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "What is the difference between an array and a pointer?",
+    "follow_ups": [
+      "Does an array name always decay into a pointer to its first element?",
+      "How does the sizeof operator treat an array compared to a pointer?",
+      "Can you reassign an array name to point to another memory location?"
+    ],
+    "evaluation_criteria": ["memory_allocation", "pointer_decay", "reassignment_rules"],
+    "expected_keywords": ["pointer decay", "contiguous memory", "base address", "modifiable lvalue", "sizeof array"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "What is the difference between * and & operators?",
+    "follow_ups": [
+      "What happens if you dereference a pointer that hasn't been initialized?",
+      "Can the & operator be used on a constant or literal value?",
+      "How are these operators used in pass-by-reference function calls?"
+    ],
+    "evaluation_criteria": ["operator_mechanics", "memory_safety", "function_arguments"],
+    "expected_keywords": ["address-of operator", "dereference operator", "memory location", "value at address", "pointers"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q16",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "What is pointer arithmetic in C?",
+    "follow_ups": [
+      "What happens when you add 1 to an integer pointer?",
+      "Is it legal to add two pointers together?",
+      "How does pointer arithmetic help in iterating over an array?"
+    ],
+    "evaluation_criteria": ["arithmetic_rules", "data_type_scaling", "array_iteration"],
+    "expected_keywords": ["scale factor", "sizeof type", "increment", "decrement", "pointer subtraction", "array elements"],
+    "type": "technical"
+  },
+  {
+    "id": "Q17",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "How does dynamic memory allocation work using malloc() and free()?",
+    "follow_ups": [
+      "What is a memory leak and how does it happen with malloc()?",
+      "What happens if malloc() fails to allocate memory?",
+      "Why must we cast the return value of malloc() in C++ but not strictly in C?"
+    ],
+    "evaluation_criteria": ["memory_management", "leak_prevention", "error_handling"],
+    "expected_keywords": ["heap", "dynamic memory", "void pointer", "memory leak", "free", "allocation failure"],
+    "type": "technical"
+  },
+  {
+    "id": "Q18",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "What is the difference between malloc() and calloc()?",
+    "follow_ups": [
+      "Which one is generally faster, malloc or calloc, and why?",
+      "How does the initialization behavior of calloc impact security?",
+      "How many arguments does calloc take compared to malloc?"
+    ],
+    "evaluation_criteria": ["allocation_methods", "initialization_differences", "performance_tradeoffs"],
+    "expected_keywords": ["contiguous allocation", "zero initialization", "garbage values", "heap", "arguments"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q19",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "What is the difference between malloc() and realloc()?",
+    "follow_ups": [
+      "What happens if realloc fails to find a contiguous block of memory to expand?",
+      "Can realloc be used to shrink a previously allocated memory block?",
+      "What happens if you pass a NULL pointer as the first argument to realloc?"
+    ],
+    "evaluation_criteria": ["reallocation_mechanics", "failure_handling", "memory_expansion"],
+    "expected_keywords": ["resize", "memory block", "contiguous", "copy data", "free original memory", "NULL pointer"],
+    "type": "technical"
+  },
+  {
+    "id": "Q20",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "What is the difference between char *str and char str[]?",
+    "follow_ups": [
+      "Which of these can be modified at runtime (e.g., changing characters)?",
+      "Where is the string literal stored in memory for `char *str`?",
+      "How does the sizeof operator treat these two declarations differently?"
+    ],
+    "evaluation_criteria": ["memory_layout", "mutability", "pointer_vs_array"],
+    "expected_keywords": ["read-only memory", "stack", "mutable array", "string literal", "pointer decay", "sizeof"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "How are strings handled in C?",
+    "follow_ups": [
+      "What is the significance of the null-terminating character (\\0)?",
+      "Why does C lack a built-in 'string' data type?",
+      "How does buffer overflow occur when handling C strings?"
+    ],
+    "evaluation_criteria": ["string_fundamentals", "memory_safety", "terminator_importance"],
+    "expected_keywords": ["null-terminated", "character array", "\\0", "buffer overflow", "string.h", "pointer"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q22",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "What is the difference between strcmp() and strncmp()?",
+    "follow_ups": [
+      "Why is strncmp() considered safer than strcmp()?",
+      "What does strcmp return when the two strings are exactly identical?",
+      "How do these functions determine which string is 'greater' or 'lesser'?"
+    ],
+    "evaluation_criteria": ["function_comparison", "security_awareness", "return_value_knowledge"],
+    "expected_keywords": ["string comparison", "ASCII value", "buffer overflow", "length limit", "zero", "lexicographical"],
+    "type": "practical"
+  },
+  {
+    "id": "Q23",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "What is the difference between strcpy() and strncpy()?",
+    "follow_ups": [
+      "What happens if the destination buffer is too small in strcpy()?",
+      "Does strncpy() automatically null-terminate the destination string if the source is longer than n?",
+      "How can you ensure a string copied via strncpy() is properly null-terminated?"
+    ],
+    "evaluation_criteria": ["safety_differences", "null_termination_rules", "buffer_management"],
+    "expected_keywords": ["string copy", "buffer overflow", "n characters", "null terminator", "destination array", "security risk"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "C",
+    "difficulty": "Medium",
+    "question": "What is the difference between fgets() and gets()?",
+    "follow_ups": [
+      "Why is gets() deprecated and removed from modern C standards?",
+      "How does fgets() handle the newline character compared to gets()?",
+      "What are the arguments required for fgets()?"
+    ],
+    "evaluation_criteria": ["security_best_practices", "input_handling", "function_arguments"],
+    "expected_keywords": ["buffer overflow", "deprecated", "newline character", "file stream", "stdin", "buffer size limit"],
+    "type": "practical"
+  },
+  {
+    "id": "Q25",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is the difference between struct and union in C?",
+    "follow_ups": [
+      "How is the memory size of a union calculated versus a struct?",
+      "In what scenario would you explicitly choose to use a union over a struct?",
+      "What happens if you assign a value to one union member and read from another?"
+    ],
+    "evaluation_criteria": ["memory_allocation_differences", "use_case_identification", "data_overwrite"],
+    "expected_keywords": ["shared memory", "contiguous memory", "largest member", "sum of members", "data corruption", "embedded systems"],
+    "type": "technical"
+  },
+  {
+    "id": "Q26",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the static keyword in C?",
+    "follow_ups": [
+      "How does static affect the scope of a global function or variable?",
+      "How does static affect the lifetime of a local variable inside a function?",
+      "Why is static useful for encapsulating code in multi-file projects?"
+    ],
+    "evaluation_criteria": ["lifetime_vs_scope", "encapsulation", "multi_file_linkage"],
+    "expected_keywords": ["internal linkage", "scope limitation", "lifetime preservation", "data segment", "global namespace pollution"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q27",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is the difference between const and #define?",
+    "follow_ups": [
+      "How do the compiler and the preprocessor treat const and #define differently?",
+      "Does a #define macro occupy memory in the data segment?",
+      "Why is const preferred over #define for type safety?"
+    ],
+    "evaluation_criteria": ["compiler_vs_preprocessor", "type_safety", "memory_allocation"],
+    "expected_keywords": ["preprocessor directive", "type checking", "symbol table", "text substitution", "scope", "read-only"],
+    "type": "technical"
+  },
+  {
+    "id": "Q28",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the extern keyword?",
+    "follow_ups": [
+      "Does using the extern keyword allocate memory for a variable?",
+      "How is extern used in header files for global variables?",
+      "What happens during the linking phase when extern variables are resolved?"
+    ],
+    "evaluation_criteria": ["declaration_vs_definition", "linkage_process", "multi_file_architecture"],
+    "expected_keywords": ["declaration", "external linkage", "linker", "global variable", "header files", "resolution"],
+    "type": "technical"
+  },
+  {
+    "id": "Q29",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the volatile keyword in C?",
+    "follow_ups": [
+      "How does volatile prevent the compiler from optimizing out variable reads?",
+      "Give an example of a scenario (like hardware interrupts) where volatile is required.",
+      "Can a variable be both const and volatile simultaneously?"
+    ],
+    "evaluation_criteria": ["compiler_optimization", "hardware_interaction", "keyword_combinations"],
+    "expected_keywords": ["optimization", "unexpected changes", "hardware registers", "interrupt service routines", "cache", "memory-mapped I/O"],
+    "type": "technical"
+  },
+  {
+    "id": "Q30",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is the difference between const char * and char * const?",
+    "follow_ups": [
+      "Which one represents a constant pointer to a mutable character?",
+      "Which one represents a mutable pointer to a constant character?",
+      "How do you declare a constant pointer to a constant character?"
+    ],
+    "evaluation_criteria": ["pointer_constness", "syntax_parsing", "immutability"],
+    "expected_keywords": ["pointer to const", "const pointer", "mutable", "read-only", "reassignment", "dereference"],
+    "type": "technical"
+  },
+  {
+    "id": "Q31",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is the difference between free() and delete?",
+    "follow_ups": [
+      "Which language does delete belong to, and why doesn't C have it?",
+      "Does free() call the destructor of an object?",
+      "Can you use free() to release memory allocated by the 'new' operator?"
+    ],
+    "evaluation_criteria": ["language_differences", "memory_lifecycle", "destructor_awareness"],
+    "expected_keywords": ["c++", "malloc", "new operator", "destructor", "memory management", "undefined behavior"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q32",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is the difference between getchar() and scanf()?",
+    "follow_ups": [
+      "How does getchar() handle whitespace compared to scanf() with a %s format?",
+      "Which function is more efficient for reading a single character?",
+      "How can getchar() be used to clear the input buffer?"
+    ],
+    "evaluation_criteria": ["input_functions", "whitespace_handling", "efficiency"],
+    "expected_keywords": ["single character", "format string", "input buffer", "stdin", "whitespace", "newline"],
+    "type": "practical"
+  },
+  {
+    "id": "Q33",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is the difference between printf() and sprintf()?",
+    "follow_ups": [
+      "Where does sprintf() write its formatted output to?",
+      "How can sprintf() lead to a buffer overflow?",
+      "What is the safer alternative to sprintf()?"
+    ],
+    "evaluation_criteria": ["output_destination", "security_risks", "safe_alternatives"],
+    "expected_keywords": ["stdout", "character array", "string formatting", "buffer overflow", "snprintf", "memory corruption"],
+    "type": "technical"
+  },
+  {
+    "id": "Q34",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is the difference between fopen() and open()?",
+    "follow_ups": [
+      "Which of these is a standard C library function, and which is a POSIX system call?",
+      "What do they return upon success (FILE pointer vs file descriptor)?",
+      "Which one provides buffering automatically?"
+    ],
+    "evaluation_criteria": ["library_vs_syscall", "return_types", "buffering_mechanisms"],
+    "expected_keywords": ["FILE pointer", "file descriptor", "standard library", "system call", "buffered I/O", "unbuffered I/O"],
+    "type": "technical"
+  },
+  {
+    "id": "Q35",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What are function pointers and why are they used?",
+    "follow_ups": [
+      "How do you declare a function pointer that takes an int and returns a float?",
+      "How are function pointers used to implement callback mechanisms?",
+      "Can function pointers be stored in an array?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "callbacks", "advanced_usage"],
+    "expected_keywords": ["callback function", "memory address", "dynamic execution", "array of pointers", "qsort", "event handling"],
+    "type": "technical"
+  },
+  {
+    "id": "Q36",
+    "subject": "C",
+    "difficulty": "Hard",
+    "question": "What is recursion and how is it used in C?",
+    "follow_ups": [
+      "What is a base case and what happens if it is missing?",
+      "What is stack overflow and how does it relate to recursion?",
+      "What is tail recursion and why is it preferred by compilers?"
+    ],
+    "evaluation_criteria": ["recursion_fundamentals", "memory_implications", "optimization"],
+    "expected_keywords": ["base case", "call stack", "stack overflow", "tail recursion", "function calls itself", "optimization"],
+    "type": "conceptual"
+  }
+]

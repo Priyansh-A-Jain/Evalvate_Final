@@ -1,0 +1,632 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "In simple terms, what is the difference between an array and a linked list regarding memory?",
+    "follow_ups": [
+      "How does this memory allocation affect CPU cache performance?",
+      "Why is inserting an element at the beginning of an array slower than a linked list?",
+      "Can an array be resized dynamically after creation in languages like C or Java?"
+    ],
+    "evaluation_criteria": ["memory_allocation", "performance_tradeoffs", "cache_locality"],
+    "expected_keywords": ["contiguous", "non-contiguous", "pointers", "cache locality", "fixed size", "dynamic size"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "What is the time complexity to access the Kth element in an array vs. a linked list?",
+    "follow_ups": [
+      "Why does a linked list require O(N) time for access?",
+      "How does an array achieve O(1) access time mathematically?",
+      "What is a skip list and how does it improve linked list access time?"
+    ],
+    "evaluation_criteria": ["time_complexity_knowledge", "memory_address_calculation", "advanced_data_structures"],
+    "expected_keywords": ["O(1)", "O(N)", "index", "traversal", "base address", "offset"],
+    "type": "technical"
+  },
+  {
+    "id": "Q3",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "Explain LIFO and FIFO. Which data structures follow them?",
+    "follow_ups": [
+      "Give a real-world analogy for both LIFO and FIFO.",
+      "How can you implement a Stack using Queues?",
+      "What happens if you try to pop from an empty stack?"
+    ],
+    "evaluation_criteria": ["acronym_understanding", "data_structure_mapping", "practical_application"],
+    "expected_keywords": ["last in first out", "first in first out", "stack", "queue", "underflow", "push", "pop"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "What is a Binary Search Tree (BST) and how does it differ from a normal binary tree?",
+    "follow_ups": [
+      "What is the time complexity of searching in a perfectly balanced BST vs a skewed BST?",
+      "How do you perform an in-order traversal of a BST, and what is the output characteristic?",
+      "What is the maximum number of children a node can have in a BST?"
+    ],
+    "evaluation_criteria": ["bst_properties", "traversal_knowledge", "time_complexity"],
+    "expected_keywords": ["left child", "right child", "smaller", "greater", "O(log n)", "sorted order", "skewed"],
+    "type": "technical"
+  },
+  {
+    "id": "Q5",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "Why do we need hashing? What is its ideal time complexity?",
+    "follow_ups": [
+      "What is a hash collision?",
+      "Name two common methods to resolve hash collisions.",
+      "Why might a hash table degrade to O(N) time complexity?"
+    ],
+    "evaluation_criteria": ["hashing_purpose", "collision_resolution", "worst_case_analysis"],
+    "expected_keywords": ["O(1)", "key-value", "hash function", "collision", "chaining", "open addressing", "load factor"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q6",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "What is a stable sorting algorithm?",
+    "follow_ups": [
+      "Give an example of a stable sort and an unstable sort.",
+      "Why does stability matter when sorting complex objects?",
+      "Is Merge Sort considered stable?"
+    ],
+    "evaluation_criteria": ["stability_definition", "algorithm_classification", "use_case_awareness"],
+    "expected_keywords": ["relative order", "equal keys", "merge sort", "quick sort", "multiple criteria"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q7",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "What is the difference between linear search and binary search conditions?",
+    "follow_ups": [
+      "What prerequisite must an array meet before applying binary search?",
+      "What is the time complexity difference between the two?",
+      "Can binary search be efficiently implemented on a linked list?"
+    ],
+    "evaluation_criteria": ["prerequisite_knowledge", "complexity_comparison", "data_structure_suitability"],
+    "expected_keywords": ["sorted", "unsorted", "O(log n)", "O(n)", "divide and conquer", "random access"],
+    "type": "technical"
+  },
+  {
+    "id": "Q8",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "How does a stack help in recursion?",
+    "follow_ups": [
+      "What is a call stack and what information does a stack frame hold?",
+      "What causes a stack overflow error?",
+      "How does tail recursion optimization relate to the call stack?"
+    ],
+    "evaluation_criteria": ["call_stack_mechanics", "error_identification", "optimization_knowledge"],
+    "expected_keywords": ["call stack", "activation record", "local variables", "return address", "stack overflow", "base case"],
+    "type": "technical"
+  },
+  {
+    "id": "Q9",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "What is a priority queue?",
+    "follow_ups": [
+      "What underlying data structure is typically used to implement a priority queue?",
+      "What is the time complexity to insert an element into a priority queue?",
+      "Give a real-world use case for a priority queue."
+    ],
+    "evaluation_criteria": ["implementation_details", "time_complexity", "practical_application"],
+    "expected_keywords": ["heap", "highest priority", "O(log n)", "dijkstra's algorithm", "scheduling", "binary heap"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q10",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "What is the difference between a graph and a tree?",
+    "follow_ups": [
+      "Can a tree contain a cycle?",
+      "What is a directed acyclic graph (DAG)?",
+      "Is every tree a graph? Is every graph a tree?"
+    ],
+    "evaluation_criteria": ["structural_differences", "cycle_properties", "graph_types"],
+    "expected_keywords": ["cycles", "root node", "directed", "undirected", "connected", "hierarchical", "network"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q11",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "What does in-place sorting mean?",
+    "follow_ups": [
+      "Is Merge Sort an in-place sorting algorithm?",
+      "Is QuickSort considered an in-place sorting algorithm?",
+      "What is the auxiliary space complexity of an in-place sort?"
+    ],
+    "evaluation_criteria": ["definition_knowledge", "space_complexity", "algorithm_classification"],
+    "expected_keywords": ["O(1) extra space", "auxiliary space", "modify original array", "quick sort", "merge sort"],
+    "type": "technical"
+  },
+  {
+    "id": "Q12",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "What is a doubly linked list?",
+    "follow_ups": [
+      "What is the advantage of a doubly linked list over a singly linked list?",
+      "What is the memory overhead of a doubly linked list?",
+      "How do you delete a node in a doubly linked list?"
+    ],
+    "evaluation_criteria": ["structure_definition", "tradeoff_analysis", "pointer_manipulation"],
+    "expected_keywords": ["prev pointer", "next pointer", "bidirectional", "memory overhead", "deletion", "traversal"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q13",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "What is the worst-case time complexity of bubble sort?",
+    "follow_ups": [
+      "In what scenario does the worst-case time complexity occur?",
+      "How can you optimize bubble sort to stop early if the array is already sorted?",
+      "What is the best-case time complexity of an optimized bubble sort?"
+    ],
+    "evaluation_criteria": ["complexity_analysis", "optimization_techniques", "scenario_identification"],
+    "expected_keywords": ["O(n^2)", "reverse order", "swap flag", "O(n)", "adjacent elements"],
+    "type": "technical"
+  },
+  {
+    "id": "Q14",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "What is a leaf node in a tree?",
+    "follow_ups": [
+      "How many children does a leaf node have?",
+      "In a strictly binary tree with N leaves, how many internal nodes are there?",
+      "How do you count the number of leaf nodes in a binary tree recursively?"
+    ],
+    "evaluation_criteria": ["node_definition", "tree_properties", "recursive_logic"],
+    "expected_keywords": ["no children", "zero degree", "bottom level", "internal nodes", "N-1"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q15",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Easy",
+    "question": "Conceptually, how do you reverse a string?",
+    "follow_ups": [
+      "How would you do this in-place using two pointers?",
+      "What is the time and space complexity of the two-pointer approach?",
+      "How could you use a stack to reverse a string?"
+    ],
+    "evaluation_criteria": ["algorithm_design", "pointer_manipulation", "complexity_analysis"],
+    "expected_keywords": ["two pointers", "swap", "O(N) time", "O(1) space", "stack pop", "in-place"],
+    "type": "practical"
+  },
+  {
+    "id": "Q16",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "How do you detect a cycle (loop) in a linked list efficiently?",
+    "follow_ups": [
+      "What is Floyd's Cycle-Finding Algorithm (Tortoise and Hare)?",
+      "How do you find the starting node of the cycle?",
+      "What is the time and space complexity of Floyd's algorithm?"
+    ],
+    "evaluation_criteria": ["algorithm_knowledge", "cycle_start_detection", "complexity_analysis"],
+    "expected_keywords": ["slow pointer", "fast pointer", "Floyd's algorithm", "O(N) time", "O(1) space", "intersection"],
+    "type": "practical"
+  },
+  {
+    "id": "Q17",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "How does merge sort work? Explain the logic.",
+    "follow_ups": [
+      "What algorithmic paradigm does Merge Sort follow?",
+      "What is the time complexity of Merge Sort in the worst, best, and average cases?",
+      "Why does Merge Sort require O(N) extra space for arrays?"
+    ],
+    "evaluation_criteria": ["algorithm_mechanics", "paradigm_identification", "complexity_analysis"],
+    "expected_keywords": ["divide and conquer", "split", "merge", "O(N log N)", "auxiliary space", "recursion"],
+    "type": "technical"
+  },
+  {
+    "id": "Q18",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "How do you implement a queue using two stacks?",
+    "follow_ups": [
+      "Which operation (enqueue or dequeue) is made costly in your implementation?",
+      "What is the amortized time complexity of the dequeue operation?",
+      "Why might someone use two stacks to build a queue instead of a standard array or linked list?"
+    ],
+    "evaluation_criteria": ["data_structure_simulation", "complexity_analysis", "amortized_cost"],
+    "expected_keywords": ["enqueue", "dequeue", "push", "pop", "amortized O(1)", "costly operation"],
+    "type": "practical"
+  },
+  {
+    "id": "Q19",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "What happens when a hash collision occurs? How do we fix it?",
+    "follow_ups": [
+      "Explain how separate chaining works.",
+      "Explain how open addressing (like linear probing) works.",
+      "What is the 'load factor' and how does it relate to collisions?"
+    ],
+    "evaluation_criteria": ["collision_resolution_techniques", "probing_mechanics", "load_factor_understanding"],
+    "expected_keywords": ["separate chaining", "linked list", "open addressing", "linear probing", "load factor", "rehash"],
+    "type": "technical"
+  },
+  {
+    "id": "Q20",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "Explain the logic of QuickSort’s partition step.",
+    "follow_ups": [
+      "How do you choose a pivot element?",
+      "What happens if the pivot is always the smallest or largest element?",
+      "What is the difference between Lomuto and Hoare partition schemes?"
+    ],
+    "evaluation_criteria": ["partition_mechanics", "pivot_selection", "worst_case_scenarios"],
+    "expected_keywords": ["pivot", "left pointer", "right pointer", "swap", "O(N^2) worst case", "median of three"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "How do you check if a string is a palindrome?",
+    "follow_ups": [
+      "How would you check it in-place without creating a new reversed string?",
+      "How do you handle spaces, punctuation, and case sensitivity?",
+      "Can you write a recursive function to check for a palindrome?"
+    ],
+    "evaluation_criteria": ["pointer_manipulation", "string_sanitization", "recursive_logic"],
+    "expected_keywords": ["two pointers", "left and right", "alphanumeric", "ignore case", "O(N) time", "O(1) space"],
+    "type": "practical"
+  },
+  {
+    "id": "Q22",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "How does breadth-first search (BFS) traverse a graph?",
+    "follow_ups": [
+      "What data structure is used to implement BFS?",
+      "How do you keep track of visited nodes to avoid infinite loops?",
+      "What is the time complexity of BFS on an adjacency list?"
+    ],
+    "evaluation_criteria": ["traversal_mechanics", "data_structure_usage", "complexity_analysis"],
+    "expected_keywords": ["queue", "level by level", "visited array", "O(V + E)", "shortest path", "unweighted graph"],
+    "type": "technical"
+  },
+  {
+    "id": "Q23",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "How does depth-first search (DFS) differ from BFS?",
+    "follow_ups": [
+      "What data structure is used to implement DFS iteratively?",
+      "When would you choose DFS over BFS?",
+      "How does DFS behave in a maze-solving scenario compared to BFS?"
+    ],
+    "evaluation_criteria": ["algorithm_comparison", "use_case_selection", "data_structure_usage"],
+    "expected_keywords": ["stack", "recursion", "backtracking", "deepest node", "shortest path", "memory consumption"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q24",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "How do you find the middle element of a linked list in one pass?",
+    "follow_ups": [
+      "What is the two-pointer (slow and fast) technique?",
+      "What happens if the linked list has an even number of elements?",
+      "What is the time and space complexity of this approach?"
+    ],
+    "evaluation_criteria": ["pointer_techniques", "edge_case_handling", "complexity_analysis"],
+    "expected_keywords": ["slow pointer", "fast pointer", "one step", "two steps", "O(N) time", "O(1) space"],
+    "type": "practical"
+  },
+  {
+    "id": "Q25",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "What is the logic behind Kadane’s algorithm for maximum subarray sum?",
+    "follow_ups": [
+      "How does Kadane's algorithm decide whether to start a new subarray or continue the current one?",
+      "What is the time complexity of Kadane's algorithm?",
+      "How do you handle an array containing only negative numbers?"
+    ],
+    "evaluation_criteria": ["dynamic_programming_logic", "complexity_analysis", "edge_case_handling"],
+    "expected_keywords": ["current sum", "max sum", "reset to zero", "O(N)", "dynamic programming", "contiguous"],
+    "type": "technical"
+  },
+  {
+    "id": "Q26",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "How is a binary heap stored in memory?",
+    "follow_ups": [
+      "Why are heaps usually stored in an array instead of using node pointers?",
+      "If a node is at index 'i', what are the indices of its left child, right child, and parent?",
+      "What property must a complete binary tree have to be a valid max-heap?"
+    ],
+    "evaluation_criteria": ["memory_representation", "index_math", "heap_properties"],
+    "expected_keywords": ["array", "complete binary tree", "2i + 1", "2i + 2", "(i - 1) / 2", "parent is greater"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "Explain the logic to check if two strings are anagrams.",
+    "follow_ups": [
+      "What is the time complexity if you sort both strings and compare them?",
+      "How can you achieve this in O(N) time using a frequency array or hash map?",
+      "How does the character encoding (ASCII vs Unicode) affect your approach?"
+    ],
+    "evaluation_criteria": ["algorithm_design", "complexity_optimization", "encoding_awareness"],
+    "expected_keywords": ["sorting", "O(N log N)", "frequency count", "hash map", "O(N)", "character array"],
+    "type": "practical"
+  },
+  {
+    "id": "Q28",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "How do you find the intersection of two sorted arrays?",
+    "follow_ups": [
+      "How can you find the intersection in O(N + M) time using two pointers?",
+      "How would you handle duplicate elements in the arrays?",
+      "If one array is much smaller than the other, how could you use binary search?"
+    ],
+    "evaluation_criteria": ["pointer_manipulation", "duplicate_handling", "algorithm_optimization"],
+    "expected_keywords": ["two pointers", "O(N + M)", "binary search", "O(M log N)", "hash set", "duplicates"],
+    "type": "practical"
+  },
+  {
+    "id": "Q29",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "What is the difference between the height of a tree and the depth of a node?",
+    "follow_ups": [
+      "What is the depth of the root node?",
+      "What is the height of a leaf node?",
+      "How do you calculate the height of a binary tree recursively?"
+    ],
+    "evaluation_criteria": ["terminology_accuracy", "tree_metrics", "recursive_logic"],
+    "expected_keywords": ["root to node", "node to leaf", "longest path", "edges", "max(left, right) + 1"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q30",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Medium",
+    "question": "Why is binary search faster than linear search?",
+    "follow_ups": [
+      "How does the search space reduce at each step in binary search?",
+      "Why might you still choose linear search over binary search for a very small array?",
+      "What is the recurrence relation for binary search?"
+    ],
+    "evaluation_criteria": ["complexity_comparison", "halving_mechanics", "practical_tradeoffs"],
+    "expected_keywords": ["halves search space", "O(log n)", "O(n)", "sorted data", "T(n) = T(n/2) + c"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q31",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "Why is QuickSort preferred for arrays but merge sort preferred for linked lists?",
+    "follow_ups": [
+      "How does memory locality and caching affect QuickSort's performance on arrays?",
+      "Why is random access necessary for efficient QuickSort partition but not for Merge Sort?",
+      "How does Merge Sort's extra O(N) space requirement change when used on a linked list?"
+    ],
+    "evaluation_criteria": ["data_structure_characteristics", "cache_locality", "space_complexity_analysis"],
+    "expected_keywords": ["cache friendly", "random access", "contiguous memory", "O(1) extra space linked list", "pointer manipulation"],
+    "type": "technical"
+  },
+  {
+    "id": "Q32",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "What is the worst-case complexity of QuickSort? When does it happen and how do we avoid it?",
+    "follow_ups": [
+      "What is the time complexity in the worst case?",
+      "Give an example of an input array that triggers the worst-case if the pivot is always the last element.",
+      "What is Randomized QuickSort?"
+    ],
+    "evaluation_criteria": ["worst_case_analysis", "pivot_selection_strategies", "randomization_benefits"],
+    "expected_keywords": ["O(N^2)", "already sorted", "reverse sorted", "random pivot", "median of three", "unbalanced partition"],
+    "type": "technical"
+  },
+  {
+    "id": "Q33",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "Dynamic programming vs greedy approach: what is the main difference?",
+    "follow_ups": [
+      "What two properties must a problem have to be solved using Dynamic Programming?",
+      "Why does a greedy algorithm sometimes fail to find the globally optimal solution?",
+      "Can you give an example of a problem where greedy works (e.g., fractional knapsack) and one where it fails (e.g., 0/1 knapsack)?"
+    ],
+    "evaluation_criteria": ["paradigm_differences", "optimal_substructure", "overlapping_subproblems"],
+    "expected_keywords": ["overlapping subproblems", "optimal substructure", "local optimum", "global optimum", "memoization", "exhaustive search"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q34",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "What is Dijkstra’s algorithm used for? Can it handle negative weights?",
+    "follow_ups": [
+      "What data structure is essential for efficiently implementing Dijkstra's algorithm?",
+      "Why does Dijkstra's algorithm fail with negative weight edges?",
+      "What algorithm should you use if the graph contains negative weights?"
+    ],
+    "evaluation_criteria": ["algorithm_purpose", "edge_weight_limitations", "alternative_algorithms"],
+    "expected_keywords": ["shortest path", "priority queue", "min-heap", "greedy", "bellman-ford", "infinite loop", "negative cycle"],
+    "type": "technical"
+  },
+  {
+    "id": "Q35",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "What is a trie (prefix tree) and where is it used?",
+    "follow_ups": [
+      "What is the time complexity to search for a string of length 'L' in a Trie?",
+      "How does a Trie compare to a Hash Set for storing strings regarding space and time?",
+      "Give a real-world application of a Trie."
+    ],
+    "evaluation_criteria": ["data_structure_mechanics", "complexity_analysis", "practical_applications"],
+    "expected_keywords": ["autocomplete", "spell checker", "O(L) time", "prefix matching", "memory overhead", "dictionary"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q36",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "What is the difference between adjacency matrix and adjacency list representations of graphs?",
+    "follow_ups": [
+      "What is the space complexity of an adjacency matrix for V vertices?",
+      "When is it better to use an adjacency matrix over an adjacency list?",
+      "How do you check if an edge exists between node A and node B in both representations?"
+    ],
+    "evaluation_criteria": ["memory_representation", "space_complexity", "operation_efficiency"],
+    "expected_keywords": ["O(V^2)", "O(V + E)", "dense graph", "sparse graph", "edge lookup O(1)"],
+    "type": "technical"
+  },
+  {
+    "id": "Q37",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "How does a hash map achieve O(1) average time complexity? What is the worst case?",
+    "follow_ups": [
+      "What triggers a resize (rehash) operation in a hash map?",
+      "What is the worst-case time complexity of insertion and when does it happen?",
+      "How do modern implementations (like Java's HashMap) optimize worst-case collision scenarios?"
+    ],
+    "evaluation_criteria": ["internal_mechanics", "worst_case_analysis", "optimization_strategies"],
+    "expected_keywords": ["hash function", "array index", "O(N) worst case", "collisions", "load factor", "red-black tree"],
+    "type": "technical"
+  },
+  {
+    "id": "Q38",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "What is a Bloom filter?",
+    "follow_ups": [
+      "Can a Bloom filter yield false positives? False negatives?",
+      "Why can't you easily delete an item from a standard Bloom filter?",
+      "What is a practical use case for a Bloom filter?"
+    ],
+    "evaluation_criteria": ["probabilistic_data_structures", "accuracy_tradeoffs", "use_cases"],
+    "expected_keywords": ["probabilistic", "false positive", "no false negatives", "bit array", "multiple hash functions", "cache filtering"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q39",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "How does an LRU (Least Recently Used) cache work internally?",
+    "follow_ups": [
+      "What two data structures are combined to achieve O(1) get and put operations in an LRU cache?",
+      "How is a node moved to the 'most recently used' position?",
+      "What happens when the cache reaches its capacity?"
+    ],
+    "evaluation_criteria": ["data_structure_combination", "operation_efficiency", "eviction_logic"],
+    "expected_keywords": ["hash map", "doubly linked list", "O(1)", "eviction", "head and tail pointers", "most recently used"],
+    "type": "technical"
+  },
+  {
+    "id": "Q40",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "Why do we need self-balancing trees like AVL or Red-Black trees?",
+    "follow_ups": [
+      "What happens to the time complexity of a standard BST if elements are inserted in sorted order?",
+      "What is the difference between the balancing strictly in AVL vs Red-Black trees?",
+      "Why does Java's TreeMap use a Red-Black tree instead of an AVL tree?"
+    ],
+    "evaluation_criteria": ["balance_importance", "tree_comparison", "performance_tradeoffs"],
+    "expected_keywords": ["O(log N)", "skewed tree", "O(N) worst case", "rotations", "strictly balanced", "fewer rotations for insertion"],
+    "type": "technical"
+  },
+  {
+    "id": "Q41",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "What is topological sort? Where is it used?",
+    "follow_ups": [
+      "On what specific type of graph can a topological sort be performed?",
+      "How can you implement topological sort using DFS?",
+      "How does Kahn's algorithm use in-degrees to perform topological sort?"
+    ],
+    "evaluation_criteria": ["graph_algorithms", "prerequisites", "implementation_methods"],
+    "expected_keywords": ["directed acyclic graph (DAG)", "dependency resolution", "build systems", "in-degree", "dfs stack"],
+    "type": "technical"
+  },
+  {
+    "id": "Q42",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "What is the difference between memoization (top-down) and tabulation (bottom-up) in dynamic programming?",
+    "follow_ups": [
+      "Which approach is generally prone to stack overflow errors?",
+      "Which approach requires computing all subproblems, even if not needed?",
+      "How does space optimization usually work in the tabulation approach?"
+    ],
+    "evaluation_criteria": ["dp_approaches", "recursion_vs_iteration", "space_optimization"],
+    "expected_keywords": ["recursion", "iteration", "cache", "array table", "stack overflow", "on-demand"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q43",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "How do you find the lowest common ancestor (LCA) of two nodes in a BST?",
+    "follow_ups": [
+      "How can you use the BST property to find the LCA in O(H) time without extra space?",
+      "How would finding the LCA differ if it was a normal binary tree instead of a BST?",
+      "What if one of the nodes does not exist in the tree?"
+    ],
+    "evaluation_criteria": ["bst_properties", "algorithm_design", "edge_case_handling"],
+    "expected_keywords": ["split point", "greater than", "less than", "O(H) time", "traversal", "binary tree vs BST"],
+    "type": "practical"
+  },
+  {
+    "id": "Q44",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "What is the difference between strong and weak connectivity in graphs?",
+    "follow_ups": [
+      "Does this concept apply to directed or undirected graphs?",
+      "What constitutes a strongly connected component (SCC)?",
+      "Name an algorithm used to find SCCs in a graph (e.g., Tarjan's or Kosaraju's)."
+    ],
+    "evaluation_criteria": ["graph_theory", "directed_graph_properties", "scc_algorithms"],
+    "expected_keywords": ["directed graph", "path in both directions", "underlying undirected graph", "kosaraju", "tarjan", "strongly connected component"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q45",
+    "subject": "Data Structures and Algorithms",
+    "difficulty": "Hard",
+    "question": "Explain the difference between Floyd’s cycle detection algorithm and the Floyd–Warshall algorithm.",
+    "follow_ups": [
+      "What is the purpose of Floyd's cycle detection algorithm?",
+      "What is the purpose of the Floyd-Warshall algorithm?",
+      "What is the time complexity of the Floyd-Warshall algorithm?"
+    ],
+    "evaluation_criteria": ["algorithm_disambiguation", "use_cases", "complexity_analysis"],
+    "expected_keywords": ["tortoise and hare", "linked list cycle", "all-pairs shortest path", "graph", "dynamic programming", "O(V^3)"],
+    "type": "technical"
+  }
+]

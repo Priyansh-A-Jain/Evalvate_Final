@@ -1,0 +1,506 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "What is the difference between JDK, JRE, and JVM?",
+    "follow_ups": [
+      "Which of these components is platform-dependent?",
+      "If you only want to run a Java program, which component do you need?",
+      "What tools are included in the JDK that are not in the JRE?"
+    ],
+    "evaluation_criteria": ["component_differentiation", "execution_vs_development", "platform_independence"],
+    "expected_keywords": ["java development kit", "java runtime environment", "java virtual machine", "compiler", "javac", "bytecode"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "Explain the main method signature: public static void main(String[] args).",
+    "follow_ups": [
+      "Why does the main method return 'void'?",
+      "What is the 'String[] args' parameter used for?",
+      "What happens if you change 'public' to 'private'?"
+    ],
+    "evaluation_criteria": ["signature_components", "command_line_arguments", "access_modifiers"],
+    "expected_keywords": ["entry point", "access modifier", "class level", "no return value", "command-line arguments", "jvm access"],
+    "type": "technical"
+  },
+  {
+    "id": "Q3",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "Why is the main() method static in Java?",
+    "follow_ups": [
+      "How does the JVM invoke the main method without instantiating the class?",
+      "Can a static method access non-static instance variables directly?",
+      "What would happen if the main method was not static?"
+    ],
+    "evaluation_criteria": ["static_context", "jvm_invocation", "memory_allocation"],
+    "expected_keywords": ["class level", "no object creation", "memory efficiency", "jvm", "instance creation error", "entry point"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "Can you overload the main() method?",
+    "follow_ups": [
+      "If you overload the main method, which one will the JVM call when the program starts?",
+      "How can you invoke the overloaded main methods?",
+      "Does changing the return type count as overloading?"
+    ],
+    "evaluation_criteria": ["overloading_rules", "jvm_entry_point", "method_signatures"],
+    "expected_keywords": ["yes", "different parameters", "jvm calls string array", "manual invocation", "return type ignores overloading"],
+    "type": "technical"
+  },
+  {
+    "id": "Q5",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "What are the eight primitive data types in Java?",
+    "follow_ups": [
+      "Which primitive type is used for single-precision floating-point numbers?",
+      "What is the default value of a boolean instance variable?",
+      "What is the size in bytes of an 'int' in Java?"
+    ],
+    "evaluation_criteria": ["type_memorization", "default_values", "memory_sizes"],
+    "expected_keywords": ["byte", "short", "int", "long", "float", "double", "char", "boolean", "32-bit int", "false"],
+    "type": "factual"
+  },
+  {
+    "id": "Q6",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "What are wrapper classes in Java?",
+    "follow_ups": [
+      "Why are wrapper classes needed in the context of Java Collections (like ArrayList)?",
+      "Name the wrapper class for the 'char' primitive.",
+      "Are wrapper class objects mutable or immutable?"
+    ],
+    "evaluation_criteria": ["collection_requirements", "class_names", "immutability"],
+    "expected_keywords": ["object representation", "java.util", "Character", "Integer", "immutable", "generics"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q7",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "What is autoboxing and unboxing?",
+    "follow_ups": [
+      "In which version of Java was this feature introduced?",
+      "Can autoboxing cause a NullPointerException? How?",
+      "What are the performance implications of excessive autoboxing in a loop?"
+    ],
+    "evaluation_criteria": ["conversion_mechanisms", "exception_risks", "performance_awareness"],
+    "expected_keywords": ["automatic conversion", "primitive to wrapper", "wrapper to primitive", "nullpointerexception", "object creation overhead", "java 5"],
+    "type": "technical"
+  },
+  {
+    "id": "Q8",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "What is the difference between == and .equals() in Java?",
+    "follow_ups": [
+      "Which one compares memory references and which compares object values?",
+      "What happens if you don't override the .equals() method in your custom class?",
+      "Why is it important to also override hashCode() when overriding equals()?"
+    ],
+    "evaluation_criteria": ["reference_vs_value", "method_overriding", "hashcode_contract"],
+    "expected_keywords": ["reference comparison", "content comparison", "object class default", "hash based collections", "memory address"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q9",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the static keyword in Java?",
+    "follow_ups": [
+      "Can you declare a class as static?",
+      "What is a static block and when is it executed?",
+      "How do static variables relate to object instances?"
+    ],
+    "evaluation_criteria": ["class_level_members", "static_blocks", "memory_sharing"],
+    "expected_keywords": ["class variable", "shared among instances", "nested class", "class loading", "no instance required"],
+    "type": "technical"
+  },
+  {
+    "id": "Q10",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "What are Java access modifiers and their scopes?",
+    "follow_ups": [
+      "What is the default access modifier if none is specified?",
+      "Which modifier allows access only within the same class?",
+      "How does 'protected' differ from 'default' (package-private)?"
+    ],
+    "evaluation_criteria": ["modifier_levels", "package_visibility", "inheritance_access"],
+    "expected_keywords": ["public", "private", "protected", "default", "package-private", "subclasses"],
+    "type": "factual"
+  },
+  {
+    "id": "Q11",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "What is the difference between String, StringBuilder, and StringBuffer?",
+    "follow_ups": [
+      "Which of these classes are mutable?",
+      "Which of these classes is thread-safe (synchronized)?",
+      "Why is string concatenation using '+' in a loop discouraged?"
+    ],
+    "evaluation_criteria": ["mutability", "thread_safety", "performance_implications"],
+    "expected_keywords": ["immutable string", "mutable builder", "synchronized buffer", "thread-safe", "memory overhead", "string pool"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q12",
+    "subject": "Java",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the final keyword in Java?",
+    "follow_ups": [
+      "What happens when you declare a variable as final?",
+      "What happens when you declare a method as final?",
+      "What happens when you declare a class as final?"
+    ],
+    "evaluation_criteria": ["constant_variables", "method_overriding_prevention", "inheritance_prevention"],
+    "expected_keywords": ["constant", "cannot be overridden", "cannot be subclassed", "immutable reference", "string class"],
+    "type": "technical"
+  },
+  {
+    "id": "Q13",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "What is the difference between method overloading and method overriding?",
+    "follow_ups": [
+      "Which one represents compile-time polymorphism and which represents runtime polymorphism?",
+      "Can you change the return type in method overloading?",
+      "What is the @Override annotation used for?"
+    ],
+    "evaluation_criteria": ["polymorphism_types", "signature_rules", "annotation_benefits"],
+    "expected_keywords": ["compile-time", "runtime", "same method name", "different parameters", "same signature", "inheritance"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q14",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "What is the difference between an abstract class and an interface?",
+    "follow_ups": [
+      "Can an abstract class have a constructor?",
+      "As of Java 8, what new feature was added to interfaces?",
+      "Can a class implement multiple interfaces and extend multiple abstract classes?"
+    ],
+    "evaluation_criteria": ["design_choices", "java_8_features", "multiple_inheritance_rules"],
+    "expected_keywords": ["default methods", "constructors", "state variables", "multiple inheritance", "implements", "extends"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "What is the diamond problem in multiple inheritance and how does Java solve it?",
+    "follow_ups": [
+      "Why does Java not support multiple inheritance of classes?",
+      "How do default methods in Java 8 interfaces reintroduce a form of the diamond problem?",
+      "How do you resolve conflicts if a class implements two interfaces with the same default method?"
+    ],
+    "evaluation_criteria": ["ambiguity_issues", "interface_default_methods", "conflict_resolution"],
+    "expected_keywords": ["ambiguity", "multiple inheritance", "interfaces", "default methods", "override", "Interface.super.method()"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q16",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "What is object cloning in Java?",
+    "follow_ups": [
+      "What marker interface must a class implement to allow cloning?",
+      "What exception is thrown if you try to clone an object that doesn't implement this interface?",
+      "What is the difference between a shallow clone and a deep clone?"
+    ],
+    "evaluation_criteria": ["cloneable_interface", "exception_handling", "copy_depth"],
+    "expected_keywords": ["Cloneable", "CloneNotSupportedException", "Object.clone()", "shallow copy", "deep copy", "reference copy"],
+    "type": "technical"
+  },
+  {
+    "id": "Q17",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "How does garbage collection work in Java?",
+    "follow_ups": [
+      "Can you force the garbage collector to run using System.gc()?",
+      "What is an unreferenced object?",
+      "Explain the concept of generational garbage collection (Young vs Old generation)."
+    ],
+    "evaluation_criteria": ["gc_mechanics", "generational_hypothesis", "developer_control"],
+    "expected_keywords": ["mark and sweep", "unreachable objects", "eden space", "survivor space", "tenured generation", "system.gc() request"],
+    "type": "technical"
+  },
+  {
+    "id": "Q18",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "What are the different memory areas allocated by the JVM?",
+    "follow_ups": [
+      "Where are local variables and method calls stored?",
+      "Where are objects and instance variables stored?",
+      "What is the Metaspace (formerly PermGen) used for?"
+    ],
+    "evaluation_criteria": ["jvm_architecture", "stack_vs_heap", "metadata_storage"],
+    "expected_keywords": ["heap", "stack", "method area", "metaspace", "pc register", "native method stack"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q19",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "Explain the Java Memory Model (stack vs heap).",
+    "follow_ups": [
+      "Are object references stored on the stack or the heap?",
+      "What causes a StackOverflowError vs an OutOfMemoryError?",
+      "Is the heap memory shared among all threads or thread-local?"
+    ],
+    "evaluation_criteria": ["memory_allocation", "error_conditions", "thread_visibility"],
+    "expected_keywords": ["thread-local stack", "shared heap", "object reference", "primitive types", "outofmemoryerror", "stackoverflowerror"],
+    "type": "technical"
+  },
+  {
+    "id": "Q20",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "What is exception handling in Java?",
+    "follow_ups": [
+      "What are the five keywords used in Java exception handling?",
+      "What is the base class for all exceptions and errors in Java?",
+      "What is a finally block and when is it executed?"
+    ],
+    "evaluation_criteria": ["keyword_knowledge", "class_hierarchy", "execution_flow"],
+    "expected_keywords": ["try", "catch", "finally", "throw", "throws", "Throwable", "always executes"],
+    "type": "practical"
+  },
+  {
+    "id": "Q21",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "What is the difference between checked and unchecked exceptions?",
+    "follow_ups": [
+      "Which class do all unchecked exceptions inherit from?",
+      "Does the compiler force you to handle unchecked exceptions?",
+      "Give an example of a checked exception and an unchecked exception."
+    ],
+    "evaluation_criteria": ["compiler_enforcement", "exception_hierarchy", "common_examples"],
+    "expected_keywords": ["RuntimeException", "compile-time", "IOException", "NullPointerException", "handle or declare"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q22",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "What is the difference between ArrayList and LinkedList?",
+    "follow_ups": [
+      "Which one implements a dynamic array and which implements a doubly linked list?",
+      "Which is faster for random access (get operation) and why?",
+      "Which is faster for insertions/deletions in the middle of the list?"
+    ],
+    "evaluation_criteria": ["data_structure_backing", "time_complexity", "use_case_selection"],
+    "expected_keywords": ["contiguous memory", "nodes", "O(1) access", "O(N) traversal", "shifting elements", "pointer manipulation"],
+    "type": "technical"
+  },
+  {
+    "id": "Q23",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "What is the difference between HashMap and Hashtable?",
+    "follow_ups": [
+      "Which one is synchronized (thread-safe)?",
+      "Which one allows a null key and null values?",
+      "Which modern alternative is preferred over Hashtable for thread-safe operations?"
+    ],
+    "evaluation_criteria": ["thread_safety", "null_handling", "modern_collections"],
+    "expected_keywords": ["synchronized", "legacy", "null key", "ConcurrentHashMap", "performance overhead"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q24",
+    "subject": "Java",
+    "difficulty": "Medium",
+    "question": "How does HashMap work internally?",
+    "follow_ups": [
+      "What happens when two different keys generate the same hashcode (a collision)?",
+      "What data structure did Java 8 introduce in HashMap to handle high collision scenarios?",
+      "What is the default initial capacity and load factor of a HashMap?"
+    ],
+    "evaluation_criteria": ["hashing_mechanics", "collision_resolution", "java_8_optimizations"],
+    "expected_keywords": ["hashcode", "buckets", "linked list", "red-black tree", "load factor 0.75", "rehash", "capacity 16"],
+    "type": "technical"
+  },
+  {
+    "id": "Q25",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "What are Java generics and why are they used?",
+    "follow_ups": [
+      "How do generics provide compile-time type safety?",
+      "How do generics eliminate the need for explicit type casting?",
+      "Can you use primitive types as generic type parameters?"
+    ],
+    "evaluation_criteria": ["type_safety", "casting_elimination", "primitive_limitations"],
+    "expected_keywords": ["compile-time check", "type casting", "ClassCastException", "wrapper classes", "parameterized types"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q26",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "Explain type erasure in Java generics.",
+    "follow_ups": [
+      "Why did the designers of Java implement generics using type erasure?",
+      "What does the compiler replace the generic type parameters with during compilation?",
+      "Why can't you instantiate a generic array (e.g., `new T[10]`)?"
+    ],
+    "evaluation_criteria": ["backward_compatibility", "compiler_behavior", "runtime_limitations"],
+    "expected_keywords": ["backward compatibility", "Object", "bound type", "runtime type information", "ClassCastException"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "What is the difference between Comparable and Comparator?",
+    "follow_ups": [
+      "Which interface requires modifying the class whose objects are being sorted?",
+      "What method must be overridden for Comparable, and what method for Comparator?",
+      "How do you use a Comparator to sort a list in reverse order?"
+    ],
+    "evaluation_criteria": ["natural_ordering_vs_custom", "method_signatures", "sorting_flexibility"],
+    "expected_keywords": ["java.lang", "java.util", "compareTo()", "compare()", "natural ordering", "custom sorting", "multiple criteria"],
+    "type": "practical"
+  },
+  {
+    "id": "Q28",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "What is multithreading in Java?",
+    "follow_ups": [
+      "What are the two primary ways to create a thread in Java?",
+      "What is the difference between calling start() and run() on a Thread object?",
+      "What is a daemon thread?"
+    ],
+    "evaluation_criteria": ["thread_creation", "execution_mechanics", "daemon_concept"],
+    "expected_keywords": ["Runnable", "Thread class", "new call stack", "background thread", "start() vs run()"],
+    "type": "technical"
+  },
+  {
+    "id": "Q29",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "Explain the Java thread lifecycle.",
+    "follow_ups": [
+      "What are the different states a thread can be in (e.g., NEW, RUNNABLE, BLOCKED, WAITING, TERMINATED)?",
+      "What methods cause a thread to enter the WAITING state?",
+      "How does sleep() differ from wait()?"
+    ],
+    "evaluation_criteria": ["thread_states", "state_transitions", "wait_vs_sleep"],
+    "expected_keywords": ["new", "runnable", "blocked", "waiting", "timed waiting", "terminated", "release lock", "hold lock"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q30",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the volatile keyword in Java?",
+    "follow_ups": [
+      "How does volatile solve the visibility problem in multithreaded environments?",
+      "Does volatile guarantee atomicity for operations like `count++`?",
+      "How does volatile relate to the CPU cache and main memory?"
+    ],
+    "evaluation_criteria": ["memory_visibility", "atomicity_limitations", "hardware_interaction"],
+    "expected_keywords": ["main memory", "thread cache", "visibility", "not atomic", "happens-before guarantee", "memory barrier"],
+    "type": "technical"
+  },
+  {
+    "id": "Q31",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "What are lambda expressions in Java 8?",
+    "follow_ups": [
+      "What is the syntax of a lambda expression?",
+      "How do lambda expressions enable functional programming in Java?",
+      "What kind of interface can be implemented using a lambda expression?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "functional_programming", "interface_requirements"],
+    "expected_keywords": ["anonymous function", "arrow operator ->", "functional interface", "concise syntax", "behavior parameterization"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q32",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "What are Java 8 Streams?",
+    "follow_ups": [
+      "What is the difference between intermediate and terminal operations?",
+      "Do streams modify the underlying collection?",
+      "What is lazy evaluation in the context of streams?"
+    ],
+    "evaluation_criteria": ["stream_pipeline", "mutability_rules", "lazy_evaluation"],
+    "expected_keywords": ["sequence of elements", "pipeline", "intermediate", "terminal", "lazy evaluation", "no storage"],
+    "type": "technical"
+  },
+  {
+    "id": "Q33",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "What is the difference between map() and flatMap()?",
+    "follow_ups": [
+      "What type of function does map() expect?",
+      "When would you use flatMap() instead of map()?",
+      "How does flatMap() handle nested collections or streams?"
+    ],
+    "evaluation_criteria": ["transformation_types", "flattening_concept", "use_cases"],
+    "expected_keywords": ["one-to-one mapping", "one-to-many mapping", "flatten", "Stream<Stream<T>>", "unwrap"],
+    "type": "technical"
+  },
+  {
+    "id": "Q34",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "What is the difference between findFirst() and findAny()?",
+    "follow_ups": [
+      "Which method is generally faster in a parallel stream environment and why?",
+      "What type of object do these methods return?",
+      "Does findFirst() always return the same element in a sequential stream?"
+    ],
+    "evaluation_criteria": ["parallel_stream_behavior", "optional_return_type", "determinism"],
+    "expected_keywords": ["parallel processing", "Optional", "non-deterministic", "encounter order", "optimization"],
+    "type": "practical"
+  },
+  {
+    "id": "Q35",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "What is a functional interface?",
+    "follow_ups": [
+      "How many abstract methods can a functional interface have?",
+      "Can a functional interface have default and static methods?",
+      "What is the @FunctionalInterface annotation used for?"
+    ],
+    "evaluation_criteria": ["interface_rules", "method_types", "compiler_enforcement"],
+    "expected_keywords": ["Single Abstract Method (SAM)", "default methods", "static methods", "@FunctionalInterface", "compiler check"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q36",
+    "subject": "Java",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the Optional class in Java 8?",
+    "follow_ups": [
+      "What common runtime exception does Optional help prevent?",
+      "What is the difference between Optional.of() and Optional.ofNullable()?",
+      "How do you execute code only if the Optional contains a value (e.g., using ifPresent)?"
+    ],
+    "evaluation_criteria": ["null_safety", "factory_methods", "functional_methods"],
+    "expected_keywords": ["NullPointerException", "container object", "ofNullable", "ifPresent", "orElse", "avoid null checks"],
+    "type": "practical"
+  }
+]

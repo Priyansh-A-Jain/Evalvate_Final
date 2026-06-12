@@ -1,0 +1,422 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Easy",
+    "question": "What is the difference between void main and int main?",
+    "follow_ups": [
+      "What does the integer returned by 'int main' represent to the operating system?",
+      "Is 'void main' considered standard practice in modern C++?",
+      "What is the standard exit code for a program that executes successfully?"
+    ],
+    "evaluation_criteria": ["return_types", "standard_compliance", "os_interaction"],
+    "expected_keywords": ["exit status", "operating system", "non-standard", "return 0", "success/failure"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Easy",
+    "question": "In C/C++, why do array indices start at 0?",
+    "follow_ups": [
+      "How does the compiler use the index to calculate the memory address of an element?",
+      "What does the index '0' conceptually represent in terms of pointers?",
+      "What is the formula to find the address of the ith element in an array?"
+    ],
+    "evaluation_criteria": ["pointer_arithmetic", "memory_offsets", "formulaic_understanding"],
+    "expected_keywords": ["offset", "base address", "pointer arithmetic", "base + (index * size)", "memory efficiency"],
+    "type": "technical"
+  },
+  {
+    "id": "Q3",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Easy",
+    "question": "What is a dangling pointer?",
+    "follow_ups": [
+      "How is a dangling pointer created?",
+      "What happens if you try to dereference a dangling pointer?",
+      "How can you prevent dangling pointers after freeing memory?"
+    ],
+    "evaluation_criteria": ["pointer_lifecycle", "undefined_behavior", "prevention_strategies"],
+    "expected_keywords": ["freed memory", "deleted object", "undefined behavior", "segmentation fault", "set to NULL/nullptr"],
+    "type": "technical"
+  },
+  {
+    "id": "Q4",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Easy",
+    "question": "What is the difference between malloc() and calloc()?",
+    "follow_ups": [
+      "Which function initializes the allocated memory to zero?",
+      "How do the arguments for malloc() and calloc() differ?",
+      "Which function is generally slightly faster and why?"
+    ],
+    "evaluation_criteria": ["initialization_behavior", "function_signatures", "performance_tradeoffs"],
+    "expected_keywords": ["initialization to zero", "number of elements", "size of element", "garbage values", "dynamic memory"],
+    "type": "practical"
+  },
+  {
+    "id": "Q5",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Easy",
+    "question": "Can you explain the static keyword in C?",
+    "follow_ups": [
+      "What happens to a local variable declared as static inside a function?",
+      "What does 'static' mean when applied to a global variable or function?",
+      "How does static affect the lifetime vs the scope of a variable?"
+    ],
+    "evaluation_criteria": ["lifetime_vs_scope", "internal_linkage", "state_preservation"],
+    "expected_keywords": ["preserves state", "lifetime of program", "internal linkage", "file scope", "local scope"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q6",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Easy",
+    "question": "What is a memory leak? How do you avoid it?",
+    "follow_ups": [
+      "What part of memory (Heap or Stack) is affected by memory leaks?",
+      "What happens to an application if it continuously leaks memory?",
+      "How do modern languages (like Java or Python) handle memory differently than C/C++?"
+    ],
+    "evaluation_criteria": ["heap_management", "system_impact", "garbage_collection"],
+    "expected_keywords": ["heap memory", "free()", "delete", "out of memory", "garbage collection", "lost reference"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q7",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Easy",
+    "question": "What is the difference between while and do-while loops?",
+    "follow_ups": [
+      "Which loop guarantees execution of its body at least once?",
+      "Where is the condition evaluated in a do-while loop compared to a while loop?",
+      "Give a practical scenario where a do-while loop is preferred."
+    ],
+    "evaluation_criteria": ["execution_guarantees", "condition_evaluation", "use_cases"],
+    "expected_keywords": ["entry-controlled", "exit-controlled", "at least once", "menu selection", "user input validation"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q8",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Easy",
+    "question": "What are local variables and global variables?",
+    "follow_ups": [
+      "Where in memory is a global variable typically stored versus a local variable?",
+      "What is the default initial value of a global variable in C?",
+      "Why is extensive use of global variables considered bad practice?"
+    ],
+    "evaluation_criteria": ["scope_rules", "memory_regions", "best_practices"],
+    "expected_keywords": ["stack", "data segment", "block scope", "file scope", "zero initialized", "namespace pollution", "side effects"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q9",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Easy",
+    "question": "What is the size of an empty class in C++?",
+    "follow_ups": [
+      "Why is the size not zero?",
+      "How does the compiler ensure distinct memory addresses for different objects of an empty class?",
+      "What happens to the size if you add a single 'char' to the class?"
+    ],
+    "evaluation_criteria": ["memory_allocation_rules", "object_identity", "padding_alignment"],
+    "expected_keywords": ["1 byte", "distinct address", "object identity", "sizeof", "memory alignment"],
+    "type": "technical"
+  },
+  {
+    "id": "Q10",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Easy",
+    "question": "What is type casting?",
+    "follow_ups": [
+      "What is the difference between implicit and explicit type casting?",
+      "What data loss can occur when casting a float to an integer?",
+      "What is a type cast operator in C?"
+    ],
+    "evaluation_criteria": ["implicit_vs_explicit", "data_truncation", "syntax_knowledge"],
+    "expected_keywords": ["type conversion", "implicit", "explicit", "truncation", "loss of precision", "(type) syntax"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q11",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Medium",
+    "question": "Why is a linked list preferred over an array in some cases?",
+    "follow_ups": [
+      "How does memory allocation differ between the two?",
+      "Which data structure is better for frequent insertions and deletions in the middle?",
+      "Why does a linked list have higher memory overhead per element?"
+    ],
+    "evaluation_criteria": ["dynamic_memory", "operation_efficiency", "memory_overhead"],
+    "expected_keywords": ["dynamic size", "contiguous memory", "O(1) insertion", "pointer overhead", "cache locality"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q12",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Medium",
+    "question": "What is the difference between a stack and a queue?",
+    "follow_ups": [
+      "Which data structure uses the LIFO principle and which uses FIFO?",
+      "How are stacks used in function calls?",
+      "How are queues used in operating system scheduling?"
+    ],
+    "evaluation_criteria": ["acronym_definitions", "practical_applications", "access_patterns"],
+    "expected_keywords": ["LIFO", "FIFO", "push/pop", "enqueue/dequeue", "call stack", "print queue", "BFS/DFS"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q13",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Medium",
+    "question": "How does binary search work? Can it be applied to a linked list?",
+    "follow_ups": [
+      "What is the required prerequisite for binary search?",
+      "What is the time complexity of binary search?",
+      "Why is binary search inefficient on a singly linked list?"
+    ],
+    "evaluation_criteria": ["algorithm_mechanics", "prerequisites", "data_structure_limitations"],
+    "expected_keywords": ["sorted array", "divide and conquer", "O(log n)", "random access", "O(N) traversal linked list"],
+    "type": "technical"
+  },
+  {
+    "id": "Q14",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Medium",
+    "question": "What is a hash map collision and how is it handled?",
+    "follow_ups": [
+      "What causes a hash collision?",
+      "Explain the 'separate chaining' method of collision resolution.",
+      "Explain the 'open addressing' (linear probing) method."
+    ],
+    "evaluation_criteria": ["hashing_mechanics", "resolution_strategies", "tradeoffs"],
+    "expected_keywords": ["same hash value", "linked list", "chaining", "open addressing", "linear probing", "load factor"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Medium",
+    "question": "What is the difference between a structure and a union?",
+    "follow_ups": [
+      "How does memory allocation differ between a struct and a union?",
+      "If a union has an int, a float, and a char, what is its total size in memory?",
+      "Can you access all members of a union simultaneously?"
+    ],
+    "evaluation_criteria": ["memory_layout", "size_calculation", "access_rules"],
+    "expected_keywords": ["shared memory", "independent memory", "largest member size", "sum of sizes", "one value at a time"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q16",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Medium",
+    "question": "What is recursion? What is a base case?",
+    "follow_ups": [
+      "What happens if a recursive function lacks a base case?",
+      "How does recursion use the call stack?",
+      "What is tail recursion and why is it beneficial?"
+    ],
+    "evaluation_criteria": ["recursive_logic", "stack_mechanics", "optimization_awareness"],
+    "expected_keywords": ["calls itself", "termination condition", "stack overflow", "tail call optimization", "memory overhead"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q17",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Medium",
+    "question": "What is the time complexity of QuickSort in best and worst cases?",
+    "follow_ups": [
+      "What specific input scenario causes the worst-case time complexity in naive QuickSort?",
+      "What is the average-case time complexity?",
+      "How can you modify pivot selection to avoid the worst case?"
+    ],
+    "evaluation_criteria": ["complexity_analysis", "worst_case_triggers", "optimization_strategies"],
+    "expected_keywords": ["O(n log n)", "O(n^2)", "already sorted", "reverse sorted", "randomized pivot", "median of three"],
+    "type": "technical"
+  },
+  {
+    "id": "Q18",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Medium",
+    "question": "What is the difference between a logical error and a syntax error?",
+    "follow_ups": [
+      "Which error prevents the code from compiling?",
+      "Which error allows the code to run but produces incorrect output?",
+      "What are runtime errors compared to these two?"
+    ],
+    "evaluation_criteria": ["error_classification", "compilation_vs_runtime", "debugging"],
+    "expected_keywords": ["compile-time", "compiler", "flawed logic", "wrong output", "exception", "crash"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q19",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Medium",
+    "question": "What is the difference between a const pointer and a pointer to a const?",
+    "follow_ups": [
+      "How do you declare a pointer to a constant integer in C?",
+      "How do you declare a constant pointer to an integer?",
+      "Can a constant pointer change the value it points to?"
+    ],
+    "evaluation_criteria": ["syntax_reading", "immutability_rules", "pointer_mechanics"],
+    "expected_keywords": ["const int *ptr", "int * const ptr", "read-only data", "read-only address", "right-to-left reading"],
+    "type": "technical"
+  },
+  {
+    "id": "Q20",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Medium",
+    "question": "What are inorder, preorder, and postorder traversals?",
+    "follow_ups": [
+      "Which traversal yields a sorted sequence for a Binary Search Tree?",
+      "What is the root node's position in a postorder traversal?",
+      "Are these traversals considered Depth-First or Breadth-First?"
+    ],
+    "evaluation_criteria": ["traversal_order", "bst_properties", "search_algorithms"],
+    "expected_keywords": ["Left-Root-Right", "Root-Left-Right", "Left-Right-Root", "sorted order", "depth-first search", "DFS"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Hard",
+    "question": "What happens when you type a URL into a browser?",
+    "follow_ups": [
+      "Explain the role of DNS in this process.",
+      "What protocol is used to establish the connection, and what is the handshake called?",
+      "How does the browser render the received HTML/CSS/JS?"
+    ],
+    "evaluation_criteria": ["networking_basics", "dns_resolution", "tcp_handshake", "browser_rendering"],
+    "expected_keywords": ["Domain Name System", "IP address", "TCP 3-way handshake", "HTTP GET request", "DOM tree", "render engine"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q22",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Hard",
+    "question": "What is virtual memory?",
+    "follow_ups": [
+      "How does the OS map virtual addresses to physical addresses?",
+      "What is a page fault?",
+      "What is swapping (or paging) and why is it slow?"
+    ],
+    "evaluation_criteria": ["memory_abstraction", "mmu_functions", "paging_mechanics"],
+    "expected_keywords": ["illusion of large RAM", "Memory Management Unit (MMU)", "page table", "page fault", "disk swap", "thrashing"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q23",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Hard",
+    "question": "Why is QuickSort preferred over MergeSort for arrays?",
+    "follow_ups": [
+      "What is the space complexity difference between the two?",
+      "How does CPU cache locality affect QuickSort's performance?",
+      "When would MergeSort be preferred over QuickSort?"
+    ],
+    "evaluation_criteria": ["algorithm_tradeoffs", "space_complexity", "hardware_efficiency"],
+    "expected_keywords": ["in-place", "O(1) extra space", "cache friendly", "linked lists", "stability"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Hard",
+    "question": "How do you detect a cycle in a linked list?",
+    "follow_ups": [
+      "Explain Floyd's cycle-finding algorithm.",
+      "What is the time and space complexity of this algorithm?",
+      "How can you find the exact node where the cycle begins?"
+    ],
+    "evaluation_criteria": ["pointer_techniques", "algorithmic_efficiency", "cycle_start_detection"],
+    "expected_keywords": ["slow pointer", "fast pointer", "tortoise and hare", "O(N) time", "O(1) space", "intersection point"],
+    "type": "practical"
+  },
+  {
+    "id": "Q25",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Hard",
+    "question": "What is a segmentation fault?",
+    "follow_ups": [
+      "What are common programming mistakes that cause a segmentation fault?",
+      "How does the operating system detect a segmentation fault?",
+      "What is a core dump?"
+    ],
+    "evaluation_criteria": ["memory_protection", "debugging", "os_mechanisms"],
+    "expected_keywords": ["illegal memory access", "dereferencing null", "array out of bounds", "read-only memory", "core dump", "signal"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q26",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Hard",
+    "question": "What is the volatile keyword?",
+    "follow_ups": [
+      "How does 'volatile' prevent compiler optimization?",
+      "When interacting with hardware registers, why is 'volatile' necessary?",
+      "Does 'volatile' guarantee thread safety (atomicity)?"
+    ],
+    "evaluation_criteria": ["compiler_optimization", "hardware_interaction", "multithreading_misconceptions"],
+    "expected_keywords": ["prevent caching", "read from RAM", "hardware registers", "memory-mapped I/O", "not thread safe", "no atomicity"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Hard",
+    "question": "What is the difference between a memory leak and a stack overflow?",
+    "follow_ups": [
+      "Which memory region is exhausted in each case?",
+      "What is the most common cause of a stack overflow?",
+      "Which of these two errors is typically caught immediately by the OS vs failing silently over time?"
+    ],
+    "evaluation_criteria": ["memory_regions", "error_causes", "failure_modes"],
+    "expected_keywords": ["heap memory", "stack memory", "infinite recursion", "forgot to free()", "immediate crash", "gradual degradation"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q28",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Hard",
+    "question": "How does a hash map work internally in Java or C++?",
+    "follow_ups": [
+      "What is the purpose of the hash function?",
+      "How does it handle collisions when multiple keys generate the same index?",
+      "What triggers a resize operation and how does rehashing work?"
+    ],
+    "evaluation_criteria": ["data_structure_internals", "collision_resolution", "dynamic_resizing"],
+    "expected_keywords": ["hashcode", "buckets", "linked list", "chaining", "load factor", "rehash", "O(1) average"],
+    "type": "technical"
+  },
+  {
+    "id": "Q29",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Hard",
+    "question": "What is the difference between a process and a thread?",
+    "follow_ups": [
+      "Which one represents an isolated execution environment?",
+      "What memory segments are shared among threads within the same process?",
+      "Why is context switching between threads generally faster than between processes?"
+    ],
+    "evaluation_criteria": ["concurrency_concepts", "memory_sharing", "context_switching_overhead"],
+    "expected_keywords": ["isolated memory", "shared heap", "shared data segment", "lightweight", "heavyweight", "IPC overhead"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q30",
+    "subject": "Programming Fundamentals",
+    "difficulty": "Hard",
+    "question": "What is the Diamond Problem in inheritance?",
+    "follow_ups": [
+      "In languages that support multiple inheritance (like C++), how does this problem arise?",
+      "How is the ambiguity resolved in C++?",
+      "How do languages like Java avoid this problem entirely?"
+    ],
+    "evaluation_criteria": ["multiple_inheritance", "ambiguity_resolution", "language_design_choices"],
+    "expected_keywords": ["multiple inheritance", "ambiguity", "two paths from base", "virtual inheritance", "interfaces", "default methods"],
+    "type": "technical"
+  }
+]

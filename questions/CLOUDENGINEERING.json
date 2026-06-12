@@ -1,0 +1,506 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Cloud Engineering",
+    "difficulty": "Easy",
+    "question": "What is cloud computing and what are its key service models (IaaS, PaaS, SaaS)?",
+    "follow_ups": [
+      "Can you give an example of a SaaS application you use daily?",
+      "In which service model does the customer manage the operating system?",
+      "How does PaaS benefit software developers?"
+    ],
+    "evaluation_criteria": ["service_model_understanding", "responsibility_boundaries", "practical_examples"],
+    "expected_keywords": ["infrastructure as a service", "platform as a service", "software as a service", "shared responsibility", "on-demand"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Cloud Engineering",
+    "difficulty": "Easy",
+    "question": "What are the differences between public, private, and hybrid clouds?",
+    "follow_ups": [
+      "Why might a company choose a private cloud over a public cloud?",
+      "What is the main challenge of implementing a hybrid cloud architecture?",
+      "Can you define a multi-cloud strategy?"
+    ],
+    "evaluation_criteria": ["deployment_models", "security_considerations", "cost_implications"],
+    "expected_keywords": ["shared infrastructure", "dedicated resources", "hybrid integration", "compliance", "data sovereignty"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q3",
+    "subject": "Cloud Engineering",
+    "difficulty": "Easy",
+    "question": "Name major cloud providers and one core service each offers.",
+    "follow_ups": [
+      "Which provider is generally considered the market leader?",
+      "What is the equivalent of AWS S3 in Google Cloud Platform?",
+      "How does pricing typically compare between these major providers?"
+    ],
+    "evaluation_criteria": ["industry_knowledge", "service_equivalency", "provider_awareness"],
+    "expected_keywords": ["aws", "azure", "gcp", "ec2", "virtual machines", "compute engine", "s3"],
+    "type": "practical"
+  },
+  {
+    "id": "Q4",
+    "subject": "Cloud Engineering",
+    "difficulty": "Easy",
+    "question": "Explain the role of compute services (e.g., EC2 in AWS).",
+    "follow_ups": [
+      "What is the difference between on-demand, reserved, and spot instances?",
+      "How do you connect securely to a Linux compute instance?",
+      "What happens to the data on an instance store volume when the instance stops?"
+    ],
+    "evaluation_criteria": ["compute_fundamentals", "pricing_models", "storage_persistence"],
+    "expected_keywords": ["virtual machine", "cpu", "memory", "ami", "ssh", "ephemeral storage"],
+    "type": "technical"
+  },
+  {
+    "id": "Q5",
+    "subject": "Cloud Engineering",
+    "difficulty": "Easy",
+    "question": "Explain the purpose of cloud storage services (e.g., S3, Blob storage).",
+    "follow_ups": [
+      "What is the difference between object storage and block storage?",
+      "How do you make an object in S3 publicly accessible?",
+      "What are storage tiers and why are they used?"
+    ],
+    "evaluation_criteria": ["storage_types", "access_control", "cost_management"],
+    "expected_keywords": ["object storage", "buckets", "metadata", "ebs", "glacier", "lifecycle policies"],
+    "type": "technical"
+  },
+  {
+    "id": "Q6",
+    "subject": "Cloud Engineering",
+    "difficulty": "Easy",
+    "question": "What is auto-scaling and how is it used?",
+    "follow_ups": [
+      "What is the difference between horizontal and vertical scaling?",
+      "Which scaling method does cloud auto-scaling typically use?",
+      "What metrics can trigger a scale-out event?"
+    ],
+    "evaluation_criteria": ["scaling_mechanisms", "metric_understanding", "high_availability"],
+    "expected_keywords": ["scale up", "scale out", "cpu utilization", "traffic", "auto-scaling group", "elasticity"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q7",
+    "subject": "Cloud Engineering",
+    "difficulty": "Easy",
+    "question": "Explain load balancing in cloud environments.",
+    "follow_ups": [
+      "What is the difference between a Layer 4 and a Layer 7 load balancer?",
+      "How does a load balancer know if a server is healthy?",
+      "What is sticky sessions (session affinity)?"
+    ],
+    "evaluation_criteria": ["osi_model_application", "health_checks", "traffic_distribution"],
+    "expected_keywords": ["traffic distribution", "health check", "application load balancer", "network load balancer", "high availability"],
+    "type": "technical"
+  },
+  {
+    "id": "Q8",
+    "subject": "Cloud Engineering",
+    "difficulty": "Easy",
+    "question": "What is a VPC (Virtual Private Cloud)?",
+    "follow_ups": [
+      "What is the difference between a public subnet and a private subnet?",
+      "How does a resource in a private subnet access the internet?",
+      "What is the role of a route table in a VPC?"
+    ],
+    "evaluation_criteria": ["network_isolation", "subnet_design", "gateway_understanding"],
+    "expected_keywords": ["isolation", "subnets", "internet gateway", "nat gateway", "route table", "cidr block"],
+    "type": "technical"
+  },
+  {
+    "id": "Q9",
+    "subject": "Cloud Engineering",
+    "difficulty": "Easy",
+    "question": "What are availability zones and regions?",
+    "follow_ups": [
+      "Why should you deploy your application across multiple availability zones?",
+      "What factors should you consider when choosing a region?",
+      "Is data automatically replicated across regions?"
+    ],
+    "evaluation_criteria": ["global_infrastructure", "fault_tolerance", "latency_considerations"],
+    "expected_keywords": ["data centers", "geographic location", "fault tolerance", "latency", "compliance", "disaster recovery"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q10",
+    "subject": "Cloud Engineering",
+    "difficulty": "Easy",
+    "question": "What is identity and access management (IAM)?",
+    "follow_ups": [
+      "What is the principle of least privilege?",
+      "What is the difference between an IAM user and an IAM role?",
+      "How do IAM policies work?"
+    ],
+    "evaluation_criteria": ["security_principles", "authentication_vs_authorization", "role_based_access"],
+    "expected_keywords": ["authentication", "authorization", "policies", "roles", "least privilege", "mfa"],
+    "type": "technical"
+  },
+  {
+    "id": "Q11",
+    "subject": "Cloud Engineering",
+    "difficulty": "Medium",
+    "question": "What is disaster recovery planning?",
+    "follow_ups": [
+      "What is the difference between RTO and RPO?",
+      "Describe a 'pilot light' disaster recovery strategy.",
+      "How often should a disaster recovery plan be tested?"
+    ],
+    "evaluation_criteria": ["business_continuity", "metric_definitions", "strategy_comparison"],
+    "expected_keywords": ["rto", "rpo", "backup and restore", "warm standby", "multi-site", "failover"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q12",
+    "subject": "Cloud Engineering",
+    "difficulty": "Medium",
+    "question": "How do you ensure high availability in a cloud architecture?",
+    "follow_ups": [
+      "How do load balancers and auto-scaling groups work together for high availability?",
+      "What role does database replication play in HA?",
+      "How do you eliminate single points of failure?"
+    ],
+    "evaluation_criteria": ["architectural_design", "redundancy_planning", "component_integration"],
+    "expected_keywords": ["multi-az", "redundancy", "load balancing", "failover", "auto-scaling", "spof"],
+    "type": "technical"
+  },
+  {
+    "id": "Q13",
+    "subject": "Cloud Engineering",
+    "difficulty": "Medium",
+    "question": "Explain cloud cost optimization techniques.",
+    "follow_ups": [
+      "How can tagging resources help with cost management?",
+      "When should you use spot instances versus reserved instances?",
+      "How do you identify idle or underutilized resources?"
+    ],
+    "evaluation_criteria": ["financial_acumen", "resource_lifecycle", "pricing_model_application"],
+    "expected_keywords": ["right-sizing", "spot instances", "reserved instances", "storage lifecycle", "tagging", "budgets"],
+    "type": "practical"
+  },
+  {
+    "id": "Q14",
+    "subject": "Cloud Engineering",
+    "difficulty": "Medium",
+    "question": "What are serverless compute services (e.g., AWS Lambda)?",
+    "follow_ups": [
+      "What is a cold start in the context of serverless functions?",
+      "How are serverless functions typically billed?",
+      "What are the limitations of serverless functions (e.g., execution time)?"
+    ],
+    "evaluation_criteria": ["serverless_architecture", "performance_characteristics", "billing_model"],
+    "expected_keywords": ["event-driven", "no infrastructure management", "cold start", "pay-per-invocation", "stateless"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "Cloud Engineering",
+    "difficulty": "Medium",
+    "question": "What is the difference between container services vs serverless?",
+    "follow_ups": [
+      "When would you choose containers (like ECS/EKS) over serverless (like Lambda)?",
+      "Which offers more control over the runtime environment?",
+      "How does scaling differ between the two models?"
+    ],
+    "evaluation_criteria": ["architecture_comparison", "control_vs_convenience", "use_case_selection"],
+    "expected_keywords": ["docker", "kubernetes", "custom runtime", "long-running processes", "vendor lock-in", "granularity"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q16",
+    "subject": "Cloud Engineering",
+    "difficulty": "Medium",
+    "question": "Describe how monitoring and logging works in cloud environments.",
+    "follow_ups": [
+      "What is the difference between an application log and a system metric?",
+      "How do you set up an alarm for high CPU usage?",
+      "Why is centralized logging important in distributed systems?"
+    ],
+    "evaluation_criteria": ["observability", "alerting_mechanisms", "log_aggregation"],
+    "expected_keywords": ["cloudwatch", "stackdriver", "metrics", "alarms", "centralized logging", "retention policies"],
+    "type": "technical"
+  },
+  {
+    "id": "Q17",
+    "subject": "Cloud Engineering",
+    "difficulty": "Medium",
+    "question": "Explain how cloud networking works (subnets, routing tables).",
+    "follow_ups": [
+      "What is the purpose of a Network Access Control List (NACL)?",
+      "How does a NACL differ from a Security Group?",
+      "How do VPC peering connections work?"
+    ],
+    "evaluation_criteria": ["networking_fundamentals", "security_layers", "vpc_connectivity"],
+    "expected_keywords": ["stateful", "stateless", "firewall", "peering", "transit gateway", "cidr"],
+    "type": "technical"
+  },
+  {
+    "id": "Q18",
+    "subject": "Cloud Engineering",
+    "difficulty": "Medium",
+    "question": "How do you handle cloud resource provisioning with Infrastructure as Code?",
+    "follow_ups": [
+      "What are the benefits of declarative IaC over imperative scripting?",
+      "How do you manage the state file in Terraform?",
+      "What is drift detection?"
+    ],
+    "evaluation_criteria": ["iac_principles", "state_management", "automation_benefits"],
+    "expected_keywords": ["terraform", "cloudformation", "declarative", "state file", "version control", "reproducibility"],
+    "type": "practical"
+  },
+  {
+    "id": "Q19",
+    "subject": "Cloud Engineering",
+    "difficulty": "Medium",
+    "question": "What is multi-region deployment and when is it needed?",
+    "follow_ups": [
+      "How do you handle data synchronization across regions?",
+      "What is the role of Route 53 or global DNS in multi-region setups?",
+      "Is multi-region always active-active, or can it be active-passive?"
+    ],
+    "evaluation_criteria": ["global_architecture", "data_consistency", "traffic_routing"],
+    "expected_keywords": ["disaster recovery", "latency reduction", "active-active", "active-passive", "global accelerator", "replication"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q20",
+    "subject": "Cloud Engineering",
+    "difficulty": "Medium",
+    "question": "What is cloud network security and key considerations?",
+    "follow_ups": [
+      "How do you protect against DDoS attacks in the cloud?",
+      "What is the purpose of a Web Application Firewall (WAF)?",
+      "How do you secure data in transit versus data at rest?"
+    ],
+    "evaluation_criteria": ["security_layers", "threat_mitigation", "encryption_standards"],
+    "expected_keywords": ["ddos", "waf", "encryption", "tls", "kms", "security groups", "vpn"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "Explain how you would design a fault-tolerant cloud service.",
+    "follow_ups": [
+      "How does database read-replica promotion work during a failover?",
+      "What role does a message queue play in decoupling services for fault tolerance?",
+      "How do you implement circuit breakers in microservices?"
+    ],
+    "evaluation_criteria": ["resiliency_patterns", "failover_mechanisms", "decoupling_strategies"],
+    "expected_keywords": ["auto-scaling", "multi-az", "sqs", "circuit breaker", "retry logic", "statelessness"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q22",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "How do you handle data backup and recovery in cloud systems?",
+    "follow_ups": [
+      "What is the difference between an automated snapshot and a manual backup?",
+      "How do you ensure backups are secure from ransomware?",
+      "How do you test your recovery procedures?"
+    ],
+    "evaluation_criteria": ["backup_strategies", "security_compliance", "recovery_testing"],
+    "expected_keywords": ["snapshots", "cross-region replication", "immutable backups", "rto", "rpo", "lifecycle management"],
+    "type": "technical"
+  },
+  {
+    "id": "Q23",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "Describe a challenging cloud migration you’ve worked on.",
+    "follow_ups": [
+      "What was the migration strategy (e.g., lift-and-shift, re-platforming, refactoring)?",
+      "How did you minimize downtime during the cutover?",
+      "What unexpected challenges arose with data migration?"
+    ],
+    "evaluation_criteria": ["migration_strategies", "downtime_mitigation", "problem_solving"],
+    "expected_keywords": ["re-host", "re-architect", "dms", "cutover", "hybrid connectivity", "validation"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q24",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "What strategies do you use for cloud performance tuning?",
+    "follow_ups": [
+      "How do you optimize database query performance in a cloud environment?",
+      "When would you use a Content Delivery Network (CDN) or caching layer (e.g., Redis)?",
+      "How does network bandwidth affect performance between instances?"
+    ],
+    "evaluation_criteria": ["optimization_layers", "caching_mechanisms", "database_tuning"],
+    "expected_keywords": ["caching", "cdn", "instance types", "iops", "query optimization", "elasticache"],
+    "type": "technical"
+  },
+  {
+    "id": "Q25",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "Explain multi-cloud vs hybrid cloud architecture decisions.",
+    "follow_ups": [
+      "Why would an organization choose a multi-cloud strategy over sticking to a single provider?",
+      "What are the operational complexities introduced by multi-cloud?",
+      "How do you handle unified monitoring and networking across different clouds?"
+    ],
+    "evaluation_criteria": ["architecture_tradeoffs", "vendor_lock_in", "operational_overhead"],
+    "expected_keywords": ["vendor lock-in", "best-of-breed", "hybrid integration", "kubernetes", "vpn/direct connect", "data gravity"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q26",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "How do you ensure compliance and security in cloud deployments?",
+    "follow_ups": [
+      "What tools do you use for continuous compliance monitoring?",
+      "How do you enforce security controls via Infrastructure as Code?",
+      "Describe how you handle PII data in the cloud."
+    ],
+    "evaluation_criteria": ["compliance_standards", "continuous_security", "data_privacy"],
+    "expected_keywords": ["aws config", "azure policy", "encryption", "hipaa", "gdpr", "audit logs", "guardrails"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "What is cloud identity and access management best practice?",
+    "follow_ups": [
+      "How do you manage temporary credentials for applications running on instances?",
+      "What is role-based access control (RBAC) vs attribute-based access control (ABAC)?",
+      "How do you audit IAM permissions to identify over-privileged accounts?"
+    ],
+    "evaluation_criteria": ["iam_deep_dive", "access_control_models", "auditing_practices"],
+    "expected_keywords": ["iam roles", "least privilege", "rbac", "abac", "sts", "access analyzer"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q28",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "How would you handle cloud incident response and recovery planning?",
+    "follow_ups": [
+      "What are the first steps you take when a critical alert is triggered?",
+      "How do you conduct a blameless post-mortem?",
+      "What is chaos engineering and how does it help with incident response?"
+    ],
+    "evaluation_criteria": ["incident_management", "post_mortem_culture", "chaos_engineering"],
+    "expected_keywords": ["pagerduty", "runbooks", "root cause analysis", "chaos monkey", "mitigation", "communication"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q29",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "What is cloud data governance and how do you implement it?",
+    "follow_ups": [
+      "How do you track data lineage in a cloud data lake?",
+      "What strategies do you use for data retention and lifecycle management?",
+      "How do you ensure data sovereignty when deploying globally?"
+    ],
+    "evaluation_criteria": ["data_management", "lifecycle_policies", "legal_compliance"],
+    "expected_keywords": ["data lake", "lineage", "retention policies", "data catalog", "macie", "compliance"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q30",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "Describe how you ensure data encryption in the cloud.",
+    "follow_ups": [
+      "What is the difference between AWS KMS (Key Management Service) and CloudHSM?",
+      "How does envelope encryption work?",
+      "How do you ensure data in transit is encrypted internally between microservices?"
+    ],
+    "evaluation_criteria": ["encryption_mechanisms", "key_management", "in_transit_vs_at_rest"],
+    "expected_keywords": ["kms", "hsm", "envelope encryption", "customer managed keys", "tls/ssl", "service mesh"],
+    "type": "technical"
+  },
+  {
+    "id": "Q31",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "What are cloud API gateways and why are they important?",
+    "follow_ups": [
+      "How does an API Gateway handle rate limiting and throttling?",
+      "What role does an API Gateway play in authenticating requests?",
+      "How do you implement caching at the API Gateway level?"
+    ],
+    "evaluation_criteria": ["gateway_features", "traffic_management", "security_integration"],
+    "expected_keywords": ["throttling", "authentication", "caching", "websocket", "cors", "lambda integration"],
+    "type": "technical"
+  },
+  {
+    "id": "Q32",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "How do you optimize cloud storage costs and performance?",
+    "follow_ups": [
+      "How do you decide between provisioned IOPS and general-purpose SSDs?",
+      "When would you use an intelligent tiering storage class?",
+      "How do you identify and clean up orphaned EBS volumes?"
+    ],
+    "evaluation_criteria": ["storage_tuning", "cost_analysis", "resource_cleanup"],
+    "expected_keywords": ["iops", "ebs volumes", "s3 lifecycle", "intelligent tiering", "glacier", "orphaned resources"],
+    "type": "practical"
+  },
+  {
+    "id": "Q33",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "Explain load balancing strategies for global applications.",
+    "follow_ups": [
+      "How does latency-based routing work?",
+      "What is Anycast IP and how do global load balancers use it?",
+      "How do you handle failover between regions using DNS?"
+    ],
+    "evaluation_criteria": ["global_traffic_management", "routing_algorithms", "dns_failover"],
+    "expected_keywords": ["route 53", "global accelerator", "latency routing", "geolocation routing", "anycast", "health checks"],
+    "type": "technical"
+  },
+  {
+    "id": "Q34",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "What is disaster recovery planning for multi-region architecture?",
+    "follow_ups": [
+      "How do you synchronize stateful data bases across regions with minimal lag?",
+      "What is the difference between active-active and active-passive deployments?",
+      "How do you test a multi-region failover?"
+    ],
+    "evaluation_criteria": ["dr_strategies", "database_replication", "failover_testing"],
+    "expected_keywords": ["active-active", "active-passive", "global database", "asynchronous replication", "rto/rpo", "failover"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q35",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "How do you implement secure API access in cloud applications?",
+    "follow_ups": [
+      "How do OAuth 2.0 and OpenID Connect work with API Gateways?",
+      "What is mutual TLS (mTLS) and when would you use it?",
+      "How do you protect against common web exploits like SQL injection at the API layer?"
+    ],
+    "evaluation_criteria": ["authentication_protocols", "mtls", "waf_integration"],
+    "expected_keywords": ["oauth2", "jwt", "mtls", "waf", "api key", "cognito/auth0"],
+    "type": "technical"
+  },
+  {
+    "id": "Q36",
+    "subject": "Cloud Engineering",
+    "difficulty": "Hard",
+    "question": "Describe how you manage and monitor cloud performance at scale.",
+    "follow_ups": [
+      "How do you implement distributed tracing across microservices?",
+      "What dashboards do you consider essential for a production application?",
+      "How do you prevent metric cardinality explosions in Prometheus or Datadog?"
+    ],
+    "evaluation_criteria": ["observability_at_scale", "distributed_tracing", "metric_management"],
+    "expected_keywords": ["x-ray", "datadog", "distributed tracing", "golden signals", "high cardinality", "dashboards"],
+    "type": "scenario"
+  }
+]

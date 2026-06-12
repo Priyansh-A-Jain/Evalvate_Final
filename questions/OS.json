@@ -1,0 +1,422 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Operating System",
+    "difficulty": "Easy",
+    "question": "What is the main difference between a process and a thread?",
+    "follow_ups": [
+      "Which one shares memory space with others of its kind?",
+      "Which one is considered a 'lightweight' process?",
+      "What happens to the threads if the parent process crashes?"
+    ],
+    "evaluation_criteria": ["memory_isolation", "resource_sharing", "crash_impact"],
+    "expected_keywords": ["independent execution", "shared memory", "address space", "lightweight", "heavyweight", "process crash kills threads"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Operating System",
+    "difficulty": "Easy",
+    "question": "What is context switching?",
+    "follow_ups": [
+      "What information must the OS save during a context switch?",
+      "Where is this information saved?",
+      "Why is context switching considered an overhead?"
+    ],
+    "evaluation_criteria": ["state_preservation", "pcb_knowledge", "performance_overhead"],
+    "expected_keywords": ["save state", "restore state", "Process Control Block (PCB)", "CPU registers", "program counter", "overhead"],
+    "type": "technical"
+  },
+  {
+    "id": "Q3",
+    "subject": "Operating System",
+    "difficulty": "Easy",
+    "question": "Explain preemptive vs. non-preemptive scheduling.",
+    "follow_ups": [
+      "Can the OS forcibly take the CPU away from a process in non-preemptive scheduling?",
+      "What triggers a context switch in preemptive scheduling?",
+      "Which scheduling type is better for interactive, responsive systems?"
+    ],
+    "evaluation_criteria": ["control_mechanisms", "trigger_events", "system_responsiveness"],
+    "expected_keywords": ["forcible removal", "time quantum", "voluntary yield", "interrupts", "responsive", "starvation"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "Operating System",
+    "difficulty": "Easy",
+    "question": "What is a deadlock? What are the four necessary conditions for deadlock?",
+    "follow_ups": [
+      "Explain the 'Mutual Exclusion' condition.",
+      "Explain the 'Hold and Wait' condition.",
+      "What happens if you break just one of these four conditions?"
+    ],
+    "evaluation_criteria": ["coffman_conditions", "condition_definitions", "deadlock_prevention"],
+    "expected_keywords": ["mutual exclusion", "hold and wait", "no preemption", "circular wait", "infinite waiting", "break one condition"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q5",
+    "subject": "Operating System",
+    "difficulty": "Easy",
+    "question": "What is the difference between logical address and physical address?",
+    "follow_ups": [
+      "Who generates the logical address?",
+      "What hardware component maps the logical address to the physical address?",
+      "Does the user program ever see the physical address?"
+    ],
+    "evaluation_criteria": ["address_generation", "mmu_role", "memory_abstraction"],
+    "expected_keywords": ["CPU generated", "virtual address", "RAM location", "Memory Management Unit (MMU)", "translation"],
+    "type": "technical"
+  },
+  {
+    "id": "Q6",
+    "subject": "Operating System",
+    "difficulty": "Easy",
+    "question": "What is starvation?",
+    "follow_ups": [
+      "How is starvation different from a deadlock?",
+      "Which scheduling algorithm is notorious for causing starvation to low-priority processes?",
+      "What technique is used to solve starvation?"
+    ],
+    "evaluation_criteria": ["concept_differentiation", "algorithm_flaws", "aging_technique"],
+    "expected_keywords": ["infinite waiting", "deadlock difference", "priority scheduling", "aging", "increase priority over time"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q7",
+    "subject": "Operating System",
+    "difficulty": "Easy",
+    "question": "What is a system call?",
+    "follow_ups": [
+      "Why can't a user program access hardware directly?",
+      "What happens to the CPU mode when a system call is made?",
+      "Give an example of a common system call (e.g., file reading)."
+    ],
+    "evaluation_criteria": ["protection_rings", "mode_switching", "practical_examples"],
+    "expected_keywords": ["interface", "kernel mode", "user mode", "hardware access", "read/write", "fork"],
+    "type": "technical"
+  },
+  {
+    "id": "Q8",
+    "subject": "Operating System",
+    "difficulty": "Easy",
+    "question": "What is round-robin scheduling?",
+    "follow_ups": [
+      "What is a time quantum (or time slice)?",
+      "What happens to a process if it doesn't finish within its time quantum?",
+      "Is round-robin preemptive or non-preemptive?"
+    ],
+    "evaluation_criteria": ["algorithm_mechanics", "time_slice_concept", "preemption"],
+    "expected_keywords": ["time quantum", "time slice", "preemptive", "circular queue", "fairness", "context switch"],
+    "type": "technical"
+  },
+  {
+    "id": "Q9",
+    "subject": "Operating System",
+    "difficulty": "Easy",
+    "question": "What are the different states of a process?",
+    "follow_ups": [
+      "What happens when a process moves from 'Running' to 'Waiting/Blocked'?",
+      "Where does a process go when it is first created?",
+      "What is the difference between the 'Ready' and 'Running' states?"
+    ],
+    "evaluation_criteria": ["process_lifecycle", "state_transitions", "i_o_blocking"],
+    "expected_keywords": ["new", "ready", "running", "waiting/blocked", "terminated", "I/O request", "CPU execution"],
+    "type": "factual"
+  },
+  {
+    "id": "Q10",
+    "subject": "Operating System",
+    "difficulty": "Easy",
+    "question": "What is kernel mode vs. user mode?",
+    "follow_ups": [
+      "Why do operating systems use dual-mode operation?",
+      "What happens if a user program attempts to execute a privileged instruction?",
+      "How does a program switch from user mode to kernel mode?"
+    ],
+    "evaluation_criteria": ["security_protection", "privileged_instructions", "mode_transitions"],
+    "expected_keywords": ["protection", "privileged instructions", "trap", "system call", "hardware access", "segmentation fault"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q11",
+    "subject": "Operating System",
+    "difficulty": "Medium",
+    "question": "What is virtual memory? Why do we need it?",
+    "follow_ups": [
+      "How does virtual memory allow programs larger than physical RAM to run?",
+      "What is the role of the hard drive (swap space/page file) in virtual memory?",
+      "How does virtual memory provide security/isolation between processes?"
+    ],
+    "evaluation_criteria": ["memory_abstraction", "swap_mechanics", "process_isolation"],
+    "expected_keywords": ["illusion of large memory", "swap space", "disk", "demand paging", "isolation", "logical to physical"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q12",
+    "subject": "Operating System",
+    "difficulty": "Medium",
+    "question": "Explain paging vs. segmentation.",
+    "follow_ups": [
+      "Which technique divides memory into fixed-size blocks?",
+      "Which technique divides memory logically according to the user's view (functions, arrays)?",
+      "Which one suffers from external fragmentation?"
+    ],
+    "evaluation_criteria": ["allocation_methods", "fragmentation_types", "user_perspective"],
+    "expected_keywords": ["fixed size pages", "variable size segments", "internal fragmentation", "external fragmentation", "frames"],
+    "type": "technical"
+  },
+  {
+    "id": "Q13",
+    "subject": "Operating System",
+    "difficulty": "Medium",
+    "question": "What is the difference between a semaphore and a mutex?",
+    "follow_ups": [
+      "Which one is an integer counter and which one is a binary lock?",
+      "Can a mutex be unlocked by a thread other than the one that locked it?",
+      "When would you use a counting semaphore over a mutex?"
+    ],
+    "evaluation_criteria": ["synchronization_tools", "ownership_rules", "use_cases"],
+    "expected_keywords": ["binary lock", "ownership", "integer counter", "signaling", "resource pool"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q14",
+    "subject": "Operating System",
+    "difficulty": "Medium",
+    "question": "What is the producer–consumer problem?",
+    "follow_ups": [
+      "What happens if the producer tries to add data to a full buffer?",
+      "What happens if the consumer tries to read from an empty buffer?",
+      "How are semaphores or mutexes used to solve this problem?"
+    ],
+    "evaluation_criteria": ["classic_synchronization", "buffer_states", "solution_mechanisms"],
+    "expected_keywords": ["bounded buffer", "wait/sleep", "wakeup/signal", "mutex", "empty/full semaphores", "race condition"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q15",
+    "subject": "Operating System",
+    "difficulty": "Medium",
+    "question": "What is Banker’s algorithm used for?",
+    "follow_ups": [
+      "Does Banker's algorithm prevent, avoid, or detect deadlocks?",
+      "What information must the OS know in advance to use this algorithm?",
+      "What is a 'safe state'?"
+    ],
+    "evaluation_criteria": ["algorithm_purpose", "prerequisites", "safe_state_concept"],
+    "expected_keywords": ["deadlock avoidance", "maximum resource claim", "safe state", "allocation matrix", "available resources"],
+    "type": "technical"
+  },
+  {
+    "id": "Q16",
+    "subject": "Operating System",
+    "difficulty": "Medium",
+    "question": "What is Belady’s anomaly?",
+    "follow_ups": [
+      "In which specific page replacement algorithm does Belady's anomaly occur?",
+      "What is the expected behavior when you increase the number of page frames?",
+      "Does the LRU algorithm suffer from Belady's anomaly?"
+    ],
+    "evaluation_criteria": ["anomaly_definition", "algorithm_specifics", "stack_algorithms"],
+    "expected_keywords": ["FIFO", "more frames, more page faults", "counter-intuitive", "stack algorithms", "LRU is immune"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q17",
+    "subject": "Operating System",
+    "difficulty": "Medium",
+    "question": "What is LRU (Least Recently Used) page replacement?",
+    "follow_ups": [
+      "How does the OS determine which page is the least recently used?",
+      "Why is perfect LRU difficult to implement in hardware?",
+      "What is the 'clock' or 'second chance' algorithm?"
+    ],
+    "evaluation_criteria": ["algorithm_mechanics", "hardware_limitations", "approximation_techniques"],
+    "expected_keywords": ["past behavior", "evict oldest access", "hardware overhead", "reference bit", "second chance approximation"],
+    "type": "technical"
+  },
+  {
+    "id": "Q18",
+    "subject": "Operating System",
+    "difficulty": "Medium",
+    "question": "What is spooling?",
+    "follow_ups": [
+      "What does SPOOL stand for?",
+      "How does spooling help with slow I/O devices like printers?",
+      "How is spooling different from buffering?"
+    ],
+    "evaluation_criteria": ["acronym_knowledge", "i_o_management", "buffering_comparison"],
+    "expected_keywords": ["Simultaneous Peripheral Operations On-line", "disk as buffer", "printer queue", "overlap CPU and I/O", "buffering is in RAM"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q19",
+    "subject": "Operating System",
+    "difficulty": "Medium",
+    "question": "What is the difference between multitasking and multiprocessing?",
+    "follow_ups": [
+      "Which one refers to executing multiple processes concurrently on a single CPU via context switching?",
+      "Which one requires physical hardware with more than one CPU or core?",
+      "What is multithreading compared to these two?"
+    ],
+    "evaluation_criteria": ["concurrency_vs_parallelism", "hardware_requirements", "terminology_precision"],
+    "expected_keywords": ["time-sharing", "single CPU", "multiple CPUs", "true parallelism", "concurrent execution", "cores"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q20",
+    "subject": "Operating System",
+    "difficulty": "Medium",
+    "question": "What is fragmentation? Explain internal vs. external fragmentation.",
+    "follow_ups": [
+      "Which type of fragmentation is primarily caused by paging?",
+      "Which type of fragmentation is primarily caused by segmentation?",
+      "How does 'compaction' solve external fragmentation?"
+    ],
+    "evaluation_criteria": ["fragmentation_types", "memory_management_schemes", "compaction_solution"],
+    "expected_keywords": ["internal fragmentation", "unused space inside block", "external fragmentation", "scattered free blocks", "paging", "compaction"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "Operating System",
+    "difficulty": "Hard",
+    "question": "What is thrashing?",
+    "follow_ups": [
+      "What causes a system to start thrashing?",
+      "What happens to CPU utilization during thrashing?",
+      "How can the OS use the 'working set model' to prevent thrashing?"
+    ],
+    "evaluation_criteria": ["performance_degradation", "cpu_utilization", "prevention_models"],
+    "expected_keywords": ["excessive page faults", "swapping", "CPU utilization drops", "degree of multiprogramming", "working set model"],
+    "type": "technical"
+  },
+  {
+    "id": "Q22",
+    "subject": "Operating System",
+    "difficulty": "Hard",
+    "question": "How do you prevent deadlocks?",
+    "follow_ups": [
+      "How can you break the 'Hold and Wait' condition?",
+      "How can you break the 'Circular Wait' condition using resource ordering?",
+      "Is deadlock prevention the same as deadlock avoidance?"
+    ],
+    "evaluation_criteria": ["prevention_strategies", "condition_breaking", "avoidance_differentiation"],
+    "expected_keywords": ["request all at once", "resource ordering", "preemption", "avoidance uses Banker's", "strict rules"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q23",
+    "subject": "Operating System",
+    "difficulty": "Hard",
+    "question": "What is a race condition?",
+    "follow_ups": [
+      "In what section of code do race conditions occur (e.g., critical section)?",
+      "Why do race conditions lead to unpredictable output?",
+      "How do hardware instructions like Test-and-Set help prevent race conditions?"
+    ],
+    "evaluation_criteria": ["critical_section_knowledge", "non_determinism", "hardware_synchronization"],
+    "expected_keywords": ["concurrent access", "shared data", "critical section", "non-deterministic", "context switch timing", "atomic operations"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "Operating System",
+    "difficulty": "Hard",
+    "question": "Explain the dining philosophers problem.",
+    "follow_ups": [
+      "What real-world OS problem does this scenario illustrate?",
+      "How can a deadlock occur if all philosophers pick up their left fork simultaneously?",
+      "What is one asymmetric solution to prevent this deadlock?"
+    ],
+    "evaluation_criteria": ["classic_synchronization", "deadlock_scenario", "asymmetric_solutions"],
+    "expected_keywords": ["resource sharing", "deadlock", "starvation", "left fork right fork", "asymmetric breaking (one picks right first)"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q25",
+    "subject": "Operating System",
+    "difficulty": "Hard",
+    "question": "What is the difference between an interrupt and a trap?",
+    "follow_ups": [
+      "Which one is generated synchronously by software?",
+      "Which one is generated asynchronously by hardware (like a keyboard press)?",
+      "Is a division by zero an interrupt or a trap?"
+    ],
+    "evaluation_criteria": ["hardware_vs_software", "synchronous_vs_asynchronous", "exception_handling"],
+    "expected_keywords": ["hardware interrupt", "asynchronous", "software interrupt", "trap", "exception", "system call", "synchronous"],
+    "type": "technical"
+  },
+  {
+    "id": "Q26",
+    "subject": "Operating System",
+    "difficulty": "Hard",
+    "question": "What is the difference between a monolithic kernel and a microkernel?",
+    "follow_ups": [
+      "Which architecture runs device drivers and file systems in kernel space?",
+      "Which architecture is generally more stable if a device driver crashes?",
+      "Why is a microkernel typically slower than a monolithic kernel?"
+    ],
+    "evaluation_criteria": ["kernel_architecture", "stability_tradeoffs", "performance_overhead"],
+    "expected_keywords": ["all-in-one", "kernel space", "user space services", "IPC overhead", "stability", "Linux vs MINIX/Mach"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q27",
+    "subject": "Operating System",
+    "difficulty": "Hard",
+    "question": "What is a zombie process?",
+    "follow_ups": [
+      "Has a zombie process finished executing its code?",
+      "Why does a zombie process still occupy an entry in the process table?",
+      "How is a zombie process cleared (what must the parent do)?"
+    ],
+    "evaluation_criteria": ["process_lifecycle", "process_table_resources", "wait_system_call"],
+    "expected_keywords": ["terminated", "process table entry", "exit status", "wait() system call", "reaping"],
+    "type": "technical"
+  },
+  {
+    "id": "Q28",
+    "subject": "Operating System",
+    "difficulty": "Hard",
+    "question": "What is an orphan process?",
+    "follow_ups": [
+      "What happens to a child process if its parent terminates before it does?",
+      "Which special process adopts orphan processes in Unix/Linux?",
+      "What happens to an orphan process when it eventually finishes executing?"
+    ],
+    "evaluation_criteria": ["process_hierarchy", "init_process", "reaping_mechanisms"],
+    "expected_keywords": ["parent terminates first", "init process (PID 1)", "adoption", "wait() called by init"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q29",
+    "subject": "Operating System",
+    "difficulty": "Hard",
+    "question": "How does the operating system handle a page fault?",
+    "follow_ups": [
+      "What hardware component triggers the page fault trap?",
+      "What are the sequential steps the OS takes to bring the required page from disk to RAM?",
+      "What happens to the executing instruction after the page is loaded?"
+    ],
+    "evaluation_criteria": ["interrupt_handling", "disk_to_ram_transfer", "instruction_restart"],
+    "expected_keywords": ["MMU", "trap to OS", "find free frame", "disk read", "update page table", "restart instruction"],
+    "type": "technical"
+  },
+  {
+    "id": "Q30",
+    "subject": "Operating System",
+    "difficulty": "Hard",
+    "question": "What is copy-on-write (COW)?",
+    "follow_ups": [
+      "How is COW used during the fork() system call to optimize memory?",
+      "What happens when the parent or child attempts to modify a shared page?",
+      "How does the MMU assist in the COW mechanism?"
+    ],
+    "evaluation_criteria": ["memory_optimization", "fork_efficiency", "page_protection_faults"],
+    "expected_keywords": ["fork()", "shared memory", "read-only pages", "page fault on write", "duplicate page", "optimization"],
+    "type": "technical"
+  }
+]

@@ -1,0 +1,506 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "What is Express.js and what is its purpose?",
+    "follow_ups": [
+      "How does Express simplify web development compared to using raw Node.js 'http' module?",
+      "Is Express.js an opinionated or unopinionated framework?",
+      "What are some common use cases for Express.js applications?"
+    ],
+    "evaluation_criteria": ["framework_understanding", "opinionation", "use_cases"],
+    "expected_keywords": ["web framework", "node.js", "minimalist", "unopinionated", "routing", "middleware", "api"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "How is Express.js related to Node.js?",
+    "follow_ups": [
+      "Can Express.js run independently of Node.js?",
+      "What underlying Node.js module does Express wrap and abstract?",
+      "How do you install Express.js in a Node project?"
+    ],
+    "evaluation_criteria": ["ecosystem_knowledge", "underlying_modules", "installation_process"],
+    "expected_keywords": ["npm", "framework", "http module", "runtime environment", "package"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q3",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "What is the difference between Node.js and Express.js?",
+    "follow_ups": [
+      "If Node.js provides the engine, what role does Express play?",
+      "Can you build a server in Node.js without Express?",
+      "Why is Express often preferred over vanilla Node.js for APIs?"
+    ],
+    "evaluation_criteria": ["role_differentiation", "abstraction_awareness", "developer_experience"],
+    "expected_keywords": ["runtime", "framework", "abstraction", "routing", "middleware", "boilerplate code"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "What are routes and route handlers in Express.js?",
+    "follow_ups": [
+      "What HTTP methods are commonly used in routing?",
+      "How do you define a callback function for a route?",
+      "What is the significance of the endpoint path in a route?"
+    ],
+    "evaluation_criteria": ["routing_concepts", "http_methods", "callback_functions"],
+    "expected_keywords": ["endpoint", "uri", "http method", "callback", "req", "res"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q5",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "What is routing in Express.js and how do you define routes?",
+    "follow_ups": [
+      "Can you show the syntax for creating a simple GET route?",
+      "How does Express match a requested URL to a route?",
+      "What happens if no route matches the request?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "route_matching", "fallback_behavior"],
+    "expected_keywords": ["app.get", "app.post", "path", "handler", "404 not found"],
+    "type": "practical"
+  },
+  {
+    "id": "Q6",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "What is middleware in Express.js?",
+    "follow_ups": [
+      "Where does middleware sit in the request-response cycle?",
+      "Can a middleware function end the request-response cycle?",
+      "What must a middleware do if it does not end the request cycle?"
+    ],
+    "evaluation_criteria": ["middleware_definition", "request_lifecycle", "next_function_usage"],
+    "expected_keywords": ["req, res, next", "intercept", "request-response cycle", "next()", "modify request"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q7",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "What is the purpose of app.use() in Express.js?",
+    "follow_ups": [
+      "How is app.use() different from app.get() or app.post()?",
+      "Can app.use() be restricted to a specific path?",
+      "In what order are app.use() middlewares executed?"
+    ],
+    "evaluation_criteria": ["method_understanding", "global_vs_local_middleware", "execution_order"],
+    "expected_keywords": ["mount", "global middleware", "path matching", "sequential", "all http methods"],
+    "type": "technical"
+  },
+  {
+    "id": "Q8",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "What is the difference between app.get() and app.post()?",
+    "follow_ups": [
+      "Which one is typically used for retrieving data vs submitting data?",
+      "Where are parameters usually passed in a GET request versus a POST request?",
+      "Are GET requests idempotent?"
+    ],
+    "evaluation_criteria": ["http_methods", "data_transmission", "idempotency_knowledge"],
+    "expected_keywords": ["retrieve", "submit", "query string", "request body", "idempotent", "state change"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q9",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "What are the req, res, and next parameters?",
+    "follow_ups": [
+      "Which object holds the client's payload and headers?",
+      "Which object provides methods to send data back to the client?",
+      "What happens if you forget to call next() in a middleware?"
+    ],
+    "evaluation_criteria": ["parameter_roles", "response_methods", "flow_control"],
+    "expected_keywords": ["request object", "response object", "next function", "hanging request", "headers", "body"],
+    "type": "technical"
+  },
+  {
+    "id": "Q10",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "What is the purpose of express.json() middleware?",
+    "follow_ups": [
+      "What HTTP header must the client send for this middleware to parse the body?",
+      "What property on the 'req' object is populated by this middleware?",
+      "Prior to Express 4.16, which external package was used for this?"
+    ],
+    "evaluation_criteria": ["middleware_purpose", "content_type_awareness", "historical_context"],
+    "expected_keywords": ["req.body", "application/json", "parse", "body-parser", "payload"],
+    "type": "technical"
+  },
+  {
+    "id": "Q11",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "What is the purpose of express.urlencoded() middleware?",
+    "follow_ups": [
+      "What type of data is typically parsed by urlencoded()?",
+      "What does the 'extended: true' option do?",
+      "Can you use express.json() and express.urlencoded() together?"
+    ],
+    "evaluation_criteria": ["form_data_parsing", "configuration_options", "middleware_stacking"],
+    "expected_keywords": ["html forms", "application/x-www-form-urlencoded", "qs library", "querystring", "req.body"],
+    "type": "technical"
+  },
+  {
+    "id": "Q12",
+    "subject": "Express.js",
+    "difficulty": "Easy",
+    "question": "How do you parse JSON data in Express.js?",
+    "follow_ups": [
+      "Why is parsing JSON data necessary before handling a POST request?",
+      "Can you apply the JSON parser middleware to only specific routes?",
+      "What happens if the client sends invalid JSON?"
+    ],
+    "evaluation_criteria": ["practical_implementation", "route_specific_middleware", "error_handling"],
+    "expected_keywords": ["app.use(express.json())", "req.body", "syntax error", "middleware", "payload"],
+    "type": "practical"
+  },
+  {
+    "id": "Q13",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between req.params and req.query?",
+    "follow_ups": [
+      "How is a URL parameter defined in an Express route string?",
+      "Where in the URL do query parameters appear?",
+      "Give an example URL that contains both a parameter and a query string."
+    ],
+    "evaluation_criteria": ["url_anatomy", "parameter_extraction", "syntax_knowledge"],
+    "expected_keywords": ["route parameters", "query string", "colon (:)", "question mark (?)", "dynamic routing"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q14",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is the purpose of req.body and how do you access it?",
+    "follow_ups": [
+      "Why is req.body undefined by default in Express?",
+      "How do you access a specific field, like 'username', from req.body?",
+      "Is req.body used in GET requests?"
+    ],
+    "evaluation_criteria": ["request_payload_knowledge", "middleware_requirement", "http_semantics"],
+    "expected_keywords": ["body-parser", "express.json()", "undefined", "post/put/patch", "payload"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between res.send(), res.json(), and res.render()?",
+    "follow_ups": [
+      "Which method automatically sets the Content-Type header to application/json?",
+      "When would you use res.render()?",
+      "Can res.send() send HTML strings?"
+    ],
+    "evaluation_criteria": ["response_methods", "content_type_headers", "template_engines"],
+    "expected_keywords": ["formatting", "content-type", "template engine", "views", "html", "json format"],
+    "type": "practical"
+  },
+  {
+    "id": "Q16",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is the purpose of the res.status() method?",
+    "follow_ups": [
+      "Can you chain res.status() with res.json() or res.send()?",
+      "What is the default HTTP status code if you don't explicitly set one?",
+      "How do you send a 404 Not Found response?"
+    ],
+    "evaluation_criteria": ["http_status_codes", "method_chaining", "default_behavior"],
+    "expected_keywords": ["chaining", "http status code", "200 ok", "404 not found", "res.status(400).json()"],
+    "type": "practical"
+  },
+  {
+    "id": "Q17",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between res.redirect() and res.send()?",
+    "follow_ups": [
+      "What HTTP status code is typically sent under the hood by res.redirect()?",
+      "Can you redirect to an external URL (like google.com)?",
+      "Why does the browser initiate a new GET request upon receiving a redirect?"
+    ],
+    "evaluation_criteria": ["redirection_mechanics", "http_status_knowledge", "browser_behavior"],
+    "expected_keywords": ["302 found", "location header", "external url", "new request", "client-side navigation"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q18",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is error-handling middleware in Express.js?",
+    "follow_ups": [
+      "How does the signature of an error-handling middleware differ from standard middleware?",
+      "Where should error-handling middleware be placed in the middleware stack?",
+      "How do you trigger the error handler from a standard route?"
+    ],
+    "evaluation_criteria": ["middleware_signature", "stack_placement", "next_usage"],
+    "expected_keywords": ["four arguments", "err, req, res, next", "bottom of stack", "next(err)"],
+    "type": "technical"
+  },
+  {
+    "id": "Q19",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is the purpose of express.static() middleware?",
+    "follow_ups": [
+      "What kind of files does this middleware serve?",
+      "How can you serve static files from a specific directory, like 'public'?",
+      "Can you create a virtual path prefix for static files?"
+    ],
+    "evaluation_criteria": ["static_asset_delivery", "directory_configuration", "virtual_paths"],
+    "expected_keywords": ["images", "css", "javascript files", "public folder", "virtual path", "serve files"],
+    "type": "practical"
+  },
+  {
+    "id": "Q20",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between app.use() and app.get()?",
+    "follow_ups": [
+      "Does app.use('/api') match a request to '/api/users'?",
+      "Does app.get('/api') match a request to '/api/users'?",
+      "Which method cares about the HTTP verb (GET, POST)?"
+    ],
+    "evaluation_criteria": ["path_matching_rules", "http_verb_sensitivity", "middleware_vs_routing"],
+    "expected_keywords": ["exact match", "prefix match", "http method", "mount path", "global middleware"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between app.route() and express.Router()?",
+    "follow_ups": [
+      "How does app.route() help reduce typo errors in route definitions?",
+      "Why is express.Router() considered a 'mini-app'?",
+      "When would you prefer express.Router() over app.route()?"
+    ],
+    "evaluation_criteria": ["chaining_routes", "modularization", "routing_design_patterns"],
+    "expected_keywords": ["chainable route handlers", "mini-app", "modular", "split files", "app.use"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q22",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is the purpose of express.Router()?",
+    "follow_ups": [
+      "How do you export a Router from a separate file and mount it in the main app?",
+      "Can a Router have its own specific middleware?",
+      "How does using Routers improve code maintainability?"
+    ],
+    "evaluation_criteria": ["code_organization", "router_mounting", "middleware_scoping"],
+    "expected_keywords": ["modularization", "module.exports", "app.use()", "mini-application", "separation of concerns"],
+    "type": "practical"
+  },
+  {
+    "id": "Q23",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is CORS and how do you enable it in Express.js?",
+    "follow_ups": [
+      "Why does the browser block cross-origin requests by default?",
+      "What npm package is commonly used to enable CORS in Express?",
+      "How can you restrict CORS to only allow requests from specific domains?"
+    ],
+    "evaluation_criteria": ["security_concepts", "package_knowledge", "cors_configuration"],
+    "expected_keywords": ["cross-origin resource sharing", "same-origin policy", "cors middleware", "options", "origins"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "Express.js",
+    "difficulty": "Medium",
+    "question": "What is the purpose of the cookie-parser middleware?",
+    "follow_ups": [
+      "How do you access cookies sent by the client after using this middleware?",
+      "What is a signed cookie and how does cookie-parser verify it?",
+      "How do you send a cookie back to the client?"
+    ],
+    "evaluation_criteria": ["cookie_handling", "security_features", "response_methods"],
+    "expected_keywords": ["req.cookies", "req.signedCookies", "res.cookie()", "secret string", "session management"],
+    "type": "practical"
+  },
+  {
+    "id": "Q25",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "What is a REST API and how do you create one using Express.js?",
+    "follow_ups": [
+      "What makes an API 'RESTful'?",
+      "How do you structure URLs and HTTP methods for a typical CRUD resource (like /users)?",
+      "Why should a REST API be stateless?"
+    ],
+    "evaluation_criteria": ["rest_architectural_style", "crud_mapping", "statelessness_understanding"],
+    "expected_keywords": ["representational state transfer", "crud", "stateless", "http methods", "json response", "resource endpoints"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q26",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "How do you handle errors globally in an Express application?",
+    "follow_ups": [
+      "Why must the global error handler have exactly four arguments?",
+      "How do you catch unhandled promise rejections or uncaught exceptions in Node.js?",
+      "How do you pass an error from an asynchronous route handler to the global error middleware?"
+    ],
+    "evaluation_criteria": ["global_middleware_setup", "async_error_handling", "process_level_errors"],
+    "expected_keywords": ["err, req, res, next", "next(err)", "try-catch", "unhandledRejection", "uncaughtException"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "How do you implement authentication in Express.js?",
+    "follow_ups": [
+      "What is the difference between session-based authentication and JWT-based authentication?",
+      "What is Passport.js and how does it integrate with Express?",
+      "How do you protect a specific route using authentication middleware?"
+    ],
+    "evaluation_criteria": ["authentication_strategies", "jwt_vs_sessions", "middleware_protection"],
+    "expected_keywords": ["jwt", "sessions", "passport.js", "bearer token", "authorization header", "middleware guard"],
+    "type": "technical"
+  },
+  {
+    "id": "Q28",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "How do you handle file uploads in Express.js?",
+    "follow_ups": [
+      "Why can't standard body-parser handle file uploads?",
+      "What is 'multipart/form-data'?",
+      "Name a popular middleware used for handling file uploads (e.g., Multer) and explain how it works."
+    ],
+    "evaluation_criteria": ["form_encoding_types", "middleware_knowledge", "upload_mechanics"],
+    "expected_keywords": ["multer", "multipart/form-data", "req.file", "binary data", "storage destination"],
+    "type": "practical"
+  },
+  {
+    "id": "Q29",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "What is the purpose of next('route') in Express.js?",
+    "follow_ups": [
+      "How does next('route') differ from next()?",
+      "Does next('route') skip to the next middleware in the current route, or skip to the next route entirely?",
+      "In what scenario would this be useful?"
+    ],
+    "evaluation_criteria": ["advanced_routing_flow", "middleware_skipping", "use_case_identification"],
+    "expected_keywords": ["skip remaining middleware", "route handler", "conditional routing", "flow control"],
+    "type": "technical"
+  },
+  {
+    "id": "Q30",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "What is the difference between res.sendFile() and res.download()?",
+    "follow_ups": [
+      "Which method sets the 'Content-Disposition' header to force a download prompt in the browser?",
+      "Do both methods transfer files asynchronously?",
+      "How do you handle errors that occur during the file transfer?"
+    ],
+    "evaluation_criteria": ["response_methods", "http_headers", "error_handling_callbacks"],
+    "expected_keywords": ["content-disposition", "attachment", "render in browser", "force download", "absolute path"],
+    "type": "technical"
+  },
+  {
+    "id": "Q31",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "What is the difference between app.listen() and server.listen()?",
+    "follow_ups": [
+      "How is the 'server' object typically created in Node.js?",
+      "Why might you need to use http.createServer(app) instead of just app.listen()?",
+      "How does this relate to setting up WebSockets (like Socket.io)?"
+    ],
+    "evaluation_criteria": ["underlying_node_http", "websocket_integration", "server_instantiation"],
+    "expected_keywords": ["http.createServer", "socket.io", "wrapper", "raw server instance", "https"],
+    "type": "technical"
+  },
+  {
+    "id": "Q32",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "How does Express.js handle asynchronous errors?",
+    "follow_ups": [
+      "Prior to Express 5, why did asynchronous errors crash the app if not passed to next(err)?",
+      "How does the 'express-async-errors' package solve this issue?",
+      "What changes are introduced in Express 5 regarding Promises in route handlers?"
+    ],
+    "evaluation_criteria": ["async_await_handling", "version_differences", "error_propagation"],
+    "expected_keywords": ["try-catch", "next(err)", "unhandled promise rejection", "express 5", "async wrapper"],
+    "type": "technical"
+  },
+  {
+    "id": "Q33",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "How do you structure a large-scale Express.js application?",
+    "follow_ups": [
+      "What is the Model-View-Controller (MVC) pattern?",
+      "How do you separate routes, controllers, and services?",
+      "Why is separation of concerns critical for scaling an Express codebase?"
+    ],
+    "evaluation_criteria": ["architecture_patterns", "folder_structure", "separation_of_concerns"],
+    "expected_keywords": ["mvc", "routes", "controllers", "services", "models", "modularity", "clean architecture"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q34",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "How do you secure an Express.js application for production?",
+    "follow_ups": [
+      "What is Helmet.js and what HTTP headers does it set?",
+      "How do you prevent brute-force attacks (e.g., using express-rate-limit)?",
+      "Why should you never run Express as root in production?"
+    ],
+    "evaluation_criteria": ["security_best_practices", "package_knowledge", "deployment_security"],
+    "expected_keywords": ["helmet", "rate limiting", "cors", "xss", "csrf", "http headers", "least privilege"],
+    "type": "practical"
+  },
+  {
+    "id": "Q35",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "How do you handle environment variables in Express.js?",
+    "follow_ups": [
+      "Why is it a security risk to hardcode API keys or database credentials?",
+      "How does the 'dotenv' package work?",
+      "How do you set NODE_ENV to 'production' and why is it important for Express performance?"
+    ],
+    "evaluation_criteria": ["configuration_management", "security", "performance_optimizations"],
+    "expected_keywords": ["process.env", "dotenv", "NODE_ENV", "secrets", "caching", "production mode"],
+    "type": "practical"
+  },
+  {
+    "id": "Q36",
+    "subject": "Express.js",
+    "difficulty": "Hard",
+    "question": "How do you test Express.js APIs?",
+    "follow_ups": [
+      "What is the difference between unit testing and integration testing for APIs?",
+      "How do you use tools like Supertest or Mocha/Chai?",
+      "How do you mock a database connection during testing?"
+    ],
+    "evaluation_criteria": ["testing_strategies", "tool_knowledge", "mocking"],
+    "expected_keywords": ["supertest", "jest", "mocha", "integration test", "mocking", "assertions", "endpoints"],
+    "type": "practical"
+  }
+]

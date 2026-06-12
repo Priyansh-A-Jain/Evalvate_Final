@@ -1,0 +1,506 @@
+[
+  {
+    "id": "Q1",
+    "subject": "DevOps",
+    "difficulty": "Easy",
+    "question": "What is DevOps and why is it used?",
+    "follow_ups": [
+      "Can you explain the CALMS framework in DevOps?",
+      "What is the cultural shift required to successfully adopt DevOps?",
+      "How does DevOps differ from traditional IT operations?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "cultural_understanding", "business_value_articulation"],
+    "expected_keywords": ["collaboration", "automation", "continuous", "silos", "culture", "delivery"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "DevOps",
+    "difficulty": "Easy",
+    "question": "Explain the key differences between Agile and DevOps.",
+    "follow_ups": [
+      "Does DevOps replace Agile, or do they complement each other?",
+      "How do Agile sprints align with continuous delivery?",
+      "Who are the primary stakeholders for Agile versus DevOps?"
+    ],
+    "evaluation_criteria": ["comparative_analysis", "methodology_understanding", "lifecycle_knowledge"],
+    "expected_keywords": ["software development", "operations", "deployment", "iterations", "scrum"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q3",
+    "subject": "DevOps",
+    "difficulty": "Easy",
+    "question": "What is version control? Name some tools you have used.",
+    "follow_ups": [
+      "What is the difference between centralized and distributed version control systems?",
+      "How does version control help in a DevOps pipeline?",
+      "Can you explain the concept of branching strategies like GitFlow?"
+    ],
+    "evaluation_criteria": ["tool_knowledge", "conceptual_clarity", "practical_application"],
+    "expected_keywords": ["source code", "git", "history", "tracking", "collaboration", "repository"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "DevOps",
+    "difficulty": "Easy",
+    "question": "What is Continuous Integration (CI)?",
+    "follow_ups": [
+      "Why is early bug detection important in CI?",
+      "How often should developers commit code in a CI environment?",
+      "What role do automated tests play in Continuous Integration?"
+    ],
+    "evaluation_criteria": ["process_understanding", "automation_awareness", "testing_importance"],
+    "expected_keywords": ["merge", "automated build", "testing", "shared repository", "early detection"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q5",
+    "subject": "DevOps",
+    "difficulty": "Easy",
+    "question": "What is Continuous Deployment (CD)?",
+    "follow_ups": [
+      "What is the difference between Continuous Delivery and Continuous Deployment?",
+      "Why might a company choose Continuous Delivery over Continuous Deployment?",
+      "What safety nets are required for successful Continuous Deployment?"
+    ],
+    "evaluation_criteria": ["definition_accuracy", "risk_management_awareness", "pipeline_knowledge"],
+    "expected_keywords": ["production", "release", "manual intervention", "pipeline", "automation"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q6",
+    "subject": "DevOps",
+    "difficulty": "Easy",
+    "question": "Name some DevOps tools you have worked with and their purpose.",
+    "follow_ups": [
+      "Which tool do you find most essential in your day-to-day work?",
+      "How do these tools integrate with one another?",
+      "Are there any open-source alternatives to the enterprise tools you mentioned?"
+    ],
+    "evaluation_criteria": ["tool_ecosystem_knowledge", "integration_understanding", "practical_experience"],
+    "expected_keywords": ["jenkins", "docker", "kubernetes", "ansible", "terraform", "prometheus"],
+    "type": "practical"
+  },
+  {
+    "id": "Q7",
+    "subject": "DevOps",
+    "difficulty": "Easy",
+    "question": "What do you understand by automation in DevOps?",
+    "follow_ups": [
+      "What tasks should NOT be automated in a DevOps pipeline?",
+      "How does automation reduce human error?",
+      "Can you give an example of an infrastructure automation tool?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "limitations_awareness", "efficiency_understanding"],
+    "expected_keywords": ["manual tasks", "efficiency", "consistency", "scripting", "human error", "repeatable"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q8",
+    "subject": "DevOps",
+    "difficulty": "Easy",
+    "question": "What is a build server or build pipeline?",
+    "follow_ups": [
+      "What are the typical stages of a build pipeline?",
+      "How does a build server handle dependencies?",
+      "What happens if a build fails in the pipeline?"
+    ],
+    "evaluation_criteria": ["pipeline_stages_knowledge", "dependency_management", "failure_handling"],
+    "expected_keywords": ["compilation", "artifacts", "jenkins", "testing", "integration", "packaging"],
+    "type": "technical"
+  },
+  {
+    "id": "Q9",
+    "subject": "DevOps",
+    "difficulty": "Easy",
+    "question": "What is Git and how is it used in DevOps?",
+    "follow_ups": [
+      "What is the difference between Git and GitHub?",
+      "How does a webhook in Git trigger a CI/CD pipeline?",
+      "What are some common Git commands you use daily?"
+    ],
+    "evaluation_criteria": ["tool_knowledge", "integration_understanding", "practical_usage"],
+    "expected_keywords": ["distributed", "version control", "commits", "branches", "webhooks", "repository"],
+    "type": "technical"
+  },
+  {
+    "id": "Q10",
+    "subject": "DevOps",
+    "difficulty": "Easy",
+    "question": "What is branching and merging in Git?",
+    "follow_ups": [
+      "What is a merge conflict and how do you resolve it?",
+      "Can you explain the difference between git merge and git rebase?",
+      "What branching strategy do you prefer for a mid-sized team?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "conflict_resolution", "strategy_knowledge"],
+    "expected_keywords": ["feature branch", "main branch", "commit history", "conflict", "rebase"],
+    "type": "technical"
+  },
+  {
+    "id": "Q11",
+    "subject": "DevOps",
+    "difficulty": "Medium",
+    "question": "What is a CI/CD tool you prefer and why?",
+    "follow_ups": [
+      "What are the limitations of the CI/CD tool you chose?",
+      "How do you secure secrets and credentials in this tool?",
+      "Compare your preferred tool with an alternative like GitLab CI or GitHub Actions."
+    ],
+    "evaluation_criteria": ["tool_justification", "security_awareness", "comparative_knowledge"],
+    "expected_keywords": ["jenkins", "gitlab ci", "github actions", "plugins", "yaml", "scalability"],
+    "type": "practical"
+  },
+  {
+    "id": "Q12",
+    "subject": "DevOps",
+    "difficulty": "Medium",
+    "question": "Explain how Jenkins integrates with Git to trigger builds.",
+    "follow_ups": [
+      "What is a Jenkinsfile and why is it important?",
+      "How do you configure polling vs webhooks in Jenkins?",
+      "How would you troubleshoot a webhook that is failing to trigger Jenkins?"
+    ],
+    "evaluation_criteria": ["integration_knowledge", "pipeline_as_code", "troubleshooting_skills"],
+    "expected_keywords": ["webhook", "polling", "jenkinsfile", "pipeline", "trigger", "payload"],
+    "type": "technical"
+  },
+  {
+    "id": "Q13",
+    "subject": "DevOps",
+    "difficulty": "Medium",
+    "question": "Describe a DevOps pipeline you have built or used.",
+    "follow_ups": [
+      "Where did the pipeline experience the most bottlenecks?",
+      "How did you integrate security testing (DevSecOps) into this pipeline?",
+      "What metrics did you use to measure the pipeline's success?"
+    ],
+    "evaluation_criteria": ["practical_experience", "bottleneck_analysis", "security_integration"],
+    "expected_keywords": ["source code", "build", "test", "deploy", "artifact", "monitoring"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q14",
+    "subject": "DevOps",
+    "difficulty": "Medium",
+    "question": "How do you manage environment configurations?",
+    "follow_ups": [
+      "What are the risks of hardcoding configurations?",
+      "How do tools like Ansible or Consul help with configuration management?",
+      "Explain the 12-Factor App methodology regarding configuration."
+    ],
+    "evaluation_criteria": ["best_practices", "tool_knowledge", "methodology_understanding"],
+    "expected_keywords": ["environment variables", "secrets management", "ansible", "12-factor", "configuration drift"],
+    "type": "technical"
+  },
+  {
+    "id": "Q15",
+    "subject": "DevOps",
+    "difficulty": "Medium",
+    "question": "Explain the concept of Infrastructure as Code (IaC).",
+    "follow_ups": [
+      "What is the difference between declarative and imperative IaC tools?",
+      "How does IaC help with disaster recovery?",
+      "Can you give an example of a declarative IaC tool?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "tool_categorization", "benefits_articulation"],
+    "expected_keywords": ["terraform", "cloudformation", "declarative", "imperative", "versioning", "reproducibility"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q16",
+    "subject": "DevOps",
+    "difficulty": "Medium",
+    "question": "What is configuration management? Name some tools.",
+    "follow_ups": [
+      "How does configuration management differ from infrastructure provisioning?",
+      "Compare Ansible and Chef/Puppet in terms of architecture (agent vs agentless).",
+      "What is configuration drift and how do you prevent it?"
+    ],
+    "evaluation_criteria": ["domain_knowledge", "tool_comparison", "drift_management"],
+    "expected_keywords": ["ansible", "chef", "puppet", "idempotency", "agentless", "drift"],
+    "type": "technical"
+  },
+  {
+    "id": "Q17",
+    "subject": "DevOps",
+    "difficulty": "Medium",
+    "question": "What are Docker containers and why use them?",
+    "follow_ups": [
+      "How does a container differ from a Virtual Machine (VM)?",
+      "What is the role of a Dockerfile?",
+      "How do containers solve the 'it works on my machine' problem?"
+    ],
+    "evaluation_criteria": ["conceptual_clarity", "vm_vs_container", "practical_benefits"],
+    "expected_keywords": ["isolation", "lightweight", "kernel", "dockerfile", "images", "portability"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q18",
+    "subject": "DevOps",
+    "difficulty": "Medium",
+    "question": "Describe how you would monitor applications and infrastructure.",
+    "follow_ups": [
+      "What is the difference between metrics, logs, and traces?",
+      "How would you set up alerting to avoid alert fatigue?",
+      "What tools would you use for monitoring a Kubernetes cluster?"
+    ],
+    "evaluation_criteria": ["observability_knowledge", "alerting_strategy", "tool_selection"],
+    "expected_keywords": ["prometheus", "grafana", "elk stack", "metrics", "tracing", "alert fatigue"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q19",
+    "subject": "DevOps",
+    "difficulty": "Medium",
+    "question": "What are some common strategies for handling rollback in deployments?",
+    "follow_ups": [
+      "How does a Blue-Green deployment make rollbacks easier?",
+      "What challenges arise when rolling back database schema changes?",
+      "How do feature flags help mitigate the need for full rollbacks?"
+    ],
+    "evaluation_criteria": ["strategy_knowledge", "database_handling", "mitigation_techniques"],
+    "expected_keywords": ["blue-green", "canary", "feature flags", "database migrations", "zero downtime"],
+    "type": "technical"
+  },
+  {
+    "id": "Q20",
+    "subject": "DevOps",
+    "difficulty": "Medium",
+    "question": "How do you implement logging in distributed systems?",
+    "follow_ups": [
+      "What is centralized logging and why is it necessary?",
+      "How do you correlate logs across different microservices?",
+      "What is the ELK or EFK stack?"
+    ],
+    "evaluation_criteria": ["architecture_understanding", "correlation_knowledge", "tool_familiarity"],
+    "expected_keywords": ["correlation id", "centralized", "elk", "fluentd", "microservices", "aggregation"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "Explain how Kubernetes helps with deployment scaling.",
+    "follow_ups": [
+      "What is the difference between Horizontal Pod Autoscaler (HPA) and Vertical Pod Autoscaler (VPA)?",
+      "How does the Cluster Autoscaler work with cloud providers?",
+      "What metrics can HPA use to trigger scaling?"
+    ],
+    "evaluation_criteria": ["kubernetes_knowledge", "autoscaling_mechanisms", "metric_usage"],
+    "expected_keywords": ["hpa", "vpa", "cluster autoscaler", "orchestration", "cpu utilization", "custom metrics"],
+    "type": "technical"
+  },
+  {
+    "id": "Q22",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "How would you design a highly available CI/CD pipeline?",
+    "follow_ups": [
+      "How do you handle single points of failure in Jenkins or GitLab?",
+      "How would you implement disaster recovery for the pipeline itself?",
+      "What role do distributed build agents play in high availability?"
+    ],
+    "evaluation_criteria": ["architectural_design", "resiliency_planning", "disaster_recovery"],
+    "expected_keywords": ["high availability", "redundancy", "build agents", "disaster recovery", "load balancing"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q23",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "What is canary deployment and when would you use it?",
+    "follow_ups": [
+      "How do you route a percentage of traffic to the canary release?",
+      "What metrics do you monitor before rolling out the canary to 100%?",
+      "How does a canary release differ from A/B testing?"
+    ],
+    "evaluation_criteria": ["deployment_strategy", "traffic_routing", "monitoring_integration"],
+    "expected_keywords": ["gradual rollout", "traffic shifting", "blast radius", "observability", "load balancer"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "How do you manage secrets securely in DevOps processes?",
+    "follow_ups": [
+      "Why is storing secrets in environment variables sometimes discouraged?",
+      "How do tools like HashiCorp Vault or AWS Secrets Manager work?",
+      "What is the process for rotating compromised secrets?"
+    ],
+    "evaluation_criteria": ["security_best_practices", "tool_knowledge", "lifecycle_management"],
+    "expected_keywords": ["hashicorp vault", "encryption at rest", "secret rotation", "dynamic secrets", "iam roles"],
+    "type": "technical"
+  },
+  {
+    "id": "Q25",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "Describe a challenging DevOps problem you solved.",
+    "follow_ups": [
+      "What was the root cause of the issue?",
+      "How did you ensure the problem wouldn't happen again?",
+      "Who were the stakeholders you had to coordinate with during the incident?"
+    ],
+    "evaluation_criteria": ["problem_solving", "root_cause_analysis", "preventative_measures"],
+    "expected_keywords": ["incident response", "post-mortem", "bottleneck", "automation", "collaboration"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q26",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "What metrics would you choose to assess deployment quality?",
+    "follow_ups": [
+      "What are the DORA metrics?",
+      "How do you measure Mean Time to Recovery (MTTR)?",
+      "What constitutes a 'failed deployment' in your metrics?"
+    ],
+    "evaluation_criteria": ["metric_selection", "industry_standards", "definition_of_success"],
+    "expected_keywords": ["dora metrics", "deployment frequency", "lead time", "mttr", "change failure rate"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q27",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "How do you handle versioning of infrastructure code?",
+    "follow_ups": [
+      "How do you manage Terraform state files securely in a team?",
+      "What happens if someone makes a manual change to the infrastructure bypassing IaC?",
+      "How do you test infrastructure code before deploying?"
+    ],
+    "evaluation_criteria": ["iac_best_practices", "state_management", "testing_iac"],
+    "expected_keywords": ["terraform state", "remote backend", "configuration drift", "gitops", "terratest"],
+    "type": "technical"
+  },
+  {
+    "id": "Q28",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "What is the role of continuous testing in DevOps?",
+    "follow_ups": [
+      "How do you balance test coverage with pipeline execution speed?",
+      "At what stage of the pipeline should security and performance testing occur?",
+      "What is 'shift-left' testing?"
+    ],
+    "evaluation_criteria": ["testing_strategy", "shift_left_concept", "pipeline_optimization"],
+    "expected_keywords": ["shift-left", "automated testing", "performance", "security", "test coverage", "feedback loop"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q29",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "How do you ensure rollback safety in a production environment?",
+    "follow_ups": [
+      "What strategies do you use for rolling back database changes?",
+      "How do you automate the rollback trigger?",
+      "Have you ever experienced a failed rollback? What went wrong?"
+    ],
+    "evaluation_criteria": ["database_safety", "automation_triggers", "risk_mitigation"],
+    "expected_keywords": ["backward compatibility", "database migrations", "automated rollback", "health checks", "blue-green"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q30",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "Describe how you would improve CI/CD pipelines to minimize downtime.",
+    "follow_ups": [
+      "How can caching improve pipeline execution time?",
+      "What are the benefits of parallel test execution?",
+      "How does deployment strategy impact application downtime during releases?"
+    ],
+    "evaluation_criteria": ["optimization_techniques", "downtime_reduction", "deployment_strategies"],
+    "expected_keywords": ["zero downtime", "caching", "parallelization", "blue-green", "canary", "optimization"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q31",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "How do you maintain reproducible build environments?",
+    "follow_ups": [
+      "How do Docker containers guarantee reproducibility?",
+      "What is the importance of pinning dependency versions?",
+      "How do you handle OS-level dependencies in build servers?"
+    ],
+    "evaluation_criteria": ["reproducibility_concept", "dependency_management", "containerization_benefits"],
+    "expected_keywords": ["docker", "version pinning", "immutable infrastructure", "dependencies", "parity"],
+    "type": "technical"
+  },
+  {
+    "id": "Q32",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "Explain the differences between deployment strategies (rolling vs blue-green).",
+    "follow_ups": [
+      "What are the cost implications of a blue-green deployment?",
+      "How does connection draining work during a rolling deployment?",
+      "When would you choose a rolling deployment over blue-green?"
+    ],
+    "evaluation_criteria": ["strategy_comparison", "cost_awareness", "technical_mechanisms"],
+    "expected_keywords": ["blue-green", "rolling update", "zero downtime", "infrastructure cost", "load balancer", "connection draining"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q33",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "How do you implement performance monitoring for cloud systems?",
+    "follow_ups": [
+      "What is APM (Application Performance Monitoring)?",
+      "How do you monitor cloud-native serverless functions like AWS Lambda?",
+      "How do you correlate infrastructure metrics with application performance?"
+    ],
+    "evaluation_criteria": ["apm_knowledge", "serverless_monitoring", "correlation_skills"],
+    "expected_keywords": ["apm", "latency", "throughput", "datadog", "new relic", "distributed tracing"],
+    "type": "technical"
+  },
+  {
+    "id": "Q34",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "What are the security risks in DevOps and how do you mitigate them?",
+    "follow_ups": [
+      "How do you scan Docker images for vulnerabilities?",
+      "What is DevSecOps and how does it change the traditional pipeline?",
+      "How do you enforce least privilege access in CI/CD?"
+    ],
+    "evaluation_criteria": ["security_knowledge", "devsecops_principles", "vulnerability_management"],
+    "expected_keywords": ["devsecops", "image scanning", "least privilege", "static analysis", "sast", "dast"],
+    "type": "technical"
+  },
+  {
+    "id": "Q35",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "How would you structure DevOps automation for microservices?",
+    "follow_ups": [
+      "Do you prefer a monorepo or polyrepo approach for microservices CI/CD?",
+      "How do you handle independent deployments of interdependent services?",
+      "How does a service mesh help in microservices networking?"
+    ],
+    "evaluation_criteria": ["microservices_architecture", "deployment_independence", "repo_strategies"],
+    "expected_keywords": ["monorepo", "polyrepo", "service mesh", "independent scaling", "api gateway", "contract testing"],
+    "type": "scenario"
+  },
+  {
+    "id": "Q36",
+    "subject": "DevOps",
+    "difficulty": "Hard",
+    "question": "Discuss how DevOps practices support business goals like faster delivery.",
+    "follow_ups": [
+      "How does faster delivery impact competitive advantage?",
+      "Can you explain the feedback loop from production back to development?",
+      "How does DevOps improve system stability and customer satisfaction?"
+    ],
+    "evaluation_criteria": ["business_acumen", "feedback_loops", "customer_focus"],
+    "expected_keywords": ["time to market", "feedback loop", "agility", "customer satisfaction", "dora metrics", "stability"],
+    "type": "conceptual"
+  }
+]

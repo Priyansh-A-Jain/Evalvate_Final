@@ -1,0 +1,506 @@
+[
+  {
+    "id": "Q1",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What is Node.js and how does it work internally?",
+    "follow_ups": [
+      "Is Node.js a programming language or a runtime environment?",
+      "What engine does Node.js use to execute JavaScript?",
+      "How does Node.js handle multiple client requests if it is single-threaded?"
+    ],
+    "evaluation_criteria": ["runtime_understanding", "v8_engine_awareness", "event_loop_basics"],
+    "expected_keywords": ["runtime environment", "v8 engine", "single-threaded", "event loop", "asynchronous", "libuv"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What is Node.js used for?",
+    "follow_ups": [
+      "What types of applications are best suited for Node.js?",
+      "Why is Node.js often used for real-time applications like chat servers?",
+      "Would you use Node.js for heavy image processing or video encoding? Why or why not?"
+    ],
+    "evaluation_criteria": ["use_case_identification", "real_time_capabilities", "cpu_bound_limitations"],
+    "expected_keywords": ["web servers", "apis", "real-time", "websockets", "i/o bound", "cpu intensive"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q3",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What is the difference between Node.js and JavaScript?",
+    "follow_ups": [
+      "Where does JavaScript traditionally run?",
+      "What objects are available in the browser (like 'window' or 'document') that are NOT available in Node.js?",
+      "What built-in modules does Node.js provide that the browser does not?"
+    ],
+    "evaluation_criteria": ["environment_distinction", "browser_vs_server_apis", "module_knowledge"],
+    "expected_keywords": ["language vs runtime", "browser", "dom", "window", "file system", "http module"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q4",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What is the event-driven architecture in Node.js?",
+    "follow_ups": [
+      "What is an EventEmitter in Node.js?",
+      "How do you listen for an event and trigger an event?",
+      "How does this architecture differ from a traditional thread-per-request model?"
+    ],
+    "evaluation_criteria": ["event_emitter_usage", "publish_subscribe_pattern", "architecture_comparison"],
+    "expected_keywords": ["eventemitter", "on", "emit", "callbacks", "publish-subscribe", "non-blocking"],
+    "type": "technical"
+  },
+  {
+    "id": "Q5",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What is the difference between blocking and non-blocking I/O?",
+    "follow_ups": [
+      "Give an example of a blocking operation in Node.js.",
+      "How does non-blocking I/O prevent the application from freezing?",
+      "Why are synchronous 'Sync' methods (like readFileSync) generally discouraged in web servers?"
+    ],
+    "evaluation_criteria": ["execution_flow", "synchronous_vs_asynchronous", "performance_implications"],
+    "expected_keywords": ["wait", "execution stops", "callback", "readFileSync", "asynchronous", "throughput"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q6",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What is the event loop in Node.js and how does it work?",
+    "follow_ups": [
+      "What is the role of the call stack?",
+      "What is the difference between the microtask queue and the macrotask (callback) queue?",
+      "Which C library implements the event loop in Node.js?"
+    ],
+    "evaluation_criteria": ["event_loop_phases", "queue_priorities", "underlying_libraries"],
+    "expected_keywords": ["libuv", "call stack", "callback queue", "microtasks", "promises", "phases"],
+    "type": "technical"
+  },
+  {
+    "id": "Q7",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What is npm and what is its purpose?",
+    "follow_ups": [
+      "What does 'npm' stand for?",
+      "How do you install a package globally versus locally?",
+      "What is the difference between 'npm' and 'npx'?"
+    ],
+    "evaluation_criteria": ["package_management", "installation_scopes", "npx_utility"],
+    "expected_keywords": ["node package manager", "registry", "global flag -g", "local directory", "execute packages", "npx"],
+    "type": "practical"
+  },
+  {
+    "id": "Q8",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the package.json file?",
+    "follow_ups": [
+      "What command generates a package.json file?",
+      "How does it help when sharing a project with other developers?",
+      "What is the 'scripts' section used for?"
+    ],
+    "evaluation_criteria": ["project_initialization", "dependency_tracking", "script_automation"],
+    "expected_keywords": ["npm init", "dependencies", "metadata", "versions", "npm start", "reproducibility"],
+    "type": "practical"
+  },
+  {
+    "id": "Q9",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What is the role of the process object in Node.js?",
+    "follow_ups": [
+      "How do you access command-line arguments using the process object?",
+      "How do you access environment variables?",
+      "How can you manually exit a Node.js process and provide an exit code?"
+    ],
+    "evaluation_criteria": ["command_line_args", "environment_variables", "process_control"],
+    "expected_keywords": ["process.argv", "process.env", "process.exit()", "global object", "current process"],
+    "type": "technical"
+  },
+  {
+    "id": "Q10",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the global object in Node.js?",
+    "follow_ups": [
+      "How does the 'global' object in Node.js differ from the 'window' object in the browser?",
+      "Are variables declared with 'var' at the top level of a module automatically added to the global object?",
+      "Why is it considered bad practice to pollute the global object?"
+    ],
+    "evaluation_criteria": ["global_scope", "module_scope_isolation", "best_practices"],
+    "expected_keywords": ["global vs window", "module scope", "not added to global", "pollution", "setTimeout"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q11",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "What are __dirname and __filename?",
+    "follow_ups": [
+      "What does __dirname represent?",
+      "What does __filename represent?",
+      "Are these variables available in ES modules (using 'import'/'export')?"
+    ],
+    "evaluation_criteria": ["path_variables", "module_context", "es_module_differences"],
+    "expected_keywords": ["absolute path", "directory name", "file name", "commonjs", "import.meta.url"],
+    "type": "practical"
+  },
+  {
+    "id": "Q12",
+    "subject": "Node.js",
+    "difficulty": "Easy",
+    "question": "How do you create a simple HTTP server in Node.js?",
+    "follow_ups": [
+      "Which built-in module is required to create a server?",
+      "What method is called to start listening for incoming connections?",
+      "How do you send a response back to the client?"
+    ],
+    "evaluation_criteria": ["http_module_usage", "server_instantiation", "response_handling"],
+    "expected_keywords": ["require('http')", "http.createServer", "server.listen", "req, res", "res.end()"],
+    "type": "practical"
+  },
+  {
+    "id": "Q13",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What is the purpose of the require() function in Node.js?",
+    "follow_ups": [
+      "How does Node.js resolve the path when you require a built-in module versus a local file?",
+      "Is require() synchronous or asynchronous?",
+      "What is module caching in Node.js?"
+    ],
+    "evaluation_criteria": ["module_resolution", "synchronous_execution", "caching_mechanism"],
+    "expected_keywords": ["commonjs", "synchronous", "node_modules", "relative path", "cached", "singleton"],
+    "type": "technical"
+  },
+  {
+    "id": "Q14",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between require() and import?",
+    "follow_ups": [
+      "Which module system does require() belong to, and which does import belong to?",
+      "How do you enable ES modules (import/export) in a Node.js project?",
+      "Can you use 'require' inside an ES module?"
+    ],
+    "evaluation_criteria": ["module_systems", "package_json_configuration", "interoperability"],
+    "expected_keywords": ["commonjs", "es modules", "\"type\": \"module\"", "static analysis", "dynamic loading"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q15",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between callbacks and promises?",
+    "follow_ups": [
+      "What is 'callback hell' and how do promises help solve it?",
+      "In a traditional Node.js error-first callback, what is the first parameter?",
+      "How do you convert a callback-based function into a promise-based function?"
+    ],
+    "evaluation_criteria": ["asynchronous_patterns", "error_first_convention", "promisification"],
+    "expected_keywords": ["error-first callback", "inversion of control", "chaining", ".then()", "util.promisify"],
+    "type": "technical"
+  },
+  {
+    "id": "Q16",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between promises and async/await in Node.js?",
+    "follow_ups": [
+      "Does async/await block the main thread?",
+      "How do you handle errors when using async/await?",
+      "Can you use the 'await' keyword outside of an 'async' function in Node.js?"
+    ],
+    "evaluation_criteria": ["syntactic_sugar", "error_handling", "top_level_await"],
+    "expected_keywords": ["syntactic sugar", "non-blocking", "try-catch", "top-level await", "readability"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q17",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What is the purpose of the fs module?",
+    "follow_ups": [
+      "What does 'fs' stand for?",
+      "How do you read a file asynchronously using the fs module?",
+      "How can you use promises with the fs module instead of callbacks?"
+    ],
+    "evaluation_criteria": ["file_system_operations", "async_methods", "fs_promises_api"],
+    "expected_keywords": ["file system", "fs.readFile", "fs.writeFile", "fs.promises", "require('fs')"],
+    "type": "practical"
+  },
+  {
+    "id": "Q18",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between fs.readFile() and fs.createReadStream()?",
+    "follow_ups": [
+      "Which method loads the entire file into memory before triggering the callback?",
+      "When working with a very large file (e.g., a 2GB video), which method must you use?",
+      "How does a ReadStream emit data?"
+    ],
+    "evaluation_criteria": ["memory_management", "large_file_handling", "event_emitters"],
+    "expected_keywords": ["buffer", "memory limit", "chunks", "data event", "streaming", "memory efficient"],
+    "type": "technical"
+  },
+  {
+    "id": "Q19",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What are streams in Node.js and what are their types?",
+    "follow_ups": [
+      "Name the four fundamental stream types in Node.js.",
+      "What is the 'pipe()' method used for?",
+      "Give an example of a Duplex stream and a Transform stream."
+    ],
+    "evaluation_criteria": ["stream_types", "piping_mechanism", "practical_examples"],
+    "expected_keywords": ["readable", "writable", "duplex", "transform", "pipe", "tcp sockets", "zlib"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q20",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What are buffers in Node.js and why are they used?",
+    "follow_ups": [
+      "What type of data do buffers store?",
+      "Are buffers resizable once created?",
+      "How do buffers relate to streams?"
+    ],
+    "evaluation_criteria": ["binary_data_handling", "fixed_size_memory", "stream_integration"],
+    "expected_keywords": ["binary data", "raw memory", "fixed-size array", "V8 heap", "chunks", "streams"],
+    "type": "technical"
+  },
+  {
+    "id": "Q21",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between exports and module.exports?",
+    "follow_ups": [
+      "Which one does the require() function actually return?",
+      "What happens if you assign a completely new object to 'exports'?",
+      "Why is 'exports' essentially just a reference to 'module.exports'?"
+    ],
+    "evaluation_criteria": ["module_system_quirks", "reference_assignment", "commonjs_exports"],
+    "expected_keywords": ["reference", "returns module.exports", "overwrite exports", "CommonJS", "alias"],
+    "type": "technical"
+  },
+  {
+    "id": "Q22",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between setTimeout() and setInterval() in Node.js?",
+    "follow_ups": [
+      "How do you stop a setInterval from continuing to run?",
+      "Does Node.js guarantee that the callback will run exactly at the specified delay?",
+      "What is the unref() method on a timeout object used for?"
+    ],
+    "evaluation_criteria": ["timing_functions", "event_loop_guarantees", "process_lifecycle"],
+    "expected_keywords": ["once", "repeating", "clearInterval", "minimum delay", "unref()", "event loop exit"],
+    "type": "technical"
+  },
+  {
+    "id": "Q23",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What is the difference between process.nextTick() and setImmediate()?",
+    "follow_ups": [
+      "Which one executes immediately after the current operation completes, before the event loop continues?",
+      "Which one is executed in the 'check' phase of the event loop?",
+      "Why might excessive use of process.nextTick() cause I/O starvation?"
+    ],
+    "evaluation_criteria": ["event_loop_phases", "execution_timing", "starvation_risks"],
+    "expected_keywords": ["microtask", "check phase", "before next phase", "I/O starvation", "macrotask"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "Node.js",
+    "difficulty": "Medium",
+    "question": "What is middleware in Node.js (Express)?",
+    "follow_ups": [
+      "What are the standard arguments passed to a middleware function?",
+      "What must a middleware function do to pass control to the next middleware?",
+      "What happens if you don't call next() or send a response?"
+    ],
+    "evaluation_criteria": ["middleware_signature", "flow_control", "hanging_requests"],
+    "expected_keywords": ["req, res, next", "intercept request", "next()", "hanging request", "modify response"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q25",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is clustering in Node.js and why is it used?",
+    "follow_ups": [
+      "Since Node.js is single-threaded, how does clustering utilize multi-core processors?",
+      "Do worker processes share the same memory space?",
+      "How is incoming traffic distributed among the worker processes?"
+    ],
+    "evaluation_criteria": ["multi_core_utilization", "process_isolation", "load_balancing"],
+    "expected_keywords": ["child processes", "multiple cores", "no shared memory", "round-robin", "IPC channel"],
+    "type": "technical"
+  },
+  {
+    "id": "Q26",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the cluster module?",
+    "follow_ups": [
+      "How do you determine if the current process is the master or a worker?",
+      "What happens to the application if a worker process crashes?",
+      "How can the master process automatically restart a crashed worker?"
+    ],
+    "evaluation_criteria": ["module_api", "fault_tolerance", "process_management"],
+    "expected_keywords": ["cluster.isMaster", "cluster.isPrimary", "cluster.fork()", "exit event", "high availability"],
+    "type": "practical"
+  },
+  {
+    "id": "Q27",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is the difference between child_process and worker_threads?",
+    "follow_ups": [
+      "Which module is better suited for executing a separate shell script?",
+      "Which module is better suited for performing heavy CPU-bound JavaScript computations?",
+      "Do worker_threads share memory?"
+    ],
+    "evaluation_criteria": ["module_selection", "cpu_bound_tasks", "memory_sharing"],
+    "expected_keywords": ["separate process", "v8 instances", "SharedArrayBuffer", "CPU intensive", "lightweight threads"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q28",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is the difference between spawn(), fork(), and exec()?",
+    "follow_ups": [
+      "Which method creates a shell to execute the command?",
+      "Which method is specifically designed to spawn new Node.js processes with an IPC communication channel?",
+      "Which method streams the data back (suitable for large outputs) instead of buffering it?"
+    ],
+    "evaluation_criteria": ["child_process_methods", "ipc_channels", "output_handling"],
+    "expected_keywords": ["shell", "buffers output", "streams output", "fork IPC", "Node.js script", "spawn"],
+    "type": "technical"
+  },
+  {
+    "id": "Q29",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the child_process module?",
+    "follow_ups": [
+      "Why might you use child_process instead of running everything in the main event loop?",
+      "How do the parent and child processes communicate?",
+      "What happens if a child process runs an infinite loop?"
+    ],
+    "evaluation_criteria": ["offloading_tasks", "inter_process_communication", "process_isolation"],
+    "expected_keywords": ["execute system commands", "IPC", "postMessage", "stdin/stdout", "prevent blocking"],
+    "type": "practical"
+  },
+  {
+    "id": "Q30",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the os module in Node.js?",
+    "follow_ups": [
+      "How can you use the os module to determine how many child processes to fork in a cluster?",
+      "How do you get the amount of free system memory?",
+      "How do you find the system's temporary directory?"
+    ],
+    "evaluation_criteria": ["system_information", "resource_querying", "module_methods"],
+    "expected_keywords": ["os.cpus()", "os.freemem()", "os.tmpdir()", "hardware info", "operating system"],
+    "type": "practical"
+  },
+  {
+    "id": "Q31",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is the difference between path.join() and path.resolve()?",
+    "follow_ups": [
+      "Which method simply concatenates path segments and normalizes the result?",
+      "Which method resolves to an absolute path, acting like a sequence of 'cd' commands?",
+      "What happens if you pass an absolute path as the second argument to path.resolve()?"
+    ],
+    "evaluation_criteria": ["path_manipulation", "relative_vs_absolute", "method_behavior"],
+    "expected_keywords": ["concatenate", "normalize", "absolute path", "current working directory", "root directory"],
+    "type": "technical"
+  },
+  {
+    "id": "Q32",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is semantic versioning and what are its types?",
+    "follow_ups": [
+      "What do the three numbers in a version like '2.14.3' represent?",
+      "What does the caret (^) symbol mean before a version number in package.json?",
+      "What does the tilde (~) symbol mean?"
+    ],
+    "evaluation_criteria": ["semver_components", "version_ranges", "package_json_syntax"],
+    "expected_keywords": ["major", "minor", "patch", "breaking changes", "backward compatible", "caret", "tilde"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q33",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is the difference between npm install and npm ci?",
+    "follow_ups": [
+      "Which command is preferred for automated environments like CI/CD pipelines?",
+      "Which command strictly adheres to the versions in package-lock.json without modifying it?",
+      "What does 'npm ci' do to the existing node_modules folder before installing?"
+    ],
+    "evaluation_criteria": ["dependency_installation", "reproducible_builds", "ci_cd_practices"],
+    "expected_keywords": ["clean install", "package-lock.json", "deletes node_modules", "exact versions", "faster"],
+    "type": "technical"
+  },
+  {
+    "id": "Q34",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is the difference between dependencies and devDependencies?",
+    "follow_ups": [
+      "Give an example of a package that belongs in devDependencies.",
+      "Are devDependencies installed when a project is installed with `npm install --production`?",
+      "How do you add a package to devDependencies using the CLI?"
+    ],
+    "evaluation_criteria": ["package_categorization", "production_builds", "cli_flags"],
+    "expected_keywords": ["production", "development only", "testing frameworks", "eslint", "npm install --save-dev", "--production"],
+    "type": "practical"
+  },
+  {
+    "id": "Q35",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the node_modules folder?",
+    "follow_ups": [
+      "Why should you never commit the node_modules folder to version control (e.g., Git)?",
+      "How does Node.js locate a module if it's not found in the immediate node_modules folder?",
+      "What is the structure of dependencies inside node_modules (nested vs flattened)?"
+    ],
+    "evaluation_criteria": ["folder_purpose", "version_control_best_practices", "module_resolution_algorithm"],
+    "expected_keywords": ["dependencies", "gitignore", "size", "module resolution", "flattened structure", "up the directory tree"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q36",
+    "subject": "Node.js",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the scripts section in package.json?",
+    "follow_ups": [
+      "How do you run a custom script defined as 'build'?",
+      "What are pre and post scripts (e.g., preinstall, poststart)?",
+      "Do scripts in package.json automatically resolve binaries inside node_modules/.bin?"
+    ],
+    "evaluation_criteria": ["automation", "lifecycle_hooks", "binary_resolution"],
+    "expected_keywords": ["npm run", "automation", "lifecycle hooks", "pre/post", "local binaries", "shortcuts"],
+    "type": "practical"
+  }
+]

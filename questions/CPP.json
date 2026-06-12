@@ -1,0 +1,506 @@
+[
+  {
+    "id": "Q1",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What is the difference between C and C++?",
+    "follow_ups": [
+      "Is C++ completely backward compatible with C?",
+      "Does C support function overloading?",
+      "How do memory management functions differ between C and C++?"
+    ],
+    "evaluation_criteria": ["language_features", "backward_compatibility", "memory_management"],
+    "expected_keywords": ["object-oriented", "classes", "templates", "malloc/free", "new/delete", "overloading"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q2",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What are the main features of object-oriented programming in C++?",
+    "follow_ups": [
+      "Can you briefly define encapsulation?",
+      "How is inheritance implemented in C++?",
+      "Give an example of polymorphism."
+    ],
+    "evaluation_criteria": ["oop_principles", "definition_accuracy", "example_provided"],
+    "expected_keywords": ["encapsulation", "inheritance", "polymorphism", "abstraction", "classes", "objects"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q3",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What is the difference between a class and a struct in C++?",
+    "follow_ups": [
+      "What is the default access specifier for members of a class versus a struct?",
+      "What is the default inheritance type for a struct?",
+      "When would you prefer to use a struct over a class?"
+    ],
+    "evaluation_criteria": ["access_specifiers", "inheritance_defaults", "design_choices"],
+    "expected_keywords": ["private by default", "public by default", "plain old data (POD)", "access modifiers"],
+    "type": "technical"
+  },
+  {
+    "id": "Q4",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What is the difference between a pointer and a reference in C++?",
+    "follow_ups": [
+      "Can a reference be reassigned to point to a different object?",
+      "Can a reference be NULL?",
+      "How does the syntax for accessing members differ between a pointer and a reference?"
+    ],
+    "evaluation_criteria": ["reassignment_rules", "null_safety", "syntax_knowledge"],
+    "expected_keywords": ["memory address", "alias", "reassignment", "null pointer", "dereferencing", "arrow operator"],
+    "type": "technical"
+  },
+  {
+    "id": "Q5",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What is the purpose of the const keyword in C++?",
+    "follow_ups": [
+      "What does it mean to declare a class member function as const?",
+      "What is a const pointer versus a pointer to a const?",
+      "Can you modify a variable referenced by a const reference?"
+    ],
+    "evaluation_criteria": ["immutability", "const_member_functions", "pointer_constness"],
+    "expected_keywords": ["read-only", "immutable", "member function", "pointer to const", "const pointer", "bitwise constness"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q6",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What is the difference between new and malloc()?",
+    "follow_ups": [
+      "Which one calls the constructor of an object?",
+      "How do they handle allocation failure differently?",
+      "Can you mix new with free() or malloc() with delete?"
+    ],
+    "evaluation_criteria": ["allocation_mechanics", "constructor_invocation", "error_handling"],
+    "expected_keywords": ["constructor", "destructor", "operator", "function", "std::bad_alloc", "void pointer"],
+    "type": "technical"
+  },
+  {
+    "id": "Q7",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What is the difference between delete and delete[]?",
+    "follow_ups": [
+      "What happens if you use 'delete' on an array allocated with 'new[]'?",
+      "How does the compiler know how many elements are in the array when delete[] is called?",
+      "Why is it important to match new with delete and new[] with delete[]?"
+    ],
+    "evaluation_criteria": ["memory_deallocation", "undefined_behavior", "array_handling"],
+    "expected_keywords": ["array", "single object", "destructors", "memory leak", "undefined behavior"],
+    "type": "technical"
+  },
+  {
+    "id": "Q8",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What is stack allocation vs heap allocation in C++?",
+    "follow_ups": [
+      "Which allocation method is faster and why?",
+      "How is memory freed in stack allocation versus heap allocation?",
+      "What causes a stack overflow?"
+    ],
+    "evaluation_criteria": ["memory_regions", "performance_differences", "lifetime_management"],
+    "expected_keywords": ["automatic memory", "dynamic memory", "new", "delete", "scope", "stack overflow"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q9",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What are namespaces in C++ and why are they used?",
+    "follow_ups": [
+      "How do you resolve a name conflict using namespaces?",
+      "What is the 'std' namespace?",
+      "Why is 'using namespace std;' considered bad practice in header files?"
+    ],
+    "evaluation_criteria": ["scope_resolution", "name_collision", "best_practices"],
+    "expected_keywords": ["name collisions", "scope resolution operator", "std", "global namespace", "pollution"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q10",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What are static members in C++?",
+    "follow_ups": [
+      "Is a static member variable tied to an instance of the class or the class itself?",
+      "Can a static member function access non-static member variables?",
+      "How do you initialize a static member variable?"
+    ],
+    "evaluation_criteria": ["class_vs_instance", "access_rules", "initialization_syntax"],
+    "expected_keywords": ["class level", "shared variable", "no this pointer", "global lifetime", "scope resolution"],
+    "type": "technical"
+  },
+  {
+    "id": "Q11",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What is the STL and why is it important?",
+    "follow_ups": [
+      "What are the three main components of the STL?",
+      "Give an example of an STL container.",
+      "How do iterators connect algorithms to containers in the STL?"
+    ],
+    "evaluation_criteria": ["stl_components", "generic_programming", "iterator_usage"],
+    "expected_keywords": ["standard template library", "containers", "algorithms", "iterators", "generic", "vector"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q12",
+    "subject": "C++",
+    "difficulty": "Easy",
+    "question": "What is operator overloading in C++?",
+    "follow_ups": [
+      "Can you overload all operators in C++? If not, name one you cannot.",
+      "How does operator overloading improve code readability?",
+      "Should operator overloads be implemented as member functions or non-member functions?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "limitations", "design_choices"],
+    "expected_keywords": ["custom behavior", "user-defined types", "sizeof", "scope resolution (::)", "friend function"],
+    "type": "technical"
+  },
+  {
+    "id": "Q13",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What is polymorphism and how is it implemented in C++?",
+    "follow_ups": [
+      "What is a virtual function?",
+      "What is an abstract class in C++?",
+      "How does a vtable (virtual table) facilitate polymorphism?"
+    ],
+    "evaluation_criteria": ["virtual_functions", "vtable_mechanics", "abstract_classes"],
+    "expected_keywords": ["compile-time", "runtime", "virtual", "vtable", "override", "base class pointer"],
+    "type": "technical"
+  },
+  {
+    "id": "Q14",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What is the difference between compile-time polymorphism and runtime polymorphism?",
+    "follow_ups": [
+      "Give an example of compile-time polymorphism.",
+      "What C++ feature enables runtime polymorphism?",
+      "Which one incurs a performance overhead and why?"
+    ],
+    "evaluation_criteria": ["early_vs_late_binding", "implementation_examples", "performance_overhead"],
+    "expected_keywords": ["function overloading", "templates", "virtual functions", "early binding", "late binding", "vptr"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q15",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What is the purpose of the virtual keyword in C++?",
+    "follow_ups": [
+      "What happens if you do not use the virtual keyword on a base class method overridden in a derived class?",
+      "What is a pure virtual function?",
+      "Can a constructor be virtual?"
+    ],
+    "evaluation_criteria": ["method_resolution", "pure_virtual", "constructor_rules"],
+    "expected_keywords": ["late binding", "override", "pure virtual function (= 0)", "abstract class", "vtable"],
+    "type": "technical"
+  },
+  {
+    "id": "Q16",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What is the diamond problem in C++ and how is it solved?",
+    "follow_ups": [
+      "How does multiple inheritance lead to the diamond problem?",
+      "What keyword is used to solve it?",
+      "How does virtual inheritance affect the memory layout of the object?"
+    ],
+    "evaluation_criteria": ["multiple_inheritance_issues", "virtual_inheritance", "memory_layout"],
+    "expected_keywords": ["multiple inheritance", "ambiguity", "virtual inheritance", "base class", "single copy"],
+    "type": "technical"
+  },
+  {
+    "id": "Q17",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What are virtual destructors and why are they important?",
+    "follow_ups": [
+      "What happens if a base class pointer deletes a derived class object and the base class destructor is non-virtual?",
+      "Can a class have a pure virtual destructor?",
+      "When is it safe to not have a virtual destructor?"
+    ],
+    "evaluation_criteria": ["memory_leaks", "destructor_chaining", "polymorphic_deletion"],
+    "expected_keywords": ["memory leak", "undefined behavior", "base class pointer", "polymorphism", "cleanup"],
+    "type": "technical"
+  },
+  {
+    "id": "Q18",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What is the difference between shallow copy and deep copy?",
+    "follow_ups": [
+      "What happens when two objects share the same dynamically allocated memory via a shallow copy?",
+      "How do you implement a deep copy in C++?",
+      "What is the role of the copy constructor?"
+    ],
+    "evaluation_criteria": ["pointer_copying", "memory_allocation", "copy_constructor_implementation"],
+    "expected_keywords": ["pointers", "dynamic memory", "copy constructor", "double free", "deep copy", "assignment operator"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q19",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What is RAII (Resource Acquisition Is Initialization)?",
+    "follow_ups": [
+      "How does RAII prevent resource leaks?",
+      "Can you give an example of an STL class that uses RAII?",
+      "How does exception handling interact with RAII?"
+    ],
+    "evaluation_criteria": ["design_pattern_knowledge", "destructor_role", "exception_safety"],
+    "expected_keywords": ["constructor", "destructor", "smart pointers", "exception safety", "mutex lock", "file handles"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q20",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "How does dynamic memory allocation work in C++ using new and delete?",
+    "follow_ups": [
+      "What happens if 'new' fails to allocate memory?",
+      "How do you allocate a 2D array dynamically?",
+      "What is placement new?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "exception_handling", "advanced_allocation"],
+    "expected_keywords": ["heap", "std::bad_alloc", "memory leak", "placement new", "constructor invocation"],
+    "type": "practical"
+  },
+  {
+    "id": "Q21",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What are templates in C++ and how do they work?",
+    "follow_ups": [
+      "When does template instantiation happen?",
+      "What is the difference between a template parameter and a function parameter?",
+      "How do templates affect compilation time and code size?"
+    ],
+    "evaluation_criteria": ["generic_programming", "compilation_process", "code_bloat"],
+    "expected_keywords": ["generic programming", "instantiation", "compile-time", "code bloat", "typename", "class keyword"],
+    "type": "technical"
+  },
+  {
+    "id": "Q22",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What is the difference between function templates and class templates?",
+    "follow_ups": [
+      "Can function templates be partially specialized?",
+      "How does the compiler deduce types for function templates vs class templates?",
+      "Can you have default template arguments in function templates?"
+    ],
+    "evaluation_criteria": ["template_deduction", "specialization_rules", "syntax_differences"],
+    "expected_keywords": ["type deduction", "partial specialization", "explicit instantiation", "generic class", "generic function"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q23",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What is template specialization in C++?",
+    "follow_ups": [
+      "What is the difference between full specialization and partial specialization?",
+      "Give a scenario where you would need to specialize a template.",
+      "Can you partially specialize a function template?"
+    ],
+    "evaluation_criteria": ["specialization_types", "use_case_scenarios", "language_restrictions"],
+    "expected_keywords": ["full specialization", "partial specialization", "custom behavior", "type specific", "compile-time"],
+    "type": "technical"
+  },
+  {
+    "id": "Q24",
+    "subject": "C++",
+    "difficulty": "Medium",
+    "question": "What is the purpose of the explicit keyword in C++?",
+    "follow_ups": [
+      "How does the explicit keyword prevent implicit type conversions?",
+      "Can explicit be used on conversion operators?",
+      "What problems can occur if single-argument constructors are not marked explicit?"
+    ],
+    "evaluation_criteria": ["implicit_conversions", "constructor_rules", "bug_prevention"],
+    "expected_keywords": ["implicit conversion", "single argument constructor", "type safety", "conversion operator", "compiler error"],
+    "type": "technical"
+  },
+  {
+    "id": "Q25",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What are smart pointers in C++ and why are they used?",
+    "follow_ups": [
+      "Which header file provides smart pointers in C++11?",
+      "How do smart pointers implement the RAII idiom?",
+      "What are the performance costs associated with smart pointers compared to raw pointers?"
+    ],
+    "evaluation_criteria": ["raii_application", "header_knowledge", "performance_tradeoffs"],
+    "expected_keywords": ["memory leak", "memory management", "<memory>", "raii", "overhead", "automatic deletion"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q26",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What is the difference between unique_ptr, shared_ptr, and weak_ptr?",
+    "follow_ups": [
+      "What is the role of the reference counter in shared_ptr?",
+      "How does weak_ptr solve the cyclic reference problem?",
+      "Can you copy a unique_ptr?"
+    ],
+    "evaluation_criteria": ["ownership_models", "cyclic_references", "move_semantics"],
+    "expected_keywords": ["exclusive ownership", "reference counting", "cyclic dependency", "std::move", "shared ownership"],
+    "type": "technical"
+  },
+  {
+    "id": "Q27",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What is the difference between const, constexpr, and constinit?",
+    "follow_ups": [
+      "At what stage (compile-time vs runtime) must a constexpr variable be evaluated?",
+      "Can a function be declared constexpr?",
+      "What problem does C++20's constinit solve regarding static initialization order?"
+    ],
+    "evaluation_criteria": ["evaluation_timing", "c++20_features", "static_initialization_fiasco"],
+    "expected_keywords": ["compile-time", "runtime", "constant expression", "static initialization", "c++20"],
+    "type": "technical"
+  },
+  {
+    "id": "Q28",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What is the rule of three, rule of five, and rule of zero in C++?",
+    "follow_ups": [
+      "Which methods constitute the Rule of Three?",
+      "What two additional methods were added in C++11 to create the Rule of Five?",
+      "Why is the Rule of Zero considered modern best practice?"
+    ],
+    "evaluation_criteria": ["class_design", "move_semantics", "modern_c++_practices"],
+    "expected_keywords": ["copy constructor", "destructor", "copy assignment", "move constructor", "move assignment", "smart pointers"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q29",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What is the difference between std::vector and std::array?",
+    "follow_ups": [
+      "Where is the data stored for std::array versus std::vector?",
+      "How does a std::vector resize itself when it exceeds its capacity?",
+      "Which one incurs more overhead?"
+    ],
+    "evaluation_criteria": ["memory_allocation", "resizing_mechanisms", "performance_overhead"],
+    "expected_keywords": ["dynamic size", "fixed size", "heap", "stack", "capacity", "reallocation"],
+    "type": "practical"
+  },
+  {
+    "id": "Q30",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What is the difference between std::map and std::unordered_map?",
+    "follow_ups": [
+      "What underlying data structure does std::map use?",
+      "What underlying data structure does std::unordered_map use?",
+      "What is the average time complexity for lookups in both?"
+    ],
+    "evaluation_criteria": ["data_structures", "time_complexity", "ordering_guarantees"],
+    "expected_keywords": ["red-black tree", "hash table", "O(log n)", "O(1)", "sorted keys", "hashing"],
+    "type": "technical"
+  },
+  {
+    "id": "Q31",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What are lambda expressions in C++11 and later?",
+    "follow_ups": [
+      "What is a capture clause in a lambda?",
+      "How do you capture variables by reference vs by value?",
+      "Can a lambda be mutable?"
+    ],
+    "evaluation_criteria": ["syntax_knowledge", "capture_semantics", "mutability"],
+    "expected_keywords": ["anonymous function", "closure", "capture list", "mutable keyword", "inline function"],
+    "type": "technical"
+  },
+  {
+    "id": "Q32",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What is the difference between std::move and std::forward?",
+    "follow_ups": [
+      "Does std::move actually move any data?",
+      "What is an rvalue reference?",
+      "In what scenario (like perfect forwarding) is std::forward used?"
+    ],
+    "evaluation_criteria": ["move_semantics", "perfect_forwarding", "value_categories"],
+    "expected_keywords": ["cast to rvalue", "perfect forwarding", "rvalue reference", "universal reference", "template deduction"],
+    "type": "technical"
+  },
+  {
+    "id": "Q33",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What is exception handling in C++?",
+    "follow_ups": [
+      "What is stack unwinding?",
+      "What happens if an exception is thrown inside a destructor during stack unwinding?",
+      "What does the 'noexcept' specifier do?"
+    ],
+    "evaluation_criteria": ["stack_unwinding", "destructor_safety", "noexcept_guarantee"],
+    "expected_keywords": ["try-catch", "throw", "stack unwinding", "std::terminate", "noexcept", "destructor"],
+    "type": "technical"
+  },
+  {
+    "id": "Q34",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What is the difference between public, private, and protected inheritance?",
+    "follow_ups": [
+      "How does protected inheritance affect the access level of public members from the base class?",
+      "Is private inheritance an 'is-a' relationship or a 'has-a' (implemented-in-terms-of) relationship?",
+      "When would you use private inheritance over composition?"
+    ],
+    "evaluation_criteria": ["access_modifiers", "inheritance_types", "design_relationships"],
+    "expected_keywords": ["is-a", "implemented-in-terms-of", "access specifiers", "derived class", "composition"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q35",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "What is the purpose of the friend keyword in C++?",
+    "follow_ups": [
+      "Does a friend function break encapsulation?",
+      "Is friendship inherited by derived classes?",
+      "Can a whole class be declared as a friend to another class?"
+    ],
+    "evaluation_criteria": ["encapsulation_violation", "friendship_rules", "access_privileges"],
+    "expected_keywords": ["private access", "encapsulation", "non-member function", "friend class", "not inherited"],
+    "type": "conceptual"
+  },
+  {
+    "id": "Q36",
+    "subject": "C++",
+    "difficulty": "Hard",
+    "question": "How do templates help achieve generic programming in C++?",
+    "follow_ups": [
+      "What is duck typing, and how do C++ templates somewhat resemble it at compile-time?",
+      "What are C++20 Concepts and how do they improve template programming?",
+      "How does generic programming differ from object-oriented programming?"
+    ],
+    "evaluation_criteria": ["generic_paradigms", "c++20_concepts", "compile_time_polymorphism"],
+    "expected_keywords": ["type independent", "code reusability", "compile-time polymorphism", "c++20 concepts", "type constraints"],
+    "type": "conceptual"
+  }
+]
