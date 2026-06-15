@@ -1,5 +1,4 @@
-# 🔑 EVALVATE — WHAT YOU OWN vs WHAT YOU NEED TO REPLACE
-## (You got this as a ZIP — here's how to make it 100% yours)
+# EVALVATE — WHAT YOU OWN vs WHAT YOU NEED TO REPLACE
 
 ---
 
@@ -37,12 +36,12 @@ LLM_MODEL=google/gemini-2.0-flash-001
 # $200 free credit on signup — more than enough for dev + demo
 DEEPGRAM_API_KEY=your_deepgram_key_here
 
-# ─── NEW: Hume AI (Vocal Prosody Analysis) ────────────
+# ─── Hume AI (Vocal Prosody Analysis) ────────────
 # Go to: https://hume.ai → sign up → API Keys
 # Free tier: 100 minutes/month — enough for demos
 HUME_API_KEY=your_hume_api_key_here
 
-# ─── NEW: Simli (AI Human Avatar) ─────────────────────
+# ─── Simli (AI Human Avatar) ─────────────────────
 # Go to: https://simli.ai → sign up → get API key
 # Free tier available
 SIMLI_API_KEY=your_simli_api_key_here
@@ -74,7 +73,7 @@ NEXT_PUBLIC_APP_NAME=Evalvate
 
 ---
 
-## STEP 2 — Download MediaPipe Model Files (NOT in repo, must do manually)
+## STEP 2 — Download MediaPipe Model Files (If NOT in repo, must do manually)
 
 Run this script from `backend/` directory:
 
@@ -94,7 +93,7 @@ wget -O pose_landmarker.task \
 wget -O hand_landmarker.task \
   https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
 
-echo "✅ All MediaPipe models downloaded"
+echo "All MediaPipe models downloaded"
 ```
 
 Add this to `backend/setup.sh` and run it once after cloning.
@@ -108,8 +107,6 @@ cd backend
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-# New packages to add to requirements.txt:
-pip install hume websockets aiofiles python-multipart
 ```
 
 ---
@@ -119,8 +116,6 @@ pip install hume websockets aiofiles python-multipart
 ```bash
 cd se-hack
 npm install
-# New packages needed:
-npm install @simli/react-simli framer-motion @radix-ui/react-progress
 ```
 
 ---
@@ -135,7 +130,7 @@ cd backend && source .venv/bin/activate && uvicorn app.main:app --reload --port 
 cd se-hack && npm run dev
 ```
 
-Open http://localhost:3000. If Google OAuth works → you own everything.
+Open http://localhost:3000.
 
 ---
 
@@ -152,5 +147,5 @@ Open http://localhost:3000. If Google OAuth works → you own everything.
 | Deepgram API key | ❌ Need yours | $200 free credits |
 | Google OAuth credentials | ❌ Need yours | Free, 5 min setup |
 | MongoDB Atlas | ❌ Need yours | Free M0 forever |
-| Hume AI key (new) | ❌ Need yours | Free tier exists |
-| Simli key (new) | ❌ Need yours | Free tier exists |
+| Hume AI key  | ❌ Need yours | Free tier exists |
+| Simli key  | ❌ Need yours | Free tier exists |
