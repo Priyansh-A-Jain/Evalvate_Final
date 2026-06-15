@@ -2,7 +2,7 @@
 
 Evalvate is an AI-native interview preparation and talent intelligence platform that simulates high-pressure hiring environments and provides candidates with deep, actionable feedback across content quality, communication style, confidence signals, and behavioral consistency.
 
-Evalvate is incubated by the **London School of Economics (LSE) Generate** program, which supports high-impact startups building next-generation technology. The project also won the **SE Hackathon** (as confirmed by `winning.txt`).
+Evalvate is incubated by the **London School of Economics (LSE) Generate** program, which supports high-impact startups building next-generation technology. The project also won the **SE Hackathon** 
 
 This repository contains the full product stack:
 - `backend/`: FastAPI + MongoDB + AI services (Hume AI, Simli, DeepFace) + real-time media analysis
@@ -121,7 +121,7 @@ Evalvate/
 ## Local Setup
 
 ### Prerequisites
-- **Python 3.10+**
+- **Python 3.11**
 - **Node.js 18+** & npm
 - **MongoDB** instance
 - API keys (OAuth + OpenRouter/LLM + Hume AI / Speech features)
