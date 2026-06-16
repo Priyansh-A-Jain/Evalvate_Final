@@ -36,6 +36,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${dmSerif.variable} ${outfit.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans">
         <AnalyticsProvider>
