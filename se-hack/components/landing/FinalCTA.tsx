@@ -42,7 +42,7 @@ export default function FinalCTA() {
         <h2 ref={headingRef}
           className="font-display font-extrabold text-[clamp(56px,10vw,160px)] leading-[0.92] tracking-[-0.05em] text-white">
           The door <br />
-          <span className="text-amber-400">opens once.</span>
+          <span className="text-orange-500">opens once.</span>
         </h2>
         <p className="mt-10 max-w-xl mx-auto text-white/55 text-[17px] leading-relaxed">
           You don't get a second take. But you can rehearse the take until it feels like memory. Walk in different.

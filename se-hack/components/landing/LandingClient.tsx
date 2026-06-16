@@ -59,32 +59,32 @@ export default function LandingClient() {
       <div className="grain" />
       <main className="relative bg-[#050505] text-white">
         <div className="fixed top-0 left-0 right-0 h-[2px] z-[200] bg-white/5">
-          <div ref={progressRef} className="h-full bg-gradient-to-r from-amber-500 via-amber-400 to-amber-300 origin-left scale-x-0" />
+          <div ref={progressRef} className="h-full bg-gradient-to-r from-orange-500 via-orange-400 to-orange-300 origin-left scale-x-0" />
         </div>
         <Nav />
         <SceneCurtain />
         <ScenePinned
           testId={TID.scene2Section}
           image="/scenes/scene2_waiting_room.png"
-          eyebrow="01 - The Waiting"
+          eyebrow="Preparation"
           lines={[
-            { id: TID.scene2Line1, text: "Every interview begins" },
-            { id: TID.scene2Line1 + "-b", text: "before you enter the room.", accent: true },
-            { id: TID.scene2Line2, text: "Nervousness is certain." },
-            { id: TID.scene2Line3, text: "Everyone prepares." },
-            { id: TID.scene2Line4, text: "But preparation alone isn't enough.", emphasize: true },
+            { id: TID.scene2Line1, text: "Master your next" },
+            { id: TID.scene2Line1 + "-b", text: "technical interview.", accent: true },
+            { id: TID.scene2Line2, text: "Practice with AI tailored to your role." },
+            { id: TID.scene2Line3, text: "Get real-time feedback." },
+            { id: TID.scene2Line4, text: "Nail your dream job.", emphasize: true },
           ]}
           align="left"
         />
         <ScenePinned
           testId={TID.scene3Section}
           image="/scenes/scene3_hands.png"
-          eyebrow="02 - The Detail"
+          eyebrow="Performance"
           lines={[
-            { id: TID.scene3Line1, text: "Knowing the answer isn't enough." },
-            { id: TID.scene3Line2, text: "The way you speak matters." },
-            { id: TID.scene3Line3, text: "The way you present yourself matters." },
-            { id: TID.scene3Line4, text: "Confidence is visible.", accent: true, emphasize: true },
+            { id: TID.scene3Line1, text: "Go beyond just answering questions." },
+            { id: TID.scene3Line2, text: "Analyze your pacing and tone." },
+            { id: TID.scene3Line3, text: "Read facial expressions." },
+            { id: TID.scene3Line4, text: "Quantify your confidence.", accent: true, emphasize: true },
           ]}
           align="right"
           imageScale={1.15}
@@ -92,10 +92,10 @@ export default function LandingClient() {
         <ScenePinned
           testId={TID.scene4Section}
           image="/scenes/scene4_walk.png"
-          eyebrow="03 - The Threshold"
+          eyebrow="Results"
           lines={[
             { id: TID.scene4Line1, text: "The moment always arrives." },
-            { id: TID.scene4Line2, text: "Will you be ready?", accent: true, emphasize: true, large: true },
+            { id: TID.scene4Line2, text: "Walk in ready.", accent: true, emphasize: true, large: true },
           ]}
           align="center"
           tall

@@ -5,7 +5,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2 mb-6">
             <span className="font-display font-extrabold text-[22px] tracking-tight text-white">evalvate</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+            <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
           </div>
           <p className="max-w-xs text-white/40 text-[13px] leading-relaxed">
             A quiet, ruthless interview preparation engine. Built for the moment before the moment.

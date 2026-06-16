@@ -5,13 +5,13 @@
   --text-primary: #ffffff;
   --text-secondary: #a3a3a3;
   --text-tertiary: #737373;
-  --amber: #f59e0b;
-  --amber-light: #fbbf24;
-  --amber-dark: #d97706;
+  --amber: #f97316;
+  --amber-light: #fb923c;
+  --amber-dark: #ea580c;
   --border-soft: rgba(255, 255, 255, 0.08);
   --border-mid: rgba(255, 255, 255, 0.14);
   
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   cursor: none;
   background: var(--bg-base);
   color: var(--text-primary);
@@ -21,7 +21,7 @@
 .landing-page a, .landing-page button, .landing-page [role="button"] { cursor: none; }
 
 .landing-page .font-display {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Outfit', sans-serif;
   letter-spacing: -0.03em;
 }
 
@@ -98,22 +98,22 @@ html.lenis, html.lenis body { height: auto; }
 .landing-page .btn-primary {
   position: relative; display: inline-flex; align-items: center; gap: 12px;
   padding: 18px 36px; background: var(--amber); color: #0a0a0a;
-  font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px;
+  font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 16px;
   letter-spacing: -0.01em; border-radius: 999px; border: none; overflow: hidden;
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s;
-  box-shadow: 0 10px 40px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 10px 40px rgba(249, 115, 22, 0.25);
 }
 
 .landing-page .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 60px rgba(245, 158, 11, 0.45);
+  box-shadow: 0 16px 60px rgba(249, 115, 22, 0.45);
   background: var(--amber-light);
 }
 
 .landing-page .btn-ghost {
   display: inline-flex; align-items: center; gap: 10px;
   padding: 14px 24px; color: var(--text-primary);
-  font-family: 'Sora', sans-serif; font-weight: 500; font-size: 14px;
+  font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 14px;
   border: 1px solid var(--border-mid); border-radius: 999px;
   background: transparent; transition: border-color 0.3s, background 0.3s;
 }

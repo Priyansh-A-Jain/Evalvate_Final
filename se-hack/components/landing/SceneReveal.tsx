@@ -63,7 +63,7 @@ export default function SceneReveal() {
         <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mb-12">
           {lines.slice(0, 2).map((l) => (
             <p key={l.id} ref={addLine} data-testid={l.id}
-              className={`font-display font-extrabold tracking-[-0.04em] leading-[1] text-[clamp(56px,9vw,140px)] ${l.accent ? "text-amber-300" : "text-white"}`}
+              className={`font-display font-extrabold tracking-[-0.04em] leading-[1] text-[clamp(56px,9vw,140px)] ${l.accent ? "text-orange-500" : "text-white"}`}
               style={{ opacity: 0 }}>
               {l.text}
             </p>

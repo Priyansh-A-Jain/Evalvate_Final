@@ -44,11 +44,11 @@ export default function SceneCurtain() {
     <section ref={sectionRef} className="relative h-screen w-full overflow-hidden" id="top">
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-center pointer-events-none">
         <div className="flex items-center gap-4 mb-6">
-          <span className="w-2 h-2 rounded-full bg-amber-500 pulse-dot" />
+          <span className="w-2 h-2 rounded-full bg-orange-500 pulse-dot" />
           <span className="font-mono text-[11px] tracking-[0.4em] uppercase text-white/50">
-            evalvate · presents
+            evalvate · intelligence
           </span>
-          <span className="w-2 h-2 rounded-full bg-amber-500 pulse-dot" />
+          <span className="w-2 h-2 rounded-full bg-orange-500 pulse-dot" />
         </div>
         <h1
           ref={logoRef}
@@ -58,7 +58,7 @@ export default function SceneCurtain() {
           evalvate
         </h1>
         <p ref={subRef} className="mt-8 max-w-xl text-center text-white/55 font-mono text-[12px] tracking-[0.25em] uppercase">
-          a cinematic story · in six acts
+          ai-powered interview intelligence
         </p>
         <div ref={scrollHintRef} className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/40">
           <span className="font-mono text-[10px] tracking-[0.4em] uppercase">scroll to begin</span>
