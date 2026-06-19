@@ -3,18 +3,20 @@ import base64
 import json
 import logging
 import os
+import uuid
 from dataclasses import dataclass
 from typing import Any
 
-from bson import ObjectId
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, status
+from sqlalchemy import select
 
 from app.auth.jwt import decode_token
-from app.auth.service import get_users_collection
+from app.db import AsyncSessionLocal
 from app.interview_agent.llm import stream_realtime_reply_tokens
 from app.interview_agent.stt_stream import STTTranscriptEvent, StreamingSTTEngine
 from app.interview_agent.streaming import tts_chunk_buffer
 from app.interview_agent.tts import synthesize_speech_audio
+from app.models.user import User
 
 
 logger = logging.getLogger(__name__)
@@ -49,18 +51,20 @@ async def _get_ws_user(websocket: WebSocket) -> dict[str, Any] | None:
 
     try:
         payload = decode_token(token=access_token, expected_type="access")
-        user_id = ObjectId(payload["user_id"])
+        user_uuid = uuid.UUID(payload["user_id"])
     except Exception:
         logger.exception("Realtime WS auth token decode failed")
         return None
 
-    users = get_users_collection()
-    user = await users.find_one({"_id": user_id})
+    async with AsyncSessionLocal() as db:
+        result = await db.execute(select(User).where(User.id == user_uuid))
+        user = result.scalar_one_or_none()
+
     if not user:
-        logger.warning("Realtime WS auth failed: user not found", extra={"user_id": str(user_id)})
+        logger.warning("Realtime WS auth failed: user not found", extra={"user_id": str(user_uuid)})
         return None
 
-    return user
+    return {"_id": user.id, "id": str(user.id)}
 
 
 @router.websocket("/ws")

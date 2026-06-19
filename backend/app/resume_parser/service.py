@@ -3,11 +3,11 @@ import logging
 from pathlib import Path
 
 from fastapi import HTTPException, UploadFile, status
-from pymongo.database import Database
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.resume_parser.extractor import clean_extracted_text, extract_text_from_docx, extract_text_from_pdf
 from app.resume_parser.llm_client import analyze_resume_ats_with_llm, parse_resume_with_llm
-from app.resume_parser.repository import build_resume_document, get_resumes_collection
+from app.resume_parser.repository import build_resume_document
 
 logger = logging.getLogger(__name__)
 
@@ -74,14 +74,13 @@ async def _extract_resume_text(suffix: str, file_bytes: bytes) -> str:
 
 async def _store_parsed_resume(
     *,
-    db: Database,
+    db: AsyncSession,
     parsed_resume: dict,
     ats_analysis: dict | None,
     raw_text: str,
     file: UploadFile,
     user_id: str | None,
 ) -> tuple[str, object]:
-    collection = get_resumes_collection(db)
     doc = build_resume_document(
         parsed_resume=parsed_resume,
         ats_analysis=ats_analysis,
@@ -90,15 +89,15 @@ async def _store_parsed_resume(
         content_type=file.content_type,
         user_id=user_id,
     )
-
-    inserted = await asyncio.to_thread(collection.insert_one, doc)
-    return str(inserted.inserted_id), doc["created_at"]
+    db.add(doc)
+    await db.flush()
+    return str(doc.id), doc.created_at
 
 
 async def process_resume_upload(
     *,
     file: UploadFile,
-    db: Database,
+    db: AsyncSession,
     user_id: str | None,
 ) -> dict:
     # Step 1: Read bytes once from the upload stream.
@@ -130,7 +129,7 @@ async def process_resume_upload(
             ],
         }
 
-    # Step 6: Store parsed output and ATS insights in MongoDB resumes collection.
+    # Step 6: Store parsed output and ATS insights in PostgreSQL.
     resume_id, created_at = await _store_parsed_resume(
         db=db,
         parsed_resume=parsed_resume,

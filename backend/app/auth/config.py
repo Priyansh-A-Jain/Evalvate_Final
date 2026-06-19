@@ -44,7 +44,7 @@ class AuthSettings:
     google_redirect_uri: str
     secret_key: str
     jwt_algorithm: str = "HS256"
-    access_token_expire_minutes: int = 15
+    access_token_expire_minutes: int = 30
     refresh_token_expire_minutes: int = 7 * 24 * 60
     cookie_secure: bool = True
     cookie_samesite: str = "lax"

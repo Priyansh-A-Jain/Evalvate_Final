@@ -105,7 +105,7 @@ Add this to `backend/setup.sh` and run it once after cloning.
 ```bash
 cd backend
 python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+source .venv/bin/activate   # Windows: .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 

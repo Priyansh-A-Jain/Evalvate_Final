@@ -1,9 +1,9 @@
 import logging
 
 from fastapi import APIRouter, Depends, HTTPException
-from motor.motor_asyncio import AsyncIOMotorDatabase
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.db import get_database
+from app.db import get_db
 from app.middlewares.auth_context import get_authenticated_user_id
 from app.interviews.schemas import (
     InterviewDetailResponse,
@@ -31,7 +31,7 @@ router = APIRouter(tags=["interviews"])
 @router.post("/start-interview", response_model=StartInterviewResponse)
 async def start_interview_route(
     payload: StartInterviewRequest,
-    db: AsyncIOMotorDatabase = Depends(get_database),
+    db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_authenticated_user_id),
 ):
     logger.info("POST /start-interview called", extra={"user_id": user_id, "role": payload.role, "difficulty": payload.difficulty, "persona": payload.persona})
@@ -41,7 +41,7 @@ async def start_interview_route(
 @router.post("/submit-answer", response_model=SubmitAnswerResponse)
 async def submit_answer_route(
     payload: SubmitAnswerRequest,
-    db: AsyncIOMotorDatabase = Depends(get_database),
+    db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_authenticated_user_id),
 ):
     logger.info(
@@ -54,7 +54,7 @@ async def submit_answer_route(
 @router.get("/interview/{id}", response_model=InterviewDetailResponse)
 async def get_interview_route(
     id: str,
-    db: AsyncIOMotorDatabase = Depends(get_database),
+    db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_authenticated_user_id),
 ):
     logger.info("GET /interview/{id} called", extra={"user_id": user_id, "interview_id": id})
@@ -64,7 +64,7 @@ async def get_interview_route(
 @router.post("/interview/{id}/share")
 async def create_share_token_route(
     id: str,
-    db: AsyncIOMotorDatabase = Depends(get_database),
+    db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_authenticated_user_id),
 ):
     logger.info("POST /interview/{id}/share called", extra={"user_id": user_id, "interview_id": id})
@@ -74,7 +74,7 @@ async def create_share_token_route(
 @router.get("/shared-report/{token}", response_model=InterviewDetailResponse)
 async def get_shared_report_route(
     token: str,
-    db: AsyncIOMotorDatabase = Depends(get_database),
+    db: AsyncSession = Depends(get_db),
 ):
     # Public endpoint by design: shareable read-only report for demos/investors.
     return await get_shared_report(db, token)
@@ -84,7 +84,7 @@ async def get_shared_report_route(
 async def save_session_analysis_route(
     id: str,
     payload: SaveSessionAnalysisRequest,
-    db: AsyncIOMotorDatabase = Depends(get_database),
+    db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_authenticated_user_id),
 ):
     logger.info("POST /interview/{id}/session-analysis called", extra={"user_id": user_id, "interview_id": id})

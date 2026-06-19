@@ -1,3 +1,11 @@
+"""
+Results analytics service — PostgreSQL version.
+
+Replaces Motor aggregation-style queries with SQLAlchemy selects.
+The analytics computation logic (weakness extraction, trend building,
+LLM synthesis) is unchanged — only the data access layer is rewritten.
+"""
+
 from __future__ import annotations
 
 import json
@@ -6,22 +14,14 @@ from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from typing import Any
 
-from motor.motor_asyncio import AsyncIOMotorDatabase
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.interview_agent.llm import invoke_llm_json
-
+from app.models.interview import Interview, InterviewResponse
+from app.models.results import ResultsAnalysisSnapshot
 
 logger = logging.getLogger(__name__)
-
-
-def get_results_analysis_collection(db: AsyncIOMotorDatabase):
-    return db["results_analysis_snapshots"]
-
-
-async def ensure_results_indexes(db: AsyncIOMotorDatabase) -> None:
-    collection = get_results_analysis_collection(db)
-    await collection.create_index("user_id", unique=True, name="uniq_results_analysis_user_id")
-    await collection.create_index("generated_at", name="idx_results_analysis_generated_at")
 
 
 def _to_percent(value: Any) -> float | None:
@@ -31,7 +31,6 @@ def _to_percent(value: Any) -> float | None:
         numeric = float(value)
     except (TypeError, ValueError):
         return None
-
     if numeric <= 1.0:
         numeric *= 100.0
     return max(0.0, min(100.0, round(numeric, 1)))
@@ -60,14 +59,10 @@ def _top_terms(items: list[str], limit: int) -> list[tuple[str, int]]:
         counter[key] += 1
         if key not in display_name:
             display_name[key] = label
-
-    out: list[tuple[str, int]] = []
-    for key, freq in counter.most_common(limit):
-        out.append((display_name[key], int(freq)))
-    return out
+    return [(display_name[key], int(freq)) for key, freq in counter.most_common(limit)]
 
 
-def _default_llm_insights(weaknesses: list[dict[str, Any]], strengths: list[dict[str, Any]], overview: dict[str, Any]) -> dict[str, Any]:
+def _default_llm_insights(weaknesses: list[dict], strengths: list[dict], overview: dict) -> dict[str, Any]:
     weakness_items = [
         {
             "area": item["area"],
@@ -77,15 +72,10 @@ def _default_llm_insights(weaknesses: list[dict[str, Any]], strengths: list[dict
         }
         for item in weaknesses[:5]
     ]
-
     strength_items = [
-        {
-            "area": item["area"],
-            "rationale": f"Consistently demonstrated across {item['frequency']} responses.",
-        }
+        {"area": item["area"], "rationale": f"Consistently demonstrated across {item['frequency']} responses."}
         for item in strengths[:5]
     ]
-
     avg_score = float(overview.get("avg_score", 0.0))
     delta = float(overview.get("improvement_delta", 0.0))
     trajectory = "improving" if delta > 1 else "declining" if delta < -1 else "steady"
@@ -139,7 +129,7 @@ def _default_llm_insights(weaknesses: list[dict[str, Any]], strengths: list[dict
     }
 
 
-def _sanitize_llm_insights(payload: dict[str, Any], fallback: dict[str, Any]) -> dict[str, Any]:
+def _sanitize_llm_insights(payload: dict, fallback: dict) -> dict[str, Any]:
     if not isinstance(payload, dict):
         return fallback
 
@@ -147,101 +137,78 @@ def _sanitize_llm_insights(payload: dict[str, Any], fallback: dict[str, Any]) ->
     trajectory = str(payload.get("trajectory") or fallback["trajectory"]).strip().lower()
     if trajectory not in {"improving", "steady", "declining"}:
         trajectory = fallback["trajectory"]
-
     confidence_note = str(payload.get("confidence_note") or fallback["confidence_note"]).strip()
 
-    key_weaknesses: list[dict[str, Any]] = []
+    key_weaknesses = []
     for item in payload.get("key_weaknesses") or []:
         if not isinstance(item, dict):
             continue
         actions = [str(x).strip() for x in (item.get("action_items") or []) if str(x).strip()]
-        key_weaknesses.append(
-            {
-                "area": str(item.get("area") or "General Improvement").strip(),
-                "impact_score": max(0.0, min(100.0, float(item.get("impact_score") or 50))),
-                "rationale": str(item.get("rationale") or "").strip() or "Observed in recent sessions.",
-                "action_items": actions[:5],
-            }
-        )
+        key_weaknesses.append({
+            "area": str(item.get("area") or "General Improvement").strip(),
+            "impact_score": max(0.0, min(100.0, float(item.get("impact_score") or 50))),
+            "rationale": str(item.get("rationale") or "").strip() or "Observed in recent sessions.",
+            "action_items": actions[:5],
+        })
 
-    key_strengths: list[dict[str, Any]] = []
+    key_strengths = []
     for item in payload.get("key_strengths") or []:
         if not isinstance(item, dict):
             continue
-        key_strengths.append(
-            {
-                "area": str(item.get("area") or "General Strength").strip(),
-                "rationale": str(item.get("rationale") or "").strip() or "Positive trend observed.",
-            }
-        )
+        key_strengths.append({
+            "area": str(item.get("area") or "General Strength").strip(),
+            "rationale": str(item.get("rationale") or "").strip() or "Positive trend observed.",
+        })
 
-    coaching_plan: list[dict[str, Any]] = []
+    coaching_plan = []
     for item in payload.get("coaching_plan") or []:
         if not isinstance(item, dict):
             continue
         action_items = [str(x).strip() for x in (item.get("action_items") or []) if str(x).strip()]
-        coaching_plan.append(
-            {
-                "phase": str(item.get("phase") or "Phase").strip(),
-                "objective": str(item.get("objective") or "").strip() or "Improve interview performance",
-                "action_items": action_items[:6],
-                "success_metric": str(item.get("success_metric") or "Track score and weakness trend.").strip(),
-            }
-        )
+        coaching_plan.append({
+            "phase": str(item.get("phase") or "Phase").strip(),
+            "objective": str(item.get("objective") or "").strip() or "Improve interview performance",
+            "action_items": action_items[:6],
+            "success_metric": str(item.get("success_metric") or "Track score and weakness trend.").strip(),
+        })
 
-    focus_radar: list[dict[str, Any]] = []
+    focus_radar = []
     for item in payload.get("focus_radar") or []:
         if not isinstance(item, dict):
             continue
-        focus_radar.append(
-            {
-                "metric": str(item.get("metric") or "Metric").strip(),
-                "score": max(0.0, min(100.0, float(item.get("score") or 0))),
-            }
-        )
+        focus_radar.append({
+            "metric": str(item.get("metric") or "Metric").strip(),
+            "score": max(0.0, min(100.0, float(item.get("score") or 0))),
+        })
 
-    weakness_heatmap: list[dict[str, Any]] = []
+    weakness_heatmap = []
     for item in payload.get("weakness_heatmap") or []:
         if not isinstance(item, dict):
             continue
-        weakness_heatmap.append(
-            {
-                "area": str(item.get("area") or "Area").strip(),
-                "technical": max(0.0, min(100.0, float(item.get("technical") or 0))),
-                "communication": max(0.0, min(100.0, float(item.get("communication") or 0))),
-                "consistency": max(0.0, min(100.0, float(item.get("consistency") or 0))),
-            }
-        )
-
-    if not key_weaknesses:
-        key_weaknesses = fallback["key_weaknesses"]
-    if not key_strengths:
-        key_strengths = fallback["key_strengths"]
-    if not coaching_plan:
-        coaching_plan = fallback["coaching_plan"]
-    if not focus_radar:
-        focus_radar = fallback["focus_radar"]
-    if not weakness_heatmap:
-        weakness_heatmap = fallback["weakness_heatmap"]
+        weakness_heatmap.append({
+            "area": str(item.get("area") or "Area").strip(),
+            "technical": max(0.0, min(100.0, float(item.get("technical") or 0))),
+            "communication": max(0.0, min(100.0, float(item.get("communication") or 0))),
+            "consistency": max(0.0, min(100.0, float(item.get("consistency") or 0))),
+        })
 
     return {
         "summary": summary,
         "trajectory": trajectory,
         "confidence_note": confidence_note,
-        "key_weaknesses": key_weaknesses,
-        "key_strengths": key_strengths,
-        "coaching_plan": coaching_plan,
-        "focus_radar": focus_radar,
-        "weakness_heatmap": weakness_heatmap,
+        "key_weaknesses": key_weaknesses or fallback["key_weaknesses"],
+        "key_strengths": key_strengths or fallback["key_strengths"],
+        "coaching_plan": coaching_plan or fallback["coaching_plan"],
+        "focus_radar": focus_radar or fallback["focus_radar"],
+        "weakness_heatmap": weakness_heatmap or fallback["weakness_heatmap"],
     }
 
 
-async def _generate_llm_insights(context_payload: dict[str, Any], fallback: dict[str, Any]) -> dict[str, Any]:
+async def _generate_llm_insights(context_payload: dict, fallback: dict) -> dict[str, Any]:
     system_prompt = (
         "You are a senior interview performance analyst. "
         "Return strict JSON only with data that can be plotted directly in charts."
     )
-
     user_prompt = (
         "Analyze the user's full historical interview context and return a coaching-oriented result.\n"
         "Schema requirements (exact keys):\n"
@@ -256,89 +223,70 @@ async def _generate_llm_insights(context_payload: dict[str, Any], fallback: dict
         '  "weakness_heatmap": [{"area": "string", "technical": 0-100, "communication": 0-100, "consistency": 0-100}]\n'
         "}\n"
         "Keep it concise and actionable.\n\n"
-        f"Context:\n{json.dumps(context_payload, ensure_ascii=True)}"
+        f"Context:\n{json.dumps(context_payload, ensure_ascii=True, default=str)}"
     )
-
     try:
-        llm_payload = await invoke_llm_json(
-            system_prompt=system_prompt,
-            user_prompt=user_prompt,
-            temperature=0.2,
-        )
+        llm_payload = await invoke_llm_json(system_prompt=system_prompt, user_prompt=user_prompt, temperature=0.2)
         return _sanitize_llm_insights(llm_payload, fallback)
     except Exception:
         logger.exception("LLM synthesis failed for results analytics; using deterministic fallback")
         return fallback
 
 
-async def _compute_user_results_analysis(db: AsyncIOMotorDatabase, user_id: str) -> dict[str, Any]:
-    interviews = await db["interviews"].find({"user_id": user_id}).sort("created_at", 1).to_list(length=1000)
+async def _compute_user_results_analysis(db: AsyncSession, user_id: str) -> dict[str, Any]:
+    interviews_result = await db.execute(
+        select(Interview).where(Interview.user_id == user_id).order_by(Interview.created_at)
+    )
+    interviews = interviews_result.scalars().all()
+
     if not interviews:
         overview = {
-            "total_sessions": 0,
-            "completed_sessions": 0,
-            "total_answers": 0,
-            "avg_score": 0.0,
-            "improvement_delta": 0.0,
-            "contradiction_rate": 0.0,
+            "total_sessions": 0, "completed_sessions": 0, "total_answers": 0,
+            "avg_score": 0.0, "improvement_delta": 0.0, "contradiction_rate": 0.0,
         }
         empty_fallback = _default_llm_insights([], [], overview)
         return {
             "generated_at": datetime.now(timezone.utc),
-            "overview": overview,
-            "score_trend": [],
-            "communication_trend": [],
-            "weaknesses": [],
-            "strengths": [],
-            "role_breakdown": [],
-            "session_snapshots": [],
-            "llm_insights": empty_fallback,
+            "overview": overview, "score_trend": [], "communication_trend": [],
+            "weaknesses": [], "strengths": [], "role_breakdown": [],
+            "session_snapshots": [], "llm_insights": empty_fallback,
         }
 
-    interview_ids = [doc["_id"] for doc in interviews]
-    responses = await db["responses"].find(
-        {
-            "user_id": user_id,
-            "interview_id": {"$in": interview_ids},
-        }
-    ).sort("created_at", 1).to_list(length=20000)
+    interview_ids = [iv.id for iv in interviews]
+    responses_result = await db.execute(
+        select(InterviewResponse)
+        .where(InterviewResponse.user_id == user_id, InterviewResponse.interview_id.in_(interview_ids))
+        .order_by(InterviewResponse.created_at)
+    )
+    responses = responses_result.scalars().all()
 
-    responses_by_session: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    responses_by_session: dict[str, list] = defaultdict(list)
     for response in responses:
-        key = str(response.get("interview_id"))
-        responses_by_session[key].append(response)
+        responses_by_session[str(response.interview_id)].append(response)
 
-    score_trend: list[dict[str, Any]] = []
-    communication_trend: list[dict[str, Any]] = []
-    session_snapshots: list[dict[str, Any]] = []
-    session_analysis_records: list[dict[str, Any]] = []
+    score_trend: list[dict] = []
+    communication_trend: list[dict] = []
+    session_snapshots: list[dict] = []
+    session_analysis_records: list[dict] = []
     weakness_terms_all: list[str] = []
     strength_terms_all: list[str] = []
 
     contradiction_total = 0
     scored_session_values: list[float] = []
     completed_sessions = 0
-    role_aggregate: dict[str, dict[str, Any]] = defaultdict(lambda: {
-        "sessions": 0,
-        "scores": [],
-        "confidence": [],
-        "clarity": [],
-        "nervousness": [],
-    })
-
+    role_aggregate: dict[str, dict] = defaultdict(lambda: {"sessions": 0, "scores": [], "confidence": [], "clarity": [], "nervousness": []})
     weakness_to_scores: dict[str, list[float]] = defaultdict(list)
     weakness_to_examples: dict[str, list[str]] = defaultdict(list)
     strength_to_examples: dict[str, list[str]] = defaultdict(list)
 
     for interview in interviews:
-        interview_id = str(interview["_id"])
-        role = str(interview.get("role") or "Unknown")
-        difficulty = str(interview.get("difficulty") or "unknown")
-        status = str(interview.get("status") or "ongoing")
-        created_at = interview.get("created_at")
-        session_date = _session_date(created_at)
+        interview_id = str(interview.id)
+        role = interview.role or "Unknown"
+        difficulty = interview.difficulty or "unknown"
+        status_value = interview.status or "ongoing"
+        session_date = _session_date(interview.created_at)
 
-        if status == "completed":
+        if status_value == "completed":
             completed_sessions += 1
 
         session_responses = responses_by_session.get(interview_id, [])
@@ -350,28 +298,24 @@ async def _compute_user_results_analysis(db: AsyncIOMotorDatabase, user_id: str)
         session_strengths: list[str] = []
 
         for response in session_responses:
-            score_value = response.get("score")
-            if isinstance(score_value, (int, float)):
-                raw_scores.append(float(score_value) * 10.0)
+            if isinstance(response.score, (int, float)):
+                raw_scores.append(float(response.score) * 10.0)
 
-            contradiction = response.get("contradiction_analysis") or {}
+            contradiction = response.contradiction_analysis or {}
             if isinstance(contradiction, dict) and contradiction.get("contradiction"):
                 contradictions += 1
 
-            weaknesses = response.get("weaknesses") or []
-            strengths = response.get("strengths") or []
-
-            if isinstance(weaknesses, list):
-                session_weaknesses.extend([str(item) for item in weaknesses if str(item).strip()])
-            if isinstance(strengths, list):
-                session_strengths.extend([str(item) for item in strengths if str(item).strip()])
+            if isinstance(response.weaknesses, list):
+                session_weaknesses.extend(str(i) for i in response.weaknesses if str(i).strip())
+            if isinstance(response.strengths, list):
+                session_strengths.extend(str(i) for i in response.strengths if str(i).strip())
 
         contradiction_total += contradictions
         session_avg = round(_mean(raw_scores), 2) if raw_scores else None
         if session_avg is not None:
             scored_session_values.append(session_avg)
 
-        analysis = interview.get("session_analysis") or {}
+        analysis = interview.session_analysis or {}
         voice_summary = str(analysis.get("voice_summary") or "").strip()
         key_moments = analysis.get("key_moments") if isinstance(analysis.get("key_moments"), list) else []
         confidence = _to_percent(analysis.get("confidence"))
@@ -382,74 +326,34 @@ async def _compute_user_results_analysis(db: AsyncIOMotorDatabase, user_id: str)
         fidgeting = _to_percent(analysis.get("fidgeting_score"))
 
         if session_avg is not None:
-            score_trend.append(
-                {
-                    "session_id": interview_id,
-                    "date": session_date,
-                    "role": role,
-                    "avg_score": session_avg,
-                }
-            )
+            score_trend.append({"session_id": interview_id, "date": session_date, "role": role, "avg_score": session_avg})
 
-        communication_trend.append(
-            {
-                "session_id": interview_id,
-                "date": session_date,
-                "confidence": confidence,
-                "clarity": clarity,
-                "nervousness": nervousness,
-                "posture": posture,
-                "gaze": gaze,
-                "fidgeting": fidgeting,
-            }
-        )
+        communication_trend.append({
+            "session_id": interview_id, "date": session_date, "confidence": confidence,
+            "clarity": clarity, "nervousness": nervousness, "posture": posture,
+            "gaze": gaze, "fidgeting": fidgeting,
+        })
 
         top_weaknesses = [item for item, _ in _top_terms(session_weaknesses, limit=3)]
         top_strengths = [item for item, _ in _top_terms(session_strengths, limit=3)]
 
-        session_snapshots.append(
-            {
-                "session_id": interview_id,
-                "role": role,
-                "difficulty": difficulty,
-                "status": status,
-                "date": session_date,
-                "question_count": question_count,
-                "avg_score": session_avg,
-                "contradictions": contradictions,
-                "top_strengths": top_strengths,
-                "top_weaknesses": top_weaknesses,
-                "confidence": confidence,
-                "clarity": clarity,
-                "nervousness": nervousness,
-                "dominant_emotion": analysis.get("dominant_emotion"),
-            }
-        )
+        session_snapshots.append({
+            "session_id": interview_id, "role": role, "difficulty": difficulty, "status": status_value,
+            "date": session_date, "question_count": question_count, "avg_score": session_avg,
+            "contradictions": contradictions, "top_strengths": top_strengths, "top_weaknesses": top_weaknesses,
+            "confidence": confidence, "clarity": clarity, "nervousness": nervousness,
+            "dominant_emotion": analysis.get("dominant_emotion"),
+        })
 
-        session_analysis_records.append(
-            {
-                "session_id": interview_id,
-                "date": session_date,
-                "role": role,
-                "difficulty": difficulty,
-                "status": status,
-                "question_count": question_count,
-                "avg_score": session_avg,
-                "contradictions": contradictions,
-                "dominant_emotion": analysis.get("dominant_emotion"),
-                "duration_seconds": analysis.get("duration_seconds"),
-                "confidence": confidence,
-                "clarity": clarity,
-                "nervousness": nervousness,
-                "posture": posture,
-                "gaze": gaze,
-                "fidgeting": fidgeting,
-                "voice_summary": voice_summary,
-                "key_moments": key_moments,
-                "top_strengths": top_strengths,
-                "top_weaknesses": top_weaknesses,
-            }
-        )
+        session_analysis_records.append({
+            "session_id": interview_id, "date": session_date, "role": role, "difficulty": difficulty,
+            "status": status_value, "question_count": question_count, "avg_score": session_avg,
+            "contradictions": contradictions, "dominant_emotion": analysis.get("dominant_emotion"),
+            "duration_seconds": analysis.get("duration_seconds"), "confidence": confidence,
+            "clarity": clarity, "nervousness": nervousness, "posture": posture, "gaze": gaze,
+            "fidgeting": fidgeting, "voice_summary": voice_summary, "key_moments": key_moments,
+            "top_strengths": top_strengths, "top_weaknesses": top_weaknesses,
+        })
 
         weakness_terms_all.extend(session_weaknesses)
         strength_terms_all.extend(session_strengths)
@@ -481,54 +385,40 @@ async def _compute_user_results_analysis(db: AsyncIOMotorDatabase, user_id: str)
             if len(strength_to_examples[key]) < 3:
                 strength_to_examples[key].append(str(strength).strip())
 
-    weakness_counter = Counter(" ".join(term.lower().split()) for term in weakness_terms_all if str(term).strip())
-    strength_counter = Counter(" ".join(term.lower().split()) for term in strength_terms_all if str(term).strip())
+    weakness_counter = Counter(" ".join(t.lower().split()) for t in weakness_terms_all if str(t).strip())
+    strength_counter = Counter(" ".join(t.lower().split()) for t in strength_terms_all if str(t).strip())
 
-    weaknesses: list[dict[str, Any]] = []
+    weaknesses: list[dict] = []
     for key, frequency in weakness_counter.most_common(12):
         examples = weakness_to_examples.get(key) or [key]
         display = examples[0]
         observed_scores = weakness_to_scores.get(key, [])
         avg_score_observed = round(_mean(observed_scores), 1) if observed_scores else 0.0
         impact_score = round(min(100.0, 25.0 + frequency * 8.5 + max(0.0, (65.0 - avg_score_observed)) * 0.8), 1)
-        weaknesses.append(
-            {
-                "area": display,
-                "frequency": int(frequency),
-                "avg_score_when_observed": avg_score_observed,
-                "impact_score": impact_score,
-                "evidence": examples,
-                "suggested_actions": [
-                    f"Practice targeted prompts around: {display}",
-                    "Use a tighter STAR-style structure with measurable outcomes",
-                    "Run timed drills and review response clarity",
-                ],
-            }
-        )
+        weaknesses.append({
+            "area": display, "frequency": int(frequency), "avg_score_when_observed": avg_score_observed,
+            "impact_score": impact_score, "evidence": examples,
+            "suggested_actions": [
+                f"Practice targeted prompts around: {display}",
+                "Use a tighter STAR-style structure with measurable outcomes",
+                "Run timed drills and review response clarity",
+            ],
+        })
 
-    strengths: list[dict[str, Any]] = []
+    strengths: list[dict] = []
     for key, frequency in strength_counter.most_common(12):
         examples = strength_to_examples.get(key) or [key]
-        strengths.append(
-            {
-                "area": examples[0],
-                "frequency": int(frequency),
-                "evidence": examples,
-            }
-        )
+        strengths.append({"area": examples[0], "frequency": int(frequency), "evidence": examples})
 
-    role_breakdown: list[dict[str, Any]] = []
+    role_breakdown: list[dict] = []
     for role, payload in role_aggregate.items():
-        role_breakdown.append(
-            {
-                "role": role,
-                "sessions": int(payload["sessions"]),
-                "avg_score": round(_mean([float(v) for v in payload["scores"]]), 1),
-                "confidence": round(_mean([float(v) for v in payload["confidence"]]), 1) if payload["confidence"] else None,
-                "clarity": round(_mean([float(v) for v in payload["clarity"]]), 1) if payload["clarity"] else None,
-                "nervousness": round(_mean([float(v) for v in payload["nervousness"]]), 1) if payload["nervousness"] else None,
-            }
-        )
+        role_breakdown.append({
+            "role": role, "sessions": int(payload["sessions"]),
+            "avg_score": round(_mean([float(v) for v in payload["scores"]]), 1),
+            "confidence": round(_mean([float(v) for v in payload["confidence"]]), 1) if payload["confidence"] else None,
+            "clarity": round(_mean([float(v) for v in payload["clarity"]]), 1) if payload["clarity"] else None,
+            "nervousness": round(_mean([float(v) for v in payload["nervousness"]]), 1) if payload["nervousness"] else None,
+        })
     role_breakdown.sort(key=lambda item: item["avg_score"], reverse=True)
 
     overall_avg_score = round(_mean([float(v) for v in scored_session_values]), 2)
@@ -541,22 +431,15 @@ async def _compute_user_results_analysis(db: AsyncIOMotorDatabase, user_id: str)
         contradiction_rate = round((contradiction_total / max(1, len(responses))) * 100.0, 2)
 
     overview = {
-        "total_sessions": len(interviews),
-        "completed_sessions": completed_sessions,
-        "total_answers": len(responses),
-        "avg_score": overall_avg_score,
-        "improvement_delta": delta,
-        "contradiction_rate": contradiction_rate,
+        "total_sessions": len(interviews), "completed_sessions": completed_sessions,
+        "total_answers": len(responses), "avg_score": overall_avg_score,
+        "improvement_delta": delta, "contradiction_rate": contradiction_rate,
     }
 
     context_payload = {
-        "overview": overview,
-        "score_trend": score_trend,
-        "communication_trend": communication_trend,
-        "top_weaknesses": weaknesses[:10],
-        "top_strengths": strengths[:10],
-        "role_breakdown": role_breakdown,
-        "session_snapshots": session_snapshots,
+        "overview": overview, "score_trend": score_trend, "communication_trend": communication_trend,
+        "top_weaknesses": weaknesses[:10], "top_strengths": strengths[:10],
+        "role_breakdown": role_breakdown, "session_snapshots": session_snapshots,
         "session_analysis_records": session_analysis_records,
     }
 
@@ -565,57 +448,64 @@ async def _compute_user_results_analysis(db: AsyncIOMotorDatabase, user_id: str)
 
     return {
         "generated_at": datetime.now(timezone.utc),
-        "overview": overview,
-        "score_trend": score_trend,
-        "communication_trend": communication_trend,
-        "weaknesses": weaknesses,
-        "strengths": strengths,
-        "role_breakdown": role_breakdown,
-        "session_snapshots": session_snapshots,
-        "llm_insights": llm_insights,
+        "overview": overview, "score_trend": score_trend, "communication_trend": communication_trend,
+        "weaknesses": weaknesses, "strengths": strengths, "role_breakdown": role_breakdown,
+        "session_snapshots": session_snapshots, "llm_insights": llm_insights,
     }
 
 
-def _sanitize_cached_snapshot(doc: dict[str, Any]) -> dict[str, Any]:
-    payload = dict(doc)
-    payload.pop("_id", None)
-    payload.pop("user_id", None)
-    payload.pop("updated_at", None)
-    return payload
+async def ensure_results_indexes(db: AsyncSession) -> None:
+    """No-op — indexes managed by Alembic."""
+    pass
+
+
+def _json_safe(value: Any) -> Any:
+    """Recursively convert datetimes to ISO strings so the dict is JSONB-storable."""
+    if isinstance(value, datetime):
+        return value.isoformat()
+    if isinstance(value, dict):
+        return {k: _json_safe(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_json_safe(v) for v in value]
+    return value
 
 
 async def get_user_results_analysis(
-    db: AsyncIOMotorDatabase,
+    db: AsyncSession,
     user_id: str,
     *,
     force_refresh: bool = False,
 ) -> dict[str, Any]:
-    collection = get_results_analysis_collection(db)
-
     if not force_refresh:
-        cached = await collection.find_one({"user_id": user_id})
+        result = await db.execute(select(ResultsAnalysisSnapshot).where(ResultsAnalysisSnapshot.user_id == user_id))
+        cached = result.scalar_one_or_none()
         if cached:
             logger.info("Returning cached results analysis", extra={"user_id": user_id})
-            return _sanitize_cached_snapshot(cached)
+            return cached.payload
 
     logger.info("Computing fresh results analysis", extra={"user_id": user_id, "force_refresh": force_refresh})
     fresh_analysis = await _compute_user_results_analysis(db, user_id)
+    storable_payload = _json_safe(fresh_analysis)
 
     now = datetime.now(timezone.utc)
-    snapshot_doc = {
-        "user_id": user_id,
-        "updated_at": now,
-        **fresh_analysis,
-    }
-    await collection.update_one(
-        {"user_id": user_id},
-        {"$set": snapshot_doc},
-        upsert=True,
-    )
+    result = await db.execute(select(ResultsAnalysisSnapshot).where(ResultsAnalysisSnapshot.user_id == user_id))
+    snap = result.scalar_one_or_none()
+    if snap:
+        snap.payload = storable_payload
+        snap.updated_at = now
+        snap.generated_at = fresh_analysis["generated_at"]
+    else:
+        snap = ResultsAnalysisSnapshot(
+            user_id=user_id,
+            generated_at=fresh_analysis["generated_at"],
+            updated_at=now,
+            payload=storable_payload,
+        )
+        db.add(snap)
+    await db.flush()
 
     return fresh_analysis
 
 
-async def build_user_results_analysis(db: AsyncIOMotorDatabase, user_id: str) -> dict[str, Any]:
-    # Backward-compatible wrapper used by existing imports.
+async def build_user_results_analysis(db: AsyncSession, user_id: str) -> dict[str, Any]:
     return await get_user_results_analysis(db, user_id, force_refresh=True)
