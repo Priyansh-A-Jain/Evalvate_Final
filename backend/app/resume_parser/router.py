@@ -1,9 +1,9 @@
 import logging
 
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
-from pymongo.database import Database
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.db import get_sync_database
+from app.db import get_db
 from app.middlewares.auth_context import get_authenticated_user_id
 from app.resume_parser.repository import (
     delete_resumes_for_user,
@@ -21,7 +21,7 @@ router = APIRouter(tags=["resume-parser"])
 @router.get("/resume", response_model=CurrentResumeResponse)
 async def get_current_resume(
     user_id: str = Depends(get_authenticated_user_id),
-    db: Database = Depends(get_sync_database),
+    db: AsyncSession = Depends(get_db),
 ):
     doc = await get_latest_resume_for_user(db=db, user_id=user_id)
     if not doc:
@@ -36,7 +36,7 @@ async def get_current_resume(
 @router.delete("/resume", response_model=DeleteResumeResponse)
 async def delete_current_resume(
     user_id: str = Depends(get_authenticated_user_id),
-    db: Database = Depends(get_sync_database),
+    db: AsyncSession = Depends(get_db),
 ):
     deleted_count = await delete_resumes_for_user(db=db, user_id=user_id)
     if deleted_count == 0:
@@ -55,7 +55,7 @@ async def delete_current_resume(
 async def upload_resume(
     user_id: str = Depends(get_authenticated_user_id),
     file: UploadFile = File(...),
-    db: Database = Depends(get_sync_database),
+    db: AsyncSession = Depends(get_db),
 ):
     logger.info("Processing resume upload: filename=%s user_id=%s", file.filename, user_id)
     try:

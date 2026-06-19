@@ -1,12 +1,14 @@
 import asyncio
 import json
 import logging
+import uuid
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, status
-from bson import ObjectId
+from sqlalchemy import select
 import numpy as np
 
 from app.auth.jwt import decode_token
-from app.auth.service import get_users_collection
+from app.db import AsyncSessionLocal
+from app.models.user import User
 from .audio_buffer import AudioBuffer
 from .audio_features import extract_features
 # We now import the Deepgram Engine from the STT layer
@@ -22,20 +24,20 @@ async def get_ws_user(websocket: WebSocket):
     access_token = websocket.cookies.get("access_token")
     if not access_token:
         access_token = websocket.query_params.get("token")
-        
+
     if not access_token:
         return None
 
     try:
         payload = decode_token(token=access_token, expected_type="access")
-        user_id = ObjectId(payload["user_id"])
+        user_uuid = uuid.UUID(payload["user_id"])
     except Exception as e:
         logger.error(f"WS auth error: {e}")
         return None
 
-    users = get_users_collection()
-    user = await users.find_one({"_id": user_id})
-    return user
+    async with AsyncSessionLocal() as db:
+        result = await db.execute(select(User).where(User.id == user_uuid))
+        return result.scalar_one_or_none()
 
 @router.websocket("/stream")
 async def voice_stream(websocket: WebSocket):
@@ -46,7 +48,7 @@ async def voice_stream(websocket: WebSocket):
         await websocket.close(code=status.WS_1008_POLICY_VIOLATION, reason="Unauthorized")
         return
 
-    logger.info(f"User {user['_id']} connected to voice stream.")
+    logger.info(f"User {user.id} connected to voice stream.")
 
     buffer = AudioBuffer(sample_rate=16000)
     
@@ -111,7 +113,7 @@ async def voice_stream(websocket: WebSocket):
     stt_ready = await deepgram.connect()
     if not stt_ready:
         detail = deepgram.last_error or "Deepgram STT connection failed"
-        logger.warning("STT unavailable for user %s: %s", user["_id"], detail)
+        logger.warning("STT unavailable for user %s: %s", user.id, detail)
         await safe_send({
             "type": "stt_unavailable",
             "message": f"Server STT offline ({detail}). Using browser speech recognition.",
@@ -215,7 +217,7 @@ async def voice_stream(websocket: WebSocket):
                     pass
                 
     except WebSocketDisconnect:
-        print(f"[VOICE] User {user['_id']} disconnected unexpectedly.")
+        print(f"[VOICE] User {user.id} disconnected unexpectedly.")
     except Exception as e:
         print(f"[VOICE] WebSocket error: {e}")
     finally:

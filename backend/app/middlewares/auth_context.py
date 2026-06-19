@@ -1,9 +1,16 @@
-from bson import ObjectId
-from bson.errors import InvalidId
+"""
+Auth context middleware — PostgreSQL version.
+"""
+
+import uuid
+
 from fastapi import HTTPException, Request, status
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.auth.jwt import decode_token
-from app.auth.service import get_users_collection
+from app.db import AsyncSessionLocal
+from app.models.user import User
 
 
 async def attach_auth_context(request: Request, call_next):
@@ -13,10 +20,16 @@ async def attach_auth_context(request: Request, call_next):
     if access_token:
         try:
             payload = decode_token(token=access_token, expected_type="access")
-            user = await get_users_collection().find_one({"_id": ObjectId(payload["user_id"])})
-            if user and user.get("email_verified", False):
-                request.state.user_id = payload["user_id"]
-        except (HTTPException, InvalidId):
+            user_uuid = uuid.UUID(payload["user_id"])
+
+            async with AsyncSessionLocal() as db:
+                result = await db.execute(
+                    select(User).where(User.id == user_uuid, User.email_verified.is_(True))
+                )
+                user = result.scalar_one_or_none()
+                if user:
+                    request.state.user_id = str(user.id)
+        except (HTTPException, ValueError, Exception):
             request.state.user_id = None
 
     response = await call_next(request)

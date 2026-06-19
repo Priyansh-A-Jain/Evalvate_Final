@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends
-from motor.motor_asyncio import AsyncIOMotorDatabase
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.db import get_database
+from app.db import get_db
 from app.group_interview.schemas import (
     GroupInterviewResultResponse,
     StartGroupInterviewRequest,
@@ -25,7 +25,7 @@ router = APIRouter(prefix="/group-interview", tags=["Group Interview"])
 @router.post("/start", response_model=StartGroupInterviewResponse)
 async def start_group_interview_route(
     payload: StartGroupInterviewRequest,
-    db: AsyncIOMotorDatabase = Depends(get_database),
+    db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_authenticated_user_id),
 ):
     return await start_group_interview(
@@ -39,7 +39,7 @@ async def start_group_interview_route(
 @router.post("/respond", response_model=SubmitGroupInterviewAnswerResponse)
 async def submit_group_interview_answer_route(
     payload: SubmitGroupInterviewAnswerRequest,
-    db: AsyncIOMotorDatabase = Depends(get_database),
+    db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_authenticated_user_id),
 ):
     return await submit_group_interview_answer(
@@ -55,7 +55,7 @@ async def submit_group_interview_answer_route(
 @router.get("/result", response_model=GroupInterviewResultResponse)
 async def get_group_interview_result_route(
     session_id: str,
-    db: AsyncIOMotorDatabase = Depends(get_database),
+    db: AsyncSession = Depends(get_db),
     user_id: str = Depends(get_authenticated_user_id),
 ):
     return await get_group_interview_result(

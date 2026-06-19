@@ -1,18 +1,18 @@
 """
-Realtime meeting-room speech transcription websocket.
-
-This mirrors the app.voice websocket pattern but is scoped to meeting-room usage.
+Realtime meeting-room speech transcription websocket. PostgreSQL version.
 """
 
 import asyncio
 import json
 import logging
+import uuid
 
-from bson import ObjectId
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect, status
+from sqlalchemy import select
 
 from app.auth.jwt import decode_token
-from app.auth.service import get_users_collection
+from app.db import AsyncSessionLocal
+from app.models.user import User
 from app.voice.stt_engine import DeepgramEngine
 
 
@@ -30,14 +30,14 @@ async def get_ws_user(websocket: WebSocket):
 
     try:
         payload = decode_token(token=access_token, expected_type="access")
-        user_id = ObjectId(payload["user_id"])
+        user_uuid = uuid.UUID(payload["user_id"])
     except Exception as exc:
         logger.error("Meeting-room realtime auth decode failed", extra={"error": str(exc)})
         return None
 
-    users = get_users_collection()
-    user = await users.find_one({"_id": user_id})
-    return user
+    async with AsyncSessionLocal() as db:
+        result = await db.execute(select(User).where(User.id == user_uuid))
+        return result.scalar_one_or_none()
 
 
 @router.websocket("/transcribe")
@@ -49,7 +49,7 @@ async def meeting_room_transcribe(websocket: WebSocket):
         await websocket.close(code=status.WS_1008_POLICY_VIOLATION, reason="Unauthorized")
         return
 
-    user_id = str(user["_id"])
+    user_id = str(user.id)
     logger.info("Meeting realtime transcription connected", extra={"user_id": user_id})
 
     words_buffer: list[str] = []
