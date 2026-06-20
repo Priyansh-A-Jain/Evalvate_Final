@@ -48,10 +48,14 @@ export default function FinalCTA() {
           You don't get a second take. But you can rehearse the take until it feels like memory. Walk in different.
         </p>
         <div ref={ctaRef} className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5">
-          <button data-testid={TID.finalCta} className="btn-primary" onClick={() => router.push('/api/auth/google')}>
+          <a
+            href="/api/auth/google"
+            className="btn-primary inline-flex items-center gap-2"
+            data-testid={TID.finalCta}
+          >
             Start Your Interview
             <ArrowRight strokeWidth={2} className="w-4 h-4" />
-          </button>
+          </a>
           <button data-testid={TID.footerStartCta} className="btn-ghost" onClick={() => router.push('/api/auth/demo')}>
             Watch the demo
           </button>
