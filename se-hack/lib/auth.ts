@@ -1,6 +1,16 @@
 import { cookies } from "next/headers";
 
-export type AuthUser = { /* unchanged */ };
+
+export type AuthUser = {
+  id: string;
+  email: string;
+  name: string | null;
+  picture: string | null;
+  auth_providers: string[];
+  email_verified: boolean;
+  created_at: string;
+  last_login: string;
+};
 
 const authBackendUrl =
   process.env.BACKEND_URL ?? process.env.NEXT_PUBLIC_BACKEND_URL ?? "http://localhost:8000";
